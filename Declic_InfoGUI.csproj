@@ -88,6 +88,10 @@
       <Project>{20f756c2-3a0b-486a-98bb-30fd35ee4614}</Project>
       <Name>Declic_InfoBO</Name>
     </ProjectReference>
+    <ProjectReference Include="Declic-InfoDAL\Declic_InfoDAL.csproj">
+      <Project>{0d9517e8-f1d7-4f79-8f00-688e822d0f1a}</Project>
+      <Name>Declic_InfoDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

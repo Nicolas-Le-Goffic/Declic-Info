@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DeclicInfoDAL;
 
 namespace Declic_Info
 {
@@ -14,9 +15,11 @@ namespace Declic_Info
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmModifierSupprimerProduit());
+            
         }
     }
 }
