@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Declic_InfoBO;
+using Declic_InfoBLL;
 
 namespace Declic_Info
 {
@@ -15,6 +17,15 @@ namespace Declic_Info
         public Form1()
         {
             InitializeComponent();
+
+            this.DialogResult = DialogResult.Cancel;
+        }
+
+        public void ModifierProduit(Produit produit)
+        {
+            this.txtbxLib.Text = produit.libelle;
+            this.txtbxCat.Text = produit.categorie;
+            this.txtbxPrix.Text = produit.prix.ToString("F2") + " €";
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -48,6 +59,17 @@ namespace Declic_Info
         }
 
         private void btnModifier_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void btnRevenir_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+
+        }
+
+        private void txtbxLib_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -79,5 +79,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Declic-InfoBLL\Declic_InfoBLL.csproj">
+      <Project>{5c528fc5-dd83-4905-a597-708732661f7a}</Project>
+      <Name>Declic_InfoBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="Declic-InfoBO\Declic_InfoBO.csproj">
+      <Project>{20f756c2-3a0b-486a-98bb-30fd35ee4614}</Project>
+      <Name>Declic_InfoBO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

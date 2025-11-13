@@ -98,6 +98,7 @@
             this.txtbxLib.Name = "txtbxLib";
             this.txtbxLib.Size = new System.Drawing.Size(236, 20);
             this.txtbxLib.TabIndex = 6;
+            this.txtbxLib.TextChanged += new System.EventHandler(this.txtbxLib_TextChanged);
             // 
             // txtbxCat
             // 
@@ -131,6 +132,7 @@
             this.btnRevenir.TabIndex = 10;
             this.btnRevenir.Text = "Revenir en arrière";
             this.btnRevenir.UseVisualStyleBackColor = true;
+            this.btnRevenir.Click += new System.EventHandler(this.btnRevenir_Click);
             // 
             // Form1
             // 
