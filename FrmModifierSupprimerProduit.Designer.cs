@@ -41,8 +41,21 @@
             btnSupprimer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
+            // btnSupprimer
+            // 
+            btnSupprimer.Location = new System.Drawing.Point(603, 123);
+            btnSupprimer.Name = "btnSupprimer";
+            btnSupprimer.Size = new System.Drawing.Size(75, 23);
+            btnSupprimer.TabIndex = 12;
+            btnSupprimer.Text = "Supprimer";
+            btnSupprimer.UseVisualStyleBackColor = true;
+            btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            // 
             // btnRetour
             // 
+            this.btnRetour.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRetour.Location = new System.Drawing.Point(410, 304);
             this.btnRetour.Name = "btnRetour";
             this.btnRetour.Size = new System.Drawing.Size(72, 23);
@@ -110,16 +123,6 @@
             this.lblLibelle.TabIndex = 13;
             this.lblLibelle.Text = "libellé";
             this.lblLibelle.Click += new System.EventHandler(this.lblLibelle_Click);
-            // 
-            // btnSupprimer
-            // 
-            btnSupprimer.Location = new System.Drawing.Point(603, 123);
-            btnSupprimer.Name = "btnSupprimer";
-            btnSupprimer.Size = new System.Drawing.Size(75, 23);
-            btnSupprimer.TabIndex = 12;
-            btnSupprimer.Text = "Supprimer";
-            btnSupprimer.UseVisualStyleBackColor = true;
-            btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // lblModifier
             // 
