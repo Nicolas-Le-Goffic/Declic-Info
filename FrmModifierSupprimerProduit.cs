@@ -94,5 +94,10 @@ namespace Declic_Info
                 MessageBox.Show("Erreur : " + ex.Message);
             }
         }
+
+        private void btnRetour_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

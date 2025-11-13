@@ -45,10 +45,11 @@
             // 
             this.btnRetour.Location = new System.Drawing.Point(410, 304);
             this.btnRetour.Name = "btnRetour";
-            this.btnRetour.Size = new System.Drawing.Size(110, 23);
+            this.btnRetour.Size = new System.Drawing.Size(72, 23);
             this.btnRetour.TabIndex = 20;
-            this.btnRetour.Text = "Revenir en arrière";
+            this.btnRetour.Text = "Retour";
             this.btnRetour.UseVisualStyleBackColor = true;
+            this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
             // 
             // btnModifier
             // 
