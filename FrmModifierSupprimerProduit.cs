@@ -31,7 +31,7 @@ namespace Declic_Info
             produitSelectionne = produit;
             // On pré-remplit les champs
             txtLibelle.Text = produit.getLibelle();
-            txtCategorie.Text = produit.getCategorie();
+            txtCategorie.Text = produit.getCategorie().ToString();
             txtPrix.Text = produit.getPrix().ToString();
         }
 
@@ -51,9 +51,23 @@ namespace Declic_Info
                     return;
                 }
 
+                // Conversion sécurisée de la catégorie
+                if (!int.TryParse(txtCategorie.Text, out int categorie))
+                {
+                    MessageBox.Show("La catégorie doit être un nombre entier !");
+                    return;
+                }
+
+                // Conversion sécurisée du prix
+                if (!decimal.TryParse(txtPrix.Text, out decimal prix))
+                {
+                    MessageBox.Show("Le prix doit être un nombre valide !");
+                    return;
+                }
+
                 produitSelectionne.setLibelle(txtLibelle.Text);
-                produitSelectionne.setCategorie(txtCategorie.Text);
-                produitSelectionne.setPrix(decimal.Parse(txtPrix.Text));
+                produitSelectionne.setCategorie(categorie);   
+                produitSelectionne.setPrix(prix);
 
                 produitBLL.ModifierProduit(produitSelectionne);
                 MessageBox.Show("Produit modifié avec succès !");
@@ -98,6 +112,11 @@ namespace Declic_Info
         private void btnRetour_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtCategorie_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

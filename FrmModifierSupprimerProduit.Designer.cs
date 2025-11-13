@@ -87,6 +87,7 @@
             this.txtCategorie.Name = "txtCategorie";
             this.txtCategorie.Size = new System.Drawing.Size(236, 20);
             this.txtCategorie.TabIndex = 17;
+            this.txtCategorie.TextChanged += new System.EventHandler(this.txtCategorie_TextChanged);
             // 
             // txtLibelle
             // 

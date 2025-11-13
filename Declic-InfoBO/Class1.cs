@@ -10,12 +10,12 @@ namespace Declic_InfoBO
     {
         protected int id;
         protected string libelle;
-        protected string categorie;
+        protected int categorie;
         protected decimal prix;
 
         public Produit() { }
 
-        public Produit(int id, string libelle, string categorie, decimal prix)
+        public Produit(int id, string libelle, int categorie, decimal prix)
         {
             this.id = id;
             this.libelle = libelle;
@@ -33,7 +33,7 @@ namespace Declic_InfoBO
             return libelle;
         }
 
-        public string getCategorie()
+        public int getCategorie()
         {
             return categorie;
         }
@@ -53,7 +53,7 @@ namespace Declic_InfoBO
             this.libelle = libelle;
         }
 
-        public void setCategorie(string categorie)
+        public void setCategorie(int categorie)
         {
             this.categorie = categorie;
         }

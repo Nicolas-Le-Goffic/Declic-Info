@@ -16,7 +16,7 @@ namespace Declic_InfoBLL
         {
             if (produit == null) throw new ArgumentNullException("produit");
             if (string.IsNullOrWhiteSpace(produit.getLibelle())) throw new ArgumentException("Libellé obligatoire");
-            if (string.IsNullOrWhiteSpace(produit.getCategorie())) throw new ArgumentException("Catégorie obligatoire");
+            if (produit.getCategorie() <= 0) throw new ArgumentException("Catégorie obligatoire");
             if (produit.getPrix() < 0) throw new ArgumentException("Prix doit être positif");
 
             produitDal.UpdateProduit(produit);
