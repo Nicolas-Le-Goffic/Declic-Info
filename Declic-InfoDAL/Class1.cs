@@ -32,7 +32,19 @@ namespace Declic_InfoDAL
             }
         }
 
-      
+        // Supprimer un produit
+        public void DeleteProduit(int id)
+        {
+            string query = "DELETE FROM Produits WHERE Id = @Id";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@Id", id);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
 
         //  Récupérer un produit existant
         public Produit GetProduitById(int id)
