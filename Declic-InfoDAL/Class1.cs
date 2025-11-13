@@ -12,7 +12,7 @@ namespace Declic_InfoDAL
     public class ProduitDAL
     {
         //METTRE LA CHAINE DE CONNEXION ENTRE ""
-        private string connectionString = "TA_CHAINE_DE_CONNEXION";
+        private string connectionString = "CHAINE_DE_CONNEXION";
 
         // Modifier un produit existant
         public void UpdateProduit(Produit produit)
