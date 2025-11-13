@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Declic_InfoDAO
+namespace Declic_InfoDAL
 {
-    public class Class1
+    internal class Class1
     {
     }
 }
