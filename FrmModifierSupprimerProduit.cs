@@ -17,6 +17,8 @@ namespace Declic_Info
         private ProduitBLL produitBLL;
         private Produit produitSelectionne;
 
+
+
         public FrmModifierSupprimerProduit()
         {
             InitializeComponent();
@@ -66,6 +68,31 @@ namespace Declic_Info
         private void txtLibelle_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (produitSelectionne == null)
+                {
+                    MessageBox.Show("Aucun produit sélectionné !");
+                    return;
+                }
+
+                var confirm = MessageBox.Show("Voulez-vous vraiment supprimer ce produit ?",
+                                              "Confirmation", MessageBoxButtons.YesNo);
+                if (confirm == DialogResult.Yes)
+                {
+                    produitBLL.SupprimerProduit(produitSelectionne.getId());
+                    MessageBox.Show("Produit supprimé !");
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur : " + ex.Message);
+            }
         }
     }
 }

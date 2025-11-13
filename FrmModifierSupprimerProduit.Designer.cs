@@ -118,6 +118,7 @@
             btnSupprimer.TabIndex = 12;
             btnSupprimer.Text = "Supprimer";
             btnSupprimer.UseVisualStyleBackColor = true;
+            btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // lblModifier
             // 
