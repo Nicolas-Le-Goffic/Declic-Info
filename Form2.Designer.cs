@@ -33,6 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.categorieComboBox = new System.Windows.Forms.ComboBox();
+            this.prixVenteProduittxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ajoutProduitbtn
@@ -43,6 +45,7 @@
             this.ajoutProduitbtn.TabIndex = 0;
             this.ajoutProduitbtn.Text = "Ajouter le produit";
             this.ajoutProduitbtn.UseVisualStyleBackColor = true;
+            this.ajoutProduitbtn.Click += new System.EventHandler(this.ajoutProduitbtn_Click);
             // 
             // libelleProduitTxt
             // 
@@ -72,16 +75,34 @@
             // categorieComboBox
             // 
             this.categorieComboBox.FormattingEnabled = true;
-            this.categorieComboBox.Location = new System.Drawing.Point(258, 203);
+            this.categorieComboBox.Location = new System.Drawing.Point(209, 206);
             this.categorieComboBox.Name = "categorieComboBox";
             this.categorieComboBox.Size = new System.Drawing.Size(239, 24);
             this.categorieComboBox.TabIndex = 4;
+            // 
+            // prixVenteProduittxt
+            // 
+            this.prixVenteProduittxt.Location = new System.Drawing.Point(209, 155);
+            this.prixVenteProduittxt.Name = "prixVenteProduittxt";
+            this.prixVenteProduittxt.Size = new System.Drawing.Size(101, 22);
+            this.prixVenteProduittxt.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(38, 155);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(146, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Prix de vente du produit";
             // 
             // ajoutProduitbdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.prixVenteProduittxt);
             this.Controls.Add(this.categorieComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -89,6 +110,7 @@
             this.Controls.Add(this.ajoutProduitbtn);
             this.Name = "ajoutProduitbdd";
             this.Text = "ajoutProduit";
+            this.Load += new System.EventHandler(this.ajoutProduitbdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,5 +123,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox categorieComboBox;
+        private System.Windows.Forms.TextBox prixVenteProduittxt;
+        private System.Windows.Forms.Label label3;
     }
 }
