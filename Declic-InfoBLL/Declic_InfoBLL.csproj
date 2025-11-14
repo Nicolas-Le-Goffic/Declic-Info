@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0D9517E8-F1D7-4F79-8F00-688E822D0F1A}</ProjectGuid>
+    <ProjectGuid>{5C528FC5-DD83-4905-A597-708732661F7A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Declic_InfoDAL</RootNamespace>
-    <AssemblyName>Declic-InfoDAL</AssemblyName>
+    <RootNamespace>Declic_InfoBLL</RootNamespace>
+    <AssemblyName>Declic-InfoBLL</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -42,8 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="ConnexionBD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Declic-InfoBO\Declic_InfoBO.csproj">
+      <Project>{20f756c2-3a0b-486a-98bb-30fd35ee4614}</Project>
+      <Name>Declic_InfoBO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Declic-InfoDAL\Declic_InfoDAL.csproj">
+      <Project>{0d9517e8-f1d7-4f79-8f00-688e822d0f1a}</Project>
+      <Name>Declic_InfoDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
