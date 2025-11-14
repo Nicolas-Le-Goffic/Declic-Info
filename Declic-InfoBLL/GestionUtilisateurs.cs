@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Declic_InfoDAL;
+using Declic_InfoBO;
 
 namespace Declic_InfoBLL
 {
@@ -33,5 +34,15 @@ namespace Declic_InfoBLL
                 return UtilisateurDAO.VerifUtilisateur(login, mdp);
             }
 
+            // Méthode qui renvoit une List d'objets Utilisateur en faisant appel à la méthode GetUtilisateurs() de la DAL
+            public static List<Produit> GetProduits()
+            {
+                return ProduitDAO.GetunProduitDAO().GetProduits(); 
         }
+
+        public static void SetchaineConnexion(object value)
+        {
+            ConnexionBD.GetConnexionBD().SetchaineConnexion(value.ToString());
+        }
+    }
     }

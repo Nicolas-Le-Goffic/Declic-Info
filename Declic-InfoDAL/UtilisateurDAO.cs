@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data.SqlClient;
-
 
 namespace Declic_InfoDAL
 {
     public class UtilisateurDAO
     {
         private static UtilisateurDAO unUtilisateurDAO;
+
         // Accesseur en lecture, renvoi une instance
         public static UtilisateurDAO GetunUtilisateurDAO()
         {
@@ -23,32 +20,23 @@ namespace Declic_InfoDAL
         // Cette méthode vérifie si un utilisateur existe
         public static bool VerifUtilisateur(string login, string mdp)
         {
-            bool existe=false;
-            // Connexion à la BD
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            bool existe = false;
 
-
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = maConnexion;
-            cmd.CommandText = cmd.CommandText = "SELECT * FROM Utilisateur WHERE nom_utilisateur =  " + login + "AND mot_de_passe_utilisateur = " + mdp;
-            SqlDataReader monReader = cmd.ExecuteReader();
-
-
-            int nbUtilisateur = (int)cmd.ExecuteScalar();
-            if (nbUtilisateur == 1)
+            // La connexion est automatiquement fermée grâce au using
+            using (SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion())
+            using (SqlCommand cmd = new SqlCommand(@"SELECT COUNT(*) FROM Utilisateur 
+                                                      WHERE nom_utilisateur = @login 
+                                                      AND mot_de_passe_utilisateur = @mdp", maConnexion))
             {
-                existe = true;
+                // Ajout des paramètres sécurisés
+                cmd.Parameters.AddWithValue("@login", login);
+                cmd.Parameters.AddWithValue("@mdp", mdp);
+
+                int nbUtilisateur = (int)cmd.ExecuteScalar();
+                existe = (nbUtilisateur == 1);
             }
 
             return existe;
-
-
-            // Fermeture de la connexion
-            maConnexion.Close();
-
         }
-
-
     }
 }
-
