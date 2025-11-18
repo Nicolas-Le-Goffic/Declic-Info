@@ -110,7 +110,6 @@
             this.Controls.Add(this.ajoutProduitbtn);
             this.Name = "ajoutProduitbdd";
             this.Text = "ajoutProduit";
-            this.Load += new System.EventHandler(this.ajoutProduitbdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

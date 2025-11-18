@@ -25,7 +25,7 @@ namespace Declic_Info
             List<CategorieBO> listeCategories = GestionCategories.GetCategories();
             foreach (CategorieBO categorie in listeCategories)
             {
-                categorieComboBox.Items.Add(categorie.getIdCategorie());
+                categorieComboBox.Items.Add(categorie);
             }
         }
 
@@ -40,7 +40,7 @@ namespace Declic_Info
                 }
 
                 //Verification qu'il y a une catégorie séléctionnée
-                if (categorieComboBox.Text == "")
+                if (categorieComboBox.SelectedItem == null)
                 {
                     MessageBox.Show("Vous devez saisir une catégorie !");
                     return;
@@ -52,10 +52,9 @@ namespace Declic_Info
                     MessageBox.Show("Le prix doit être un nombre valide !");
                     return;
                 }
-
+                CategorieBO categorie = (CategorieBO)categorieComboBox.SelectedItem;
                 float.TryParse(prixVenteProduittxt.Text, out float prixVenteProduit);
-                int.TryParse(categorieComboBox.Text, out int idCategorie);
-                List<CategorieBO> Categorie = GestionCategories.GetCategorie(idCategorie);
+                List<CategorieBO> Categorie = GestionCategories.GetCategorie(categorie.getIdCategorie());
 
                 // Création de l'objet Utilisateur avec le nom récupérer dans la GUI
                 ProduitBO prod = new ProduitBO(libelleProduitTxt.Text, prixVenteProduit, Categorie[0]);
@@ -69,16 +68,12 @@ namespace Declic_Info
                 // Effacement de la valeur saisie après confirmation de l'enregristrement
                 libelleProduitTxt.Clear();
                 prixVenteProduittxt.Clear();
+                categorieComboBox.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur : " + ex.Message);
             }
-        }
-
-        private void ajoutProduitbdd_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

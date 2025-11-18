@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Declic_InfoBO
 {
@@ -30,6 +31,10 @@ namespace Declic_InfoBO
         public void setNomCategorie(string nomCategorie)
         {
             this.nomCategorie = nomCategorie;
+        }
+        public override string ToString()
+        {
+            return nomCategorie;   // C’est ce qui sera affiché dans la ComboBox
         }
     }
 }

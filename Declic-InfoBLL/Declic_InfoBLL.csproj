@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="GestionProduits.cs" />
     <Compile Include="GestionCategories.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
