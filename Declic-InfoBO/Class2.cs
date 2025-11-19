@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Declic_InfoBO
 {
-    internal class Class2
+    public class Class1
     {
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 
-namespace Declic_InfoDAL
+namespace DeclicInfoDAL
 {
     // Classe de gestion de la connexion à la BD
     public class ConnexionBD
