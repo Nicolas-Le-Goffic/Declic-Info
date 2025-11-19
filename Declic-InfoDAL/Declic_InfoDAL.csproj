@@ -41,9 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CategorieDAO.cs" />
     <Compile Include="ConnexionBD.cs" />
+    <Compile Include="ProduitDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Declic-InfoBO\Declic_InfoBO.csproj">
+      <Project>{20f756c2-3a0b-486a-98bb-30fd35ee4614}</Project>
+      <Name>Declic_InfoBO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

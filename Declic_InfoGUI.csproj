@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,8 +53,20 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAjoutProduit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAjoutProduit.Designer.cs">
+      <DependentUpon>FormAjoutProduit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAjoutProduit.resx">
+      <DependentUpon>FormAjoutProduit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +88,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Declic-InfoBLL\Declic_InfoBLL.csproj">
+      <Project>{5c528fc5-dd83-4905-a597-708732661f7a}</Project>
+      <Name>Declic_InfoBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="Declic-InfoBO\Declic_InfoBO.csproj">
+      <Project>{20f756c2-3a0b-486a-98bb-30fd35ee4614}</Project>
+      <Name>Declic_InfoBO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

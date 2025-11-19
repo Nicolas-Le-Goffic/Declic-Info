@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,8 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="GestionProduits.cs" />
+    <Compile Include="GestionCategories.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Declic-InfoBO\Declic_InfoBO.csproj">
+      <Project>{20f756c2-3a0b-486a-98bb-30fd35ee4614}</Project>
+      <Name>Declic_InfoBO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Declic-InfoDAL\Declic_InfoDAL.csproj">
+      <Project>{0d9517e8-f1d7-4f79-8f00-688e822d0f1a}</Project>
+      <Name>Declic_InfoDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
