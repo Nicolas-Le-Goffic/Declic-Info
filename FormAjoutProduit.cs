@@ -54,7 +54,7 @@ namespace Declic_Info
                 }
                 CategorieBO categorie = (CategorieBO)categorieComboBox.SelectedItem;
                 float.TryParse(prixVenteProduittxt.Text, out float prixVenteProduit);
-                List<CategorieBO> Categorie = GestionCategories.GetCategorie(categorie.getIdCategorie());
+                List<CategorieBO> Categorie = GestionCategories.GetCategorie(categorie.IdCategorie);
 
                 // Création de l'objet Utilisateur avec le nom récupérer dans la GUI
                 ProduitBO prod = new ProduitBO(libelleProduitTxt.Text, prixVenteProduit, Categorie[0]);

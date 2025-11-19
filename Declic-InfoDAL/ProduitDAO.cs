@@ -26,9 +26,9 @@ namespace Declic_InfoDAL
         public static int AjoutProduit(ProduitBO unProduit)
         {
             int nbEnr;
-            string libelleProduit = unProduit.getLibelleProduit();
-            float prixVente = unProduit.getPrixVenteProduit();
-            int idCategorie = unProduit.getCategorieProduit().getIdCategorie();
+            string libelleProduit = unProduit.LibelleProduit;
+            float prixVente = unProduit.PrixVenteProduit;
+            int idCategorie = unProduit.CategorieProduit.IdCategorie;
 
             // Connexion à la BD
             SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();

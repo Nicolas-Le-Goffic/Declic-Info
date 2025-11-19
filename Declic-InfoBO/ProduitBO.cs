@@ -26,37 +26,25 @@ namespace Declic_InfoBO
             this.prixVenteProduit = prixVenteProduit;
             this.categorieProduit = categorieProduit;
         }
-        public int getCodeProduit() 
+        public int CodeProduit
         {
-            return codeProduit; 
+            get => codeProduit;
+            set => codeProduit = value;
         }
-        public string getLibelleProduit() 
-        { 
-            return libelleProduit; 
-        }
-        public float getPrixVenteProduit()
+        public string LibelleProduit
         {
-            return prixVenteProduit;
+            get => libelleProduit;
+            set => libelleProduit = value;
         }
-        public CategorieBO getCategorieProduit()
-        { 
-            return categorieProduit;
-        }
-        public void setCodeProduit(int codeProduit)
+        public float PrixVenteProduit
         {
-            this.codeProduit = codeProduit;
+            get => prixVenteProduit;
+            set => prixVenteProduit = value;
         }
-        public void setLibelleProduit (string libelleProduit)
+        public CategorieBO CategorieProduit
         {
-            this.libelleProduit = libelleProduit;
-        }
-        public void setPrixVenteProduit (float prixVenteProduit)
-        {
-            this.prixVenteProduit = prixVenteProduit;
-        }
-        public void setCategorieProduit (CategorieBO categorieProduit)
-        {
-            this.categorieProduit = categorieProduit;
+            get => categorieProduit;
+            set => categorieProduit = value;
         }
     }
 }

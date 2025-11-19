@@ -16,21 +16,15 @@ namespace Declic_InfoBO
             this.idCategorie = idCategorie;
             this.nomCategorie = nomCategorie;
         }
-        public int getIdCategorie()
+        public int IdCategorie
         {
-            return idCategorie;
+            get => idCategorie;
+            set => idCategorie = value;
         }
-        public string getNomCategorie()
+        public string NomCategorie
         {
-            return nomCategorie;
-        }
-        public void setIdCategorie(int idCategorie)
-        {
-            this.idCategorie = idCategorie;
-        }
-        public void setNomCategorie(string nomCategorie)
-        {
-            this.nomCategorie = nomCategorie;
+            get => nomCategorie;
+            set => nomCategorie = value;
         }
         public override string ToString()
         {
