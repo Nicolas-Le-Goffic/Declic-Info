@@ -23,8 +23,6 @@ namespace Declic_Info
 
         }
 
-
-
         private void FrmProduits_Load(object sender, EventArgs e)
         {
             var liste = GestionUtilisateurs.GetProduits();

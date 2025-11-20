@@ -23,26 +23,23 @@ namespace Declic_InfoBLL
             }
 
         // Définit la chaîne de connexion grâce à la méthode SetchaineConnexion de la DAL
-        public static void SetchaineConnexion(ConnectionStringSettings chset)
+            public static void SetchaineConnexion(object value)
             {
-                string chaine = chset.ConnectionString;
-                ConnexionBD.GetConnexionBD().SetchaineConnexion(chaine);
-            }
-            // Méthode qui renvoit une List d'objets Utilisateur en faisant appel à la méthode GetUtilisateurs() de la DAL
-            public static bool VerifUtilisateur(string login, string mdp)
-            {
-                return UtilisateurDAO.VerifUtilisateur(login, mdp);
+                ConnexionBD.GetConnexionBD().SetchaineConnexion(value.ToString());
             }
 
-            // Méthode qui renvoit une List d'objets Utilisateur en faisant appel à la méthode GetUtilisateurs() de la DAL
+        // Méthode qui renvoit une List d'objets Utilisateur en faisant appel à la méthode VerifUtilisateurs() de la DAL
+            public static bool VerifUtilisateur(Utilisateur unUtilisateur)
+                {
+                    return UtilisateurDAO.VerifUtilisateur(unUtilisateur);
+                }
+
+            // Méthode qui renvoit une List d'objets Utilisateur en faisant appel à la méthode GetProduits() de la DAL
             public static List<Produit> GetProduits()
             {
                 return ProduitDAO.GetunProduitDAO().GetProduits(); 
         }
 
-        public static void SetchaineConnexion(object value)
-        {
-            ConnexionBD.GetConnexionBD().SetchaineConnexion(value.ToString());
-        }
+       
     }
     }

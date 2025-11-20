@@ -33,9 +33,9 @@ namespace Declic_Info
             this.txt = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.TextBox();
-            this.btnConnexion = new System.Windows.Forms.Button();
             this.labelMenu = new System.Windows.Forms.Label();
             this.txtMdp = new System.Windows.Forms.TextBox();
+            this.btnConnexion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt
@@ -46,7 +46,6 @@ namespace Declic_Info
             this.txt.Size = new System.Drawing.Size(90, 13);
             this.txt.TabIndex = 0;
             this.txt.Text = "Nom d\'utilisateur :";
-            this.txt.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -63,16 +62,6 @@ namespace Declic_Info
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(164, 20);
             this.txtLogin.TabIndex = 2;
-            // 
-            // btnConnexion
-            // 
-            this.btnConnexion.Location = new System.Drawing.Point(328, 247);
-            this.btnConnexion.Name = "btnConnexion";
-            this.btnConnexion.Size = new System.Drawing.Size(105, 24);
-            this.btnConnexion.TabIndex = 4;
-            this.btnConnexion.Text = "Se connecter";
-            this.btnConnexion.UseVisualStyleBackColor = true;
-            this.btnConnexion.Click += new System.EventHandler(this.button1_Click);
             // 
             // labelMenu
             // 
@@ -93,14 +82,24 @@ namespace Declic_Info
             this.txtMdp.TabIndex = 6;
             this.txtMdp.UseSystemPasswordChar = true;
             // 
+            // btnConnexion
+            // 
+            this.btnConnexion.Location = new System.Drawing.Point(347, 259);
+            this.btnConnexion.Name = "btnConnexion";
+            this.btnConnexion.Size = new System.Drawing.Size(118, 23);
+            this.btnConnexion.TabIndex = 0;
+            this.btnConnexion.Text = "Se connecter";
+            this.btnConnexion.UseVisualStyleBackColor = true;
+            this.btnConnexion.Click += new System.EventHandler(this.btnConnexion_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnConnexion);
             this.Controls.Add(this.txtMdp);
             this.Controls.Add(this.labelMenu);
-            this.Controls.Add(this.btnConnexion);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt);
@@ -119,9 +118,9 @@ namespace Declic_Info
         private System.Windows.Forms.Label txt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtLogin;
-        private System.Windows.Forms.Button btnConnexion;
         private System.Windows.Forms.Label labelMenu;
         private System.Windows.Forms.TextBox txtMdp;
+        private System.Windows.Forms.Button btnConnexion;
     }
 }
 

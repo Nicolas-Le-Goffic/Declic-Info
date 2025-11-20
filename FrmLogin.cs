@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Declic_InfoBLL;
+using Declic_InfoBO;
 
 namespace Declic_Info
 {
@@ -21,22 +22,33 @@ namespace Declic_Info
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textMdp_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnConnexion_Click(object sender, EventArgs e)
         {
             string login = txtLogin.Text;
             string mdp = txtMdp.Text;
 
-            bool connexionOK = GestionUtilisateurs.VerifUtilisateur(login, mdp);
+            Utilisateur unUtilisateur = new Utilisateur(login, mdp);
+            bool connexionOK = GestionUtilisateurs.VerifUtilisateur(unUtilisateur);
+
+            if (string.IsNullOrWhiteSpace(unUtilisateur.Mdp) && string.IsNullOrWhiteSpace(unUtilisateur.Login))
+            {
+                MessageBox.Show("Aucun champ ne doit être vide !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(unUtilisateur.Login))
+            {
+                MessageBox.Show("Veuillez renseigner un login", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(unUtilisateur.Mdp))
+            {
+                MessageBox.Show("Veuillez renseigner un mot de passe !");
+                return;
+            }
+
+            
 
             if (connexionOK)
             {
@@ -48,9 +60,10 @@ namespace Declic_Info
 
                 this.Hide(); // Cache la fenêtre login
             }
+
             else
             {
-                MessageBox.Show("Identifiants incorrects.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Identifiant ou mot de passe incorrects.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

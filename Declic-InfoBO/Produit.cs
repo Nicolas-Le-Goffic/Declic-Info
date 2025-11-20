@@ -19,7 +19,7 @@ namespace Declic_InfoBO
             this.categorie = categorie;
         }
 
-        // Propriétés publiques (CamelCase)
+        // Propriétés 
         public int CodeProduit
         {
             get { return codeProduit; }

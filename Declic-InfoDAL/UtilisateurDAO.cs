@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using Declic_InfoBO;
 
 namespace Declic_InfoDAL
 {
@@ -18,7 +19,7 @@ namespace Declic_InfoDAL
         }
 
         // Cette méthode vérifie si un utilisateur existe
-        public static bool VerifUtilisateur(string login, string mdp)
+        public static bool VerifUtilisateur(Utilisateur unUtilisateur)
         {
             bool existe = false;
 
@@ -29,13 +30,13 @@ namespace Declic_InfoDAL
                                                       AND mot_de_passe_utilisateur = @mdp", maConnexion))
             {
                 // Ajout des paramètres sécurisés
-                cmd.Parameters.AddWithValue("@login", login);
-                cmd.Parameters.AddWithValue("@mdp", mdp);
+                cmd.Parameters.AddWithValue("@login", unUtilisateur.Login);
+                cmd.Parameters.AddWithValue("@mdp", unUtilisateur.Mdp);
 
                 int nbUtilisateur = (int)cmd.ExecuteScalar();
                 existe = (nbUtilisateur == 1);
             }
-
+            
             return existe;
         }
     }
