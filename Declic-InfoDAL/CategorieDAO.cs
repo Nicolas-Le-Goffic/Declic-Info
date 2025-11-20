@@ -77,7 +77,8 @@ namespace Declic_InfoDAL
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
-            cmd.CommandText = " SELECT * FROM Categorie WHERE id_categorie = " + idUneCategorie;
+            cmd.CommandText = " SELECT * FROM Categorie WHERE id_categorie = @idCategorie";
+            cmd.Parameters.AddWithValue("@idCategorie", idUneCategorie);
 
             SqlDataReader monReader = cmd.ExecuteReader();
 

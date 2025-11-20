@@ -18,7 +18,7 @@ namespace Declic_Info
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ajoutProduitbdd());
+            Application.Run(new FormSuppressionClient());
         }
     }
 }
