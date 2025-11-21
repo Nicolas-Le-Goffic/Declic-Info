@@ -26,5 +26,17 @@ namespace Declic_Info
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FrmProduits frm = new FrmProduits();
+            frm.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ajoutProduitbdd form = new ajoutProduitbdd();
+            form.ShowDialog();
+        }
     }
 }

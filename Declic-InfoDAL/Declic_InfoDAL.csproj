@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="UtilisateurDAO.cs" />
-    <Compile Include="ProduitsDAO.cs" />
     <Compile Include="CategorieDAO.cs" />
     <Compile Include="ConnexionBD.cs" />
     <Compile Include="ProduitDAO.cs" />

@@ -55,7 +55,7 @@ namespace Declic_Info
                 MessageBox.Show("Connexion réussie !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Ouvre le formulaire principal
-                FrmProduits frm = new FrmProduits();
+                PageAccueilGestCom frm = new PageAccueilGestCom();
                 frm.Show();
 
                 this.Hide(); // Cache la fenêtre login

@@ -72,6 +72,24 @@
     <EmbeddedResource Include="FrmProduits.resx">
       <DependentUpon>FrmProduits.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="PageAccueilGestCom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageAccueilGestCom.Designer.cs">
+      <DependentUpon>PageAccueilGestCom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAjoutProduit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAjoutProduit.Designer.cs">
+      <DependentUpon>FormAjoutProduit.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormAjoutProduit.resx">
+      <DependentUpon>FormAjoutProduit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageAccueilGestCom.resx">
+      <DependentUpon>PageAccueilGestCom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -106,13 +124,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Declic-InfoBLL\Declic-InfoBLL.csproj">
+    <ProjectReference Include="Declic-InfoBLL\Declic_InfoBLL.csproj">
       <Project>{5c528fc5-dd83-4905-a597-708732661f7a}</Project>
-      <Name>Declic-InfoBLL</Name>
+      <Name>Declic_InfoBLL</Name>
     </ProjectReference>
-    <ProjectReference Include="Declic-InfoBO\Declic-InfoBO.csproj">
-      <Project>{20F756C2-3A0B-486A-98BB-30FD35EE4614}</Project>
-      <Name>Declic-InfoBO</Name>
+    <ProjectReference Include="Declic-InfoBO\Declic_InfoBO.csproj">
+      <Project>{20f756c2-3a0b-486a-98bb-30fd35ee4614}</Project>
+      <Name>Declic_InfoBO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,5 +1,4 @@
 ﻿using Declic_InfoBLL;
-using Declic_InfoBO;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

@@ -35,7 +35,7 @@ namespace Declic_InfoBLL
                 }
 
             // Méthode qui renvoit une List d'objets Utilisateur en faisant appel à la méthode GetProduits() de la DAL
-            public static List<Produit> GetProduits()
+            public static List<ProduitBO> GetProduits()
             {
                 return ProduitDAO.GetunProduitDAO().GetProduits(); 
         }
