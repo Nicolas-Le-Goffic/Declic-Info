@@ -37,7 +37,7 @@ namespace Declic_Info
                 //Verification qu'il y a une catégorie séléctionnée
                 if (clientComboBox.SelectedItem == null)
                 {
-                    MessageBox.Show("Vous devez saisir une catégorie !");
+                    MessageBox.Show("Vous devez saisir un client !");
                     return;
                 }
 

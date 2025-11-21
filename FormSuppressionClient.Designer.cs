@@ -40,6 +40,7 @@
             this.clientComboBox.Name = "clientComboBox";
             this.clientComboBox.Size = new System.Drawing.Size(401, 24);
             this.clientComboBox.TabIndex = 0;
+
             // 
             // button1
             // 
