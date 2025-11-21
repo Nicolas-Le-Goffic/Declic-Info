@@ -1,60 +1,85 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Declic_InfoBO; // Référence la couche BO
 using System.Data.SqlClient;
-using Declic_InfoBO;
 
 namespace Declic_InfoDAL
 {
-    public static class ClientDAL
-    { //ACHANGERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-        private static string connectionString = @"YOUR_CONNECTION_STRING";
+    public class ClientDAO
+    {
+        private static ClientDAO unClientDAO;
 
-        public static int AjouterClient(ClientBO client)
+        // Accesseur en lecture -> renvoie une instance
+        public static ClientDAO GetUnClientDAO()
         {
-            int nbLignes;
+            if (unClientDAO == null)
+            {
+                unClientDAO = new ClientDAO();
+            }
+            return unClientDAO;
+        }
 
-            string req = @"INSERT INTO Client 
-            (
+        // cette méthode insère un nouveau client passé en paramètre dans la BD
+        public static int AjoutClient(ClientBO unClient)
+        {
+            int nbEnr;
+
+            string nom = unClient.NomClient;
+            int tel = unClient.NumTelClient;
+            int fax = unClient.NumFaxClient;
+            string email = unClient.EmailClient;
+
+            int numFact = unClient.NumAdrFactClient;
+            string rueFact = unClient.RueAdrFactClient;
+            string villeFact = unClient.VilleAdFactClient;
+            int cpFact = unClient.CpAdrFactClient;
+
+            int numLiv = unClient.NumAdrLivClient;
+            string rueLiv = unClient.RueAdrLivClient;
+            string villeLiv = unClient.VilleAdrLivClient;
+            int cpLiv = unClient.CpAdrLivClient;
+
+            // Connexion à la BD
+            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = maConnexion;
+            cmd.CommandText = @"INSERT INTO Client (
                 nom_client, num_tel_client, num_fax_client, email_client,
                 num_adr_fact_client, rue_adr_fact_client, ville_adr_fact_client, cp_adr_fact_client,
                 num_adr_liv_client, rue_adr_liv_client, ville_adr_liv_client, cp_adr_liv_client
-            )
-            VALUES
-            (
+            ) 
+            VALUES (
                 @nom, @tel, @fax, @mail,
                 @numFact, @rueFact, @villeFact, @cpFact,
                 @numLiv, @rueLiv, @villeLiv, @cpLiv
-            );";
+            )";
 
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand(req, con);
+            //ajout des paramètres
+            cmd.Parameters.AddWithValue("@nom", nom);
+            cmd.Parameters.AddWithValue("@tel", tel);
+            cmd.Parameters.AddWithValue("@fax", fax);
+            cmd.Parameters.AddWithValue("@mail", email);
 
-                    cmd.Parameters.AddWithValue("@nom", client.NomClient);
-                    cmd.Parameters.AddWithValue("@tel", client.NumTelClient);
-                    cmd.Parameters.AddWithValue("@fax", client.NumFaxClient);
-                    cmd.Parameters.AddWithValue("@mail", client.EmailClient);
+            cmd.Parameters.AddWithValue("@numFact", numFact);
+            cmd.Parameters.AddWithValue("@rueFact", rueFact);
+            cmd.Parameters.AddWithValue("@villeFact", villeFact);
+            cmd.Parameters.AddWithValue("@cpFact", cpFact);
 
-                    cmd.Parameters.AddWithValue("@numFact", client.NumAdrFactClient);
-                    cmd.Parameters.AddWithValue("@rueFact", client.RueAdrFactClient);
-                    cmd.Parameters.AddWithValue("@villeFact", client.VilleAdFactClient);
-                    cmd.Parameters.AddWithValue("@cpFact", client.CpAdrFactClient);
+            cmd.Parameters.AddWithValue("@numLiv", numLiv);
+            cmd.Parameters.AddWithValue("@rueLiv", rueLiv);
+            cmd.Parameters.AddWithValue("@villeLiv", villeLiv);
+            cmd.Parameters.AddWithValue("@cpLiv", cpLiv);
 
-                    cmd.Parameters.AddWithValue("@numLiv", client.NumAdrLivClient);
-                    cmd.Parameters.AddWithValue("@rueLiv", client.RueAdrLivClient);
-                    cmd.Parameters.AddWithValue("@villeLiv", client.VilleAdrLivClient);
-                    cmd.Parameters.AddWithValue("@cpLiv", client.CpAdrLivClient);
+            //execution
+            nbEnr = cmd.ExecuteNonQuery();
 
-                    nbLignes = cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Erreur DAL : " + ex.Message);
-                }
-            }
-            return nbLignes;
+            //fermeture de la connexion
+            maConnexion.Close();
+
+            return nbEnr;
         }
     }
 }
