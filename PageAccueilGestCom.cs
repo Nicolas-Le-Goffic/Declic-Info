@@ -39,15 +39,21 @@ namespace Declic_Info
             form.ShowDialog();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             FrmModificationClients frm = new FrmModificationClients();
             frm.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
-            FrmModificationClients frm = new FrmModificationClients();
+            FormSuppressionClient frm = new FormSuppressionClient();
+            frm.ShowDialog();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FormListeClient frm = new FormListeClient();
             frm.ShowDialog();
         }
     }

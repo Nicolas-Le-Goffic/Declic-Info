@@ -9,6 +9,7 @@ namespace Declic_InfoDAL
     {
         private static ClientDAO unClientDAO;
 
+        // Accesseur en lecture, renvoi une instance
         public static ClientDAO GetunClientDAO()
         {
             if (unClientDAO == null)
@@ -18,6 +19,7 @@ namespace Declic_InfoDAL
             return unClientDAO;
         }
 
+        // Cette méthode retourne une List contenant les objets Utilisateurs contenus dans la table Identification
 
         public static List<ClientBO> GetInfosClients()
         {
@@ -117,6 +119,102 @@ namespace Declic_InfoDAL
 
             return lesClients;
         }
+        public static List<ClientBO> GetClients()
+        {
+            int codeClient;
+            string nomClient;
+            ClientBO unClient;
+
+            // Connexion à la BD
+            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+
+            // Création d'une liste vide d'objets Utilisateurs
+            List<ClientBO> lesClients = new List<ClientBO>();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = maConnexion;
+            cmd.CommandText = " SELECT * FROM Client";
+
+            SqlDataReader monReader = cmd.ExecuteReader();
+
+            // Remplissage de la liste
+            while (monReader.Read())
+            {
+                codeClient = Int32.Parse(monReader["code_client"].ToString());
+                if (monReader["nom_client"] == DBNull.Value)
+                {
+                    nomClient = default(string);
+                }
+                else
+                {
+                    nomClient = monReader["nom_client"].ToString();
+                }
+                unClient = new ClientBO(codeClient, nomClient);
+                lesClients.Add(unClient);
+            }
+
+            // Fermeture de la connexion
+            maConnexion.Close();
+
+            return lesClients;
+        }
+        public static List<ClientBO> GetUnClient(int idUnClient)
+        {
+            int idClient;
+            string nomClient;
+            ClientBO unClient;
+            // Connexion à la BD
+            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+
+            // Création d'une liste vide d'objets Utilisateurs
+            List<ClientBO> lesClients = new List<ClientBO>();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = maConnexion;
+            cmd.CommandText = " SELECT * FROM Categorie WHERE id_categorie = @idClient";
+            cmd.Parameters.AddWithValue("@idClient", idUnClient);
+
+            SqlDataReader monReader = cmd.ExecuteReader();
+
+            // Remplissage de la liste
+            while (monReader.Read())
+            {
+                idClient = Int32.Parse(monReader["id_categorie"].ToString());
+                if (monReader["nom_categorie"] == DBNull.Value)
+                {
+                    nomClient = default(string);
+                }
+                else
+                {
+                    nomClient = monReader["nom_categorie"].ToString();
+                }
+
+                unClient = new ClientBO(idClient, nomClient);
+                lesClients.Add(unClient);
+            }
+
+            // Fermeture de la connexion
+            maConnexion.Close();
+
+            return lesClients;
+        }
+        public static void SupprimerClient(int id)
+        {
+            // Connexion à la BD
+            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+
+            // Création d'une liste vide d'objets Utilisateurs
+            List<ClientBO> lesClients = new List<ClientBO>();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = maConnexion;
+            cmd.CommandText = "DELETE FROM Client WHERE code_client = @Id";
+            cmd.Parameters.AddWithValue("@Id", id);
+
+            SqlDataReader monReader = cmd.ExecuteReader();
+            // Fermeture de la connexion
+            maConnexion.Close();
+        }
 
         // Cette méthode modifie un utilisateur passé en paramètre dans la BD
         public static int ModificationClient(ClientBO unClient)
@@ -152,7 +250,7 @@ namespace Declic_InfoDAL
                 cmd.Parameters.AddWithValue("@emailClient", unClient.EmailClient);
                 cmd.Parameters.AddWithValue("@numAdrFactClient", unClient.NumAdrFactClient);
                 cmd.Parameters.AddWithValue("@rueAdrFactClient", unClient.RueAdrFactClient);
-                cmd.Parameters.AddWithValue("@villeAdrFactClient", unClient.VilleAdrFactClient);
+                cmd.Parameters.AddWithValue("@villeAdrFactClient", unClient.VilleAdFactClient);
                 cmd.Parameters.AddWithValue("@cpAdrFactClient", unClient.CpAdrFactClient);
                 cmd.Parameters.AddWithValue("@numAdrLivClient", unClient.NumAdrLivClient);
                 cmd.Parameters.AddWithValue("@rueAdrLivClient", unClient.RueAdrLivClient);

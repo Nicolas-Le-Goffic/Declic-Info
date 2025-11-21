@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormSuppressionClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuppressionClient.Designer.cs">
+      <DependentUpon>FormSuppressionClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListeClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListeClients.Designer.cs">
+      <DependentUpon>FormListeClients.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmModificationClients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,7 +82,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GESTION_COMMERCIALEDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -93,8 +104,15 @@
     <Compile Include="FormAjoutProduit.Designer.cs">
       <DependentUpon>FormAjoutProduit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
+    <EmbeddedResource Include="FormListeClients.resx">
+      <DependentUpon>FormListeClients.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAjoutProduit.resx">
       <DependentUpon>FormAjoutProduit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuppressionClient.resx">
+      <DependentUpon>FormSuppressionClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageAccueilGestCom.resx">
       <DependentUpon>PageAccueilGestCom.cs</DependentUpon>

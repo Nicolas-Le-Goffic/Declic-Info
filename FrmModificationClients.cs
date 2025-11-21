@@ -51,7 +51,7 @@ namespace Declic_Info
             txtEmail.Text = client.EmailClient;
             txtNumAdrFact.Text = client.NumAdrFactClient.ToString();
             txtRueAdrFact.Text = client.RueAdrFactClient;
-            txtVilleAdrFact.Text = client.VilleAdrFactClient;
+            txtVilleAdrFact.Text = client.VilleAdrLivClient;
             txtCpAdrFact.Text = client.CpAdrFactClient.ToString();
             txtNumAdrLiv.Text = client.NumAdrLivClient.ToString();
             txtRueAdrLiv.Text = client.RueAdrLivClient;

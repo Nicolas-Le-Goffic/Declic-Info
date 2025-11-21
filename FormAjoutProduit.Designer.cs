@@ -35,6 +35,7 @@
             this.categorieComboBox = new System.Windows.Forms.ComboBox();
             this.prixVenteProduittxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ajoutProduitbtn
@@ -96,11 +97,22 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Prix de vente du produit";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(185, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(421, 52);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Ajoutez un Produit !";
+            // 
             // ajoutProduitbdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.prixVenteProduittxt);
             this.Controls.Add(this.categorieComboBox);
@@ -124,5 +136,6 @@
         private System.Windows.Forms.ComboBox categorieComboBox;
         private System.Windows.Forms.TextBox prixVenteProduittxt;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
