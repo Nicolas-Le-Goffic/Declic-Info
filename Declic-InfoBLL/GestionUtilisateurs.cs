@@ -32,19 +32,6 @@ namespace Declic_InfoBLL
                 public static bool VerifUtilisateur(Utilisateur unUtilisateur)
                         {
                             return UtilisateurDAO.VerifUtilisateur(unUtilisateur);
-                        }
-
-            // Méthode qui renvoit une List d'objets Utilisateur en faisant appel à la méthode GetProduits() de la DAL
-            public static List<ClientBO> GetInfosClients()
-            {
-                return ClientDAO.GetInfosClients();
-            }
-
-                public static int ModificationClient(ClientBO unClient)
-                {
-                return ClientDAO.ModificationClient(unClient);
                 }
-
-
         }
     }
