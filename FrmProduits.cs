@@ -18,7 +18,7 @@ namespace Declic_Info
         {
             InitializeComponent();
             this.Load += FrmProduits_Load;
-            GestionUtilisateurs.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"]);
+            GestionUtilisateurs.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"].ConnectionString);
 
 
         }

@@ -16,7 +16,7 @@ namespace Declic_Info
         [STAThread]
         static void Main()
         {
-            GestionUtilisateurs.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"]);
+            GestionUtilisateurs.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"].ConnectionString);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmLogin());

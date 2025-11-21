@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Declic_InfoDAL;
 using Declic_InfoBO;
+using Declic_InfoBLL;
 
 namespace Declic_InfoBLL
 {
@@ -22,24 +23,28 @@ namespace Declic_InfoBLL
                 return uneGestionUtilisateurs;
             }
 
-        // Définit la chaîne de connexion grâce à la méthode SetchaineConnexion de la DAL
-            public static void SetchaineConnexion(object value)
-            {
-                ConnexionBD.GetConnexionBD().SetchaineConnexion(value.ToString());
-            }
-
-        // Méthode qui renvoit une List d'objets Utilisateur en faisant appel à la méthode VerifUtilisateurs() de la DAL
-            public static bool VerifUtilisateur(Utilisateur unUtilisateur)
+            // Définit la chaîne de connexion grâce à la méthode SetchaineConnexion de la DAL
+                public static void SetchaineConnexion(string value)
                 {
-                    return UtilisateurDAO.VerifUtilisateur(unUtilisateur);
+                    ConnexionBD.GetConnexionBD().SetchaineConnexion(value);
                 }
+                // Méthode qui renvoit une List d'objets Utilisateur en faisant appel à la méthode VerifUtilisateurs() de la DAL
+                public static bool VerifUtilisateur(Utilisateur unUtilisateur)
+                        {
+                            return UtilisateurDAO.VerifUtilisateur(unUtilisateur);
+                        }
 
             // Méthode qui renvoit une List d'objets Utilisateur en faisant appel à la méthode GetProduits() de la DAL
-            public static List<ProduitBO> GetProduits()
+            public static List<ClientBO> GetInfosClients()
             {
-                return ProduitDAO.GetunProduitDAO().GetProduits(); 
-        }
+                return ClientDAO.GetInfosClients();
+            }
 
-       
-    }
+                public static int ModificationClient(ClientBO unClient)
+                {
+                return ClientDAO.ModificationClient(unClient);
+                }
+
+
+        }
     }
