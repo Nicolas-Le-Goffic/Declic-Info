@@ -68,14 +68,5 @@ namespace Declic_Info
 
         }
 
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtLogin_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

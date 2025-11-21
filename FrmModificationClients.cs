@@ -148,5 +148,10 @@ namespace Declic_Info
             txtVilleAdrLiv.Clear();
             txtCpAdrLiv.Clear();
         }
+
+        private void FrmModificationClients_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
