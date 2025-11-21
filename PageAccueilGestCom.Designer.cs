@@ -48,6 +48,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Liste de clients";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
             // 
@@ -121,7 +122,7 @@
             // 
             this.button6.Location = new System.Drawing.Point(444, 97);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(159, 52);
+            this.button6.Size = new System.Drawing.Size(204, 50);
             this.button6.TabIndex = 8;
             this.button6.Text = "Modification et suppression de produits";
             this.button6.UseVisualStyleBackColor = true;
@@ -134,6 +135,7 @@
             this.button7.TabIndex = 9;
             this.button7.Text = "Suppression de clients";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // PageAccueilGestCom
             // 
