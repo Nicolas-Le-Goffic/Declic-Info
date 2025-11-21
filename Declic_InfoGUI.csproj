@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -47,6 +47,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmModificationClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificationClients.Designer.cs">
+      <DependentUpon>FrmModificationClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProduits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProduits.Designer.cs">
+      <DependentUpon>FrmProduits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GESTION_COMMERCIALEDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GESTION_COMMERCIALEDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificationClients.resx">
+      <DependentUpon>FrmModificationClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProduits.resx">
+      <DependentUpon>FrmProduits.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="PageAccueilGestCom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,8 +93,6 @@
     <Compile Include="FormAjoutProduit.Designer.cs">
       <DependentUpon>FormAjoutProduit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAjoutProduit.resx">
       <DependentUpon>FormAjoutProduit.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +108,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="GESTION_COMMERCIALEDataSet.xsc">
+      <DependentUpon>GESTION_COMMERCIALEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GESTION_COMMERCIALEDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GESTION_COMMERCIALEDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GESTION_COMMERCIALEDataSet.xss">
+      <DependentUpon>GESTION_COMMERCIALEDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

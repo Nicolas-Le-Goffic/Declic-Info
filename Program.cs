@@ -1,7 +1,7 @@
 ﻿using Declic_InfoBLL;
-using Declic_InfoBO;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,9 +16,10 @@ namespace Declic_Info
         [STAThread]
         static void Main()
         {
+            GestionUtilisateurs.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"].ConnectionString);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ajoutProduitbdd());
+            Application.Run(new FrmLogin());
         }
     }
 }

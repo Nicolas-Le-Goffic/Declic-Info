@@ -36,10 +36,7 @@ namespace Declic_InfoDAL
         }
 
         // Constructeur privé
-        private ConnexionBD()
-        {
-
-        }
+        private ConnexionBD(){}
 
         public SqlConnection GetSqlConnexion()
         {
