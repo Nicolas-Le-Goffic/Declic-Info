@@ -58,6 +58,7 @@
             this.txtCpAdrLiv = new System.Windows.Forms.TextBox();
             this.txtCpAdrFact = new System.Windows.Forms.TextBox();
             this.comboClients = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelModModif
@@ -327,11 +328,22 @@
             this.comboClients.TabIndex = 47;
             this.comboClients.SelectedIndexChanged += new System.EventHandler(this.comboClients_SelectedIndexChanged);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(25, 58);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(160, 18);
+            this.label11.TabIndex = 48;
+            this.label11.Text = "Selectionner un client  :";
+            // 
             // FrmModificationClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.comboClients);
             this.Controls.Add(this.txtCpAdrFact);
             this.Controls.Add(this.txtCpAdrLiv);
@@ -401,5 +413,6 @@
         private System.Windows.Forms.TextBox txtCpAdrLiv;
         private System.Windows.Forms.TextBox txtCpAdrFact;
         private System.Windows.Forms.ComboBox comboClients;
+        private System.Windows.Forms.Label label11;
     }
 }

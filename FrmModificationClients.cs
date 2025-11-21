@@ -30,7 +30,7 @@ namespace Declic_Info
 
         private void LoadClients()
         {
-            List<ClientBO> clients = GestionUtilisateurs.GetInfosClients();
+            List<ClientBO> clients = GestionClients.GetInfosClients();
 
             comboClients.DataSource = null; // réinitialisation
             comboClients.DataSource = clients;
@@ -103,7 +103,7 @@ namespace Declic_Info
             );
 
             // Appliquer la modification
-            GestionUtilisateurs.ModificationClient(client);
+            GestionClients.ModificationClient(client);
             MessageBox.Show("Modification effectuée !", "Modification");
 
             // Rafraîchir la ComboBox et garder le client sélectionné
