@@ -1,12 +1,7 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using Declic_InfoBO; // Référence la couche BO
-
-
+using Declic_InfoBO;
 
 namespace Declic_InfoDAL
 {
@@ -25,6 +20,7 @@ namespace Declic_InfoDAL
         }
 
         // Cette méthode retourne une List contenant les objets Utilisateurs contenus dans la table Identification
+
         public static List<ClientBO> GetInfosClients()
         {
             int codeClient;
@@ -69,14 +65,14 @@ namespace Declic_InfoDAL
                 numTelClient = Int32.Parse(monReader["num_tel_client"].ToString());
                 numFaxClient = Int32.Parse(monReader["num_fax_client"].ToString());
                 if (monReader["email_client"] == DBNull.Value)
-                    {
-                        emailClient = default(string);
-                    }
+                {
+                    emailClient = default(string);
+                }
                 else
-                    {
+                {
                     emailClient = monReader["email_client"].ToString();
-                    }
-                    numAdrFactClient = Int32.Parse(monReader["num_adr_fact_client"].ToString());
+                }
+                numAdrFactClient = Int32.Parse(monReader["num_adr_fact_client"].ToString());
                 if (monReader["rue_adr_fact_client"] == DBNull.Value)
                 {
                     rueAdrFactClient = default(string);
@@ -219,5 +215,60 @@ namespace Declic_InfoDAL
             // Fermeture de la connexion
             maConnexion.Close();
         }
+
+        // Cette méthode modifie un utilisateur passé en paramètre dans la BD
+        public static int ModificationClient(ClientBO unClient)
+            {
+                int nbEnr;
+
+                // Connexion à la BD
+                SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = maConnexion;
+            cmd.CommandText = @"UPDATE Client 
+                    SET nom_client = @nomClient,
+                        num_tel_client = @numTelClient,
+                        num_fax_client = @numFaxClient,
+                        email_client = @emailClient,
+                        num_adr_fact_client = @numAdrFactClient,
+                        rue_adr_fact_client = @rueAdrFactClient,
+                        ville_adr_fact_client = @villeAdrFactClient,
+                        cp_adr_fact_client = @cpAdrFactClient,
+                        num_adr_liv_client = @numAdrLivClient,
+                        rue_adr_liv_client = @rueAdrLivClient,
+                        ville_adr_liv_client = @villeAdrLivClient,
+                        cp_adr_liv_client = @cpAdrLivClient
+                    WHERE code_client = @codeClient";
+
+
+
+
+            cmd.Parameters.AddWithValue("@nomClient", unClient.NomClient);
+                cmd.Parameters.AddWithValue("@numTelClient", unClient.NumTelClient);
+                cmd.Parameters.AddWithValue("@numFaxClient", unClient.NumFaxClient);
+                cmd.Parameters.AddWithValue("@emailClient", unClient.EmailClient);
+                cmd.Parameters.AddWithValue("@numAdrFactClient", unClient.NumAdrFactClient);
+                cmd.Parameters.AddWithValue("@rueAdrFactClient", unClient.RueAdrFactClient);
+                cmd.Parameters.AddWithValue("@villeAdrFactClient", unClient.VilleAdFactClient);
+                cmd.Parameters.AddWithValue("@cpAdrFactClient", unClient.CpAdrFactClient);
+                cmd.Parameters.AddWithValue("@numAdrLivClient", unClient.NumAdrLivClient);
+                cmd.Parameters.AddWithValue("@rueAdrLivClient", unClient.RueAdrLivClient);
+                cmd.Parameters.AddWithValue("@villeAdrLivClient", unClient.VilleAdrLivClient);
+                cmd.Parameters.AddWithValue("@cpAdrLivClient", unClient.CpAdrLivClient);
+                cmd.Parameters.AddWithValue("@codeClient", unClient.CodeClient);
+            
+
+
+
+            nbEnr = cmd.ExecuteNonQuery();
+
+            // Fermeture de la connexion
+            maConnexion.Close();
+            return nbEnr;
+                }
+
+           
+        
     }
 }
