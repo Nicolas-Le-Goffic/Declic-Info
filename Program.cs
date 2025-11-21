@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DeclicInfoDAL;
+
 
 namespace Declic_Info
 {
@@ -17,15 +17,18 @@ namespace Declic_Info
         [STAThread]
         static void Main()
         {
-
+            // Toujours avant Application.Run
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-            Application.Run(new FrmModifierSupprimerProduit());
-            
-=======
-            Application.Run(new ajoutProduitbdd());
->>>>>>> origin
+
+            // Démarrage du formulaire que tu veux
+            Application.Run(new FormAjoutClient());
+
+
+
+
+
+
         }
     }
 }

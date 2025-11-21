@@ -10,7 +10,7 @@ using Declic_InfoDAL; // Référence la couche DAL
 
 namespace Declic_InfoDAO
 {
-    internal class GestionClient
+    public class GestionClient
     {
         private static GestionClient uneGestionClient; // objet BLL
 
@@ -36,9 +36,9 @@ namespace Declic_InfoDAO
         }
 
        
-        public static int CreerClient(ClientBO ut)
+        public static int CreerClient(ClientBO client)
         {
-            return ClientDAO.AjoutClient(ut);
+            return ClientDAO.AjoutClient(client);
         }
     }
 }

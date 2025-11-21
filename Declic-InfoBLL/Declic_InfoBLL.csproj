@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Declic_InfoBLL</RootNamespace>
     <AssemblyName>Declic-InfoBLL</AssemblyName>
-    <ProjectGuid>{1CCBDB08-5A69-4F73-9AF5-2F22195B61ED}</ProjectGuid>
+    <ProjectGuid>{5C528FC5-DD83-4905-A597-708732661F7A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Declic_InfoDAO</RootNamespace>
@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="GestionClient.cs" />
     <Compile Include="GestionProduits.cs" />
     <Compile Include="GestionCategories.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

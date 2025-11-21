@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAjoutClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAjoutClient.Designer.cs">
+      <DependentUpon>FormAjoutClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmModifierSupprimerProduit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,8 +61,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAjoutClient.resx">
+      <DependentUpon>FormAjoutClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmModifierSupprimerProduit.resx">
       <DependentUpon>FrmModifierSupprimerProduit.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="PageAccueilGestCom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,7 +79,6 @@
     <Compile Include="FormAjoutProduit.Designer.cs">
       <DependentUpon>FormAjoutProduit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAjoutProduit.resx">
       <DependentUpon>FormAjoutProduit.cs</DependentUpon>
