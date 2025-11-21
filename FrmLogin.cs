@@ -18,7 +18,7 @@ namespace Declic_Info
         public FrmLogin()
         {
             InitializeComponent();
-            GestionUtilisateurs.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"]);
+            GestionUtilisateurs.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"].ConnectionString);
 
         }
 
@@ -55,7 +55,7 @@ namespace Declic_Info
                 MessageBox.Show("Connexion réussie !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Ouvre le formulaire principal
-                FrmProduits frm = new FrmProduits();
+                FrmModificationClients frm = new FrmModificationClients();
                 frm.Show();
 
                 this.Hide(); // Cache la fenêtre login
@@ -69,6 +69,11 @@ namespace Declic_Info
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLogin_TextChanged(object sender, EventArgs e)
         {
 
         }
