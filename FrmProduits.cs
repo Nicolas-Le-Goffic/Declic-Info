@@ -25,7 +25,7 @@ namespace Declic_Info
 
         private void FrmProduits_Load(object sender, EventArgs e)
         {
-            var liste = GestionUtilisateurs.GetProduits();
+            var liste = GestionProduits.GetProduits();
 
             dgvProduits.DataSource = liste;
 
@@ -34,7 +34,7 @@ namespace Declic_Info
 
         private void FrmProduits_Load_1(object sender, EventArgs e)
         {
-            var liste = GestionUtilisateurs.GetProduits();
+            var liste = GestionProduits.GetProduits();
 
             dgvProduits.DataSource = liste;
 
