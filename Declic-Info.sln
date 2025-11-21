@@ -10,8 +10,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Declic_InfoBO", "Declic-InfoBO\Declic_InfoBO.csproj", "{20F756C2-3A0B-486A-98BB-30FD35EE4614}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Declic_InfoBLL", "Declic-InfoBLL\Declic_InfoBLL.csproj", "{5C528FC5-DD83-4905-A597-708732661F7A}"
+<<<<<<< HEAD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Declic_InfoDAO", "Declic-InfoDAO\Declic_InfoDAO.csproj", "{1CCBDB08-5A69-4F73-9AF5-2F22195B61ED}"
+=======
+>>>>>>> origin
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
