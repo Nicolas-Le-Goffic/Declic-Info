@@ -198,22 +198,34 @@ namespace Declic_InfoDAL
 
             return lesClients;
         }
-        public static void SupprimerClient(int id)
+        public static bool SupprimerClient(int id)
         {
             // Connexion à la BD
             SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
 
             // Création d'une liste vide d'objets Utilisateurs
             List<ClientBO> lesClients = new List<ClientBO>();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = maConnexion;
 
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = maConnexion;
-            cmd.CommandText = "DELETE FROM Client WHERE code_client = @Id";
-            cmd.Parameters.AddWithValue("@Id", id);
+                cmd.CommandText = "DELETE FROM Client WHERE code_client = @Id";
+                cmd.Parameters.AddWithValue("@Id", id);
 
-            SqlDataReader monReader = cmd.ExecuteReader();
+                SqlDataReader monReader = cmd.ExecuteReader();
+            }
+            catch (SqlException ex)
+            {
+                // Code 547 = violation de contrainte FK
+                if (ex.Number == 547)
+                {
+                    return false;
+                }
+            }
             // Fermeture de la connexion
             maConnexion.Close();
+            return true;
         }
 
         // Cette méthode modifie un utilisateur passé en paramètre dans la BD
