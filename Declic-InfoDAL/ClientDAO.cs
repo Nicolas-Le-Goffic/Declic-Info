@@ -220,6 +220,7 @@ namespace Declic_InfoDAL
                 // Code 547 = violation de contrainte FK
                 if (ex.Number == 547)
                 {
+                    maConnexion.Close();
                     return false;
                 }
             }
