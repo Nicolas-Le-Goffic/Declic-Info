@@ -22,7 +22,7 @@ namespace Declic_InfoDAL
             return unProduitDAO;
         }
 
-        // Cette méthode insert un nouvel utilisateur passé en paramètre dans la BD
+        // Cette méthode insert un nouveeau produit passé en paramètre dans la BD
         public static int AjoutProduit(ProduitBO unProduit)
         {
             int nbEnr;
