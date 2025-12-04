@@ -35,5 +35,25 @@ namespace Declic_InfoBLL
         {
             return ProduitDAO.AjoutProduit(ut);
         }
+
+        // Méthode qui renvoit une List d'objets Utilisateur en faisant appel à la méthode GetProduits() de la DAL
+        public static List<ProduitBO> GetProduits()
+        {
+            return ProduitDAO.GetunProduitDAO().GetProduits();
+        }
+
+
+        //SUPPRESSION PRODUIT ET MODIFICATION
+
+        public static void SupprimerProduit(int idProduit)
+        {
+            ProduitDAO.SupprimerProduit(idProduit);
+        }
+
+        public static int ModificationProduit(ProduitBO unProduit)
+        {
+            return ProduitDAO.ModificationProduit(unProduit);
+        }
+
     }
 }

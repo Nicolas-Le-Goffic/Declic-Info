@@ -9,11 +9,6 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Declic_InfoBLL</RootNamespace>
     <AssemblyName>Declic-InfoBLL</AssemblyName>
-    <ProjectGuid>{5C528FC5-DD83-4905-A597-708732661F7A}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Declic_InfoDAO</RootNamespace>
-    <AssemblyName>Declic-InfoDAO</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -47,8 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="GestionClient.cs" />
+    <Compile Include="GestionClients.cs" />
+    <Compile Include="GestionDevis.cs" />
+    <Compile Include="GestionStatut.cs" />
+    <Compile Include="GestionUtilisateurs.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="GestionProduits.cs" />
     <Compile Include="GestionCategories.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

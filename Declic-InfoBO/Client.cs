@@ -94,7 +94,7 @@ namespace Declic_InfoBO
             get => rueAdrFactClient;
             set => rueAdrFactClient = value;
         }
-        public string VilleAdFactClient
+        public string VilleAdrFactClient
         {
             get => villeAdrFactClient;
             set => villeAdrFactClient = value;

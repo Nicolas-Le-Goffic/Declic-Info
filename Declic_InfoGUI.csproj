@@ -53,19 +53,80 @@
     <Compile Include="FormAjoutClient.Designer.cs">
       <DependentUpon>FormAjoutClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmModifierSupprimerProduit.cs">
+    <Compile Include="FormListeDevis.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmModifierSupprimerProduit.Designer.cs">
-      <DependentUpon>FrmModifierSupprimerProduit.cs</DependentUpon>
+    <Compile Include="FormListeDevis.Designer.cs">
+      <DependentUpon>FormListeDevis.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="FormModificationProduit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModificationProduit.Designer.cs">
+      <DependentUpon>FormModificationProduit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSuppressionClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuppressionClient.Designer.cs">
+      <DependentUpon>FormSuppressionClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListeClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListeClients.Designer.cs">
+      <DependentUpon>FormListeClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSuppressionProduit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuppressionProduit.Designer.cs">
+      <DependentUpon>FormSuppressionProduit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificationClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificationClients.Designer.cs">
+      <DependentUpon>FrmModificationClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProduits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProduits.Designer.cs">
+      <DependentUpon>FrmProduits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GESTION_COMMERCIALEDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GESTION_COMMERCIALEDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAjoutClient.resx">
       <DependentUpon>FormAjoutClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmModifierSupprimerProduit.resx">
-      <DependentUpon>FrmModifierSupprimerProduit.cs</DependentUpon>
+    <EmbeddedResource Include="FormListeDevis.resx">
+      <DependentUpon>FormListeDevis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModificationProduit.resx">
+      <DependentUpon>FormModificationProduit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuppressionProduit.resx">
+      <DependentUpon>FormSuppressionProduit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificationClients.resx">
+      <DependentUpon>FrmModificationClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProduits.resx">
+      <DependentUpon>FrmProduits.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="PageAccueilGestCom.cs">
       <SubType>Form</SubType>
@@ -79,9 +140,15 @@
     <Compile Include="FormAjoutProduit.Designer.cs">
       <DependentUpon>FormAjoutProduit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Program.cs" />
+    <EmbeddedResource Include="FormListeClients.resx">
+      <DependentUpon>FormListeClients.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAjoutProduit.resx">
       <DependentUpon>FormAjoutProduit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuppressionClient.resx">
+      <DependentUpon>FormSuppressionClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageAccueilGestCom.resx">
       <DependentUpon>PageAccueilGestCom.cs</DependentUpon>
@@ -95,6 +162,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="GESTION_COMMERCIALEDataSet.xsc">
+      <DependentUpon>GESTION_COMMERCIALEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GESTION_COMMERCIALEDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GESTION_COMMERCIALEDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GESTION_COMMERCIALEDataSet.xss">
+      <DependentUpon>GESTION_COMMERCIALEDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -116,10 +194,6 @@
     <ProjectReference Include="Declic-InfoBO\Declic_InfoBO.csproj">
       <Project>{20f756c2-3a0b-486a-98bb-30fd35ee4614}</Project>
       <Name>Declic_InfoBO</Name>
-    </ProjectReference>
-    <ProjectReference Include="Declic-InfoDAL\Declic_InfoDAL.csproj">
-      <Project>{0d9517e8-f1d7-4f79-8f00-688e822d0f1a}</Project>
-      <Name>Declic_InfoDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

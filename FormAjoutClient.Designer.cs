@@ -28,266 +28,318 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.AjoutClientBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.txtCpAdrFact = new System.Windows.Forms.TextBox();
+            this.txtCpAdrLiv = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.NomClientTxt = new System.Windows.Forms.TextBox();
-            this.TelClientTxt = new System.Windows.Forms.TextBox();
-            this.FaxClientTxt = new System.Windows.Forms.TextBox();
-            this.EmailClientTxt = new System.Windows.Forms.TextBox();
-            this.NomVilleLivClientTxt = new System.Windows.Forms.TextBox();
-            this.CPLivClientTxt = new System.Windows.Forms.TextBox();
-            this.NumLivClientTxt = new System.Windows.Forms.TextBox();
-            this.RueLivClientTxt = new System.Windows.Forms.TextBox();
-            this.NumFacClientTxt = new System.Windows.Forms.TextBox();
-            this.RueFacClientTxt = new System.Windows.Forms.TextBox();
-            this.VilleFacClientTxt = new System.Windows.Forms.TextBox();
-            this.CPFacClientTxt = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtVilleAdrLiv = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtRueAdrLiv = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtNumAdrLiv = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtVilleAdrFact = new System.Windows.Forms.TextBox();
+            this.txtRueAdrFact = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtNumAdrFact = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTel = new System.Windows.Forms.TextBox();
+            this.txtFax = new System.Windows.Forms.TextBox();
+            this.Tel = new System.Windows.Forms.Label();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.lblNom = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.btnModifier = new System.Windows.Forms.Button();
+            this.labelModModif = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // AjoutClientBtn
+            // txtCpAdrFact
             // 
-            this.AjoutClientBtn.Location = new System.Drawing.Point(334, 345);
-            this.AjoutClientBtn.Name = "AjoutClientBtn";
-            this.AjoutClientBtn.Size = new System.Drawing.Size(133, 77);
-            this.AjoutClientBtn.TabIndex = 0;
-            this.AjoutClientBtn.Text = "Ajouter un client";
-            this.AjoutClientBtn.UseVisualStyleBackColor = true;
-            this.AjoutClientBtn.Click += new System.EventHandler(this.AjoutClientBtn_Click);
+            this.txtCpAdrFact.Location = new System.Drawing.Point(225, 287);
+            this.txtCpAdrFact.Name = "txtCpAdrFact";
+            this.txtCpAdrFact.Size = new System.Drawing.Size(160, 20);
+            this.txtCpAdrFact.TabIndex = 76;
             // 
-            // label1
+            // txtCpAdrLiv
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nom :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1, 125);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Fax :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 155);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Email :";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(511, 67);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Numéro Adresse facturation :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(509, 94);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Rue Adresse facturation :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(510, 125);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(126, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Ville Adresse facturation :";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(512, 155);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Code postal facturation :";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(223, 125);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(147, 13);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Numéro Adresse de livraison :";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(223, 155);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(130, 13);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Rue Adresse de livraison :";
+            this.txtCpAdrLiv.Location = new System.Drawing.Point(224, 240);
+            this.txtCpAdrLiv.Name = "txtCpAdrLiv";
+            this.txtCpAdrLiv.Size = new System.Drawing.Size(160, 20);
+            this.txtCpAdrLiv.TabIndex = 75;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(223, 67);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(221, 263);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(152, 13);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Nom de ville adresse livraison :";
+            this.label10.Size = new System.Drawing.Size(170, 18);
+            this.label10.TabIndex = 74;
+            this.label10.Text = "Cp Adresse facturation : ";
             // 
-            // label11
+            // label9
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(223, 94);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(168, 13);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Code postal adresse  de livraison :";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(222, 222);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(155, 18);
+            this.label9.TabIndex = 73;
+            this.label9.Text = "Cp Adresse livraison : ";
             // 
-            // label12
+            // txtVilleAdrLiv
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 94);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(28, 13);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "Tél :";
+            this.txtVilleAdrLiv.Location = new System.Drawing.Point(224, 199);
+            this.txtVilleAdrLiv.Name = "txtVilleAdrLiv";
+            this.txtVilleAdrLiv.Size = new System.Drawing.Size(160, 20);
+            this.txtVilleAdrLiv.TabIndex = 72;
             // 
-            // NomClientTxt
+            // label8
             // 
-            this.NomClientTxt.Location = new System.Drawing.Point(43, 67);
-            this.NomClientTxt.Name = "NomClientTxt";
-            this.NomClientTxt.Size = new System.Drawing.Size(100, 20);
-            this.NomClientTxt.TabIndex = 13;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(222, 178);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(162, 18);
+            this.label8.TabIndex = 71;
+            this.label8.Text = "Ville Adresse livraison : ";
             // 
-            // TelClientTxt
+            // txtRueAdrLiv
             // 
-            this.TelClientTxt.Location = new System.Drawing.Point(43, 94);
-            this.TelClientTxt.Name = "TelClientTxt";
-            this.TelClientTxt.Size = new System.Drawing.Size(100, 20);
-            this.TelClientTxt.TabIndex = 14;
+            this.txtRueAdrLiv.Location = new System.Drawing.Point(584, 285);
+            this.txtRueAdrLiv.Name = "txtRueAdrLiv";
+            this.txtRueAdrLiv.Size = new System.Drawing.Size(195, 20);
+            this.txtRueAdrLiv.TabIndex = 70;
             // 
-            // FaxClientTxt
+            // label7
             // 
-            this.FaxClientTxt.Location = new System.Drawing.Point(44, 125);
-            this.FaxClientTxt.Name = "FaxClientTxt";
-            this.FaxClientTxt.Size = new System.Drawing.Size(100, 20);
-            this.FaxClientTxt.TabIndex = 15;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(411, 284);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(171, 18);
+            this.label7.TabIndex = 69;
+            this.label7.Text = " Rue Adresse livraison :  ";
             // 
-            // EmailClientTxt
+            // txtNumAdrLiv
             // 
-            this.EmailClientTxt.Location = new System.Drawing.Point(43, 155);
-            this.EmailClientTxt.Name = "EmailClientTxt";
-            this.EmailClientTxt.Size = new System.Drawing.Size(100, 20);
-            this.EmailClientTxt.TabIndex = 16;
+            this.txtNumAdrLiv.Location = new System.Drawing.Point(584, 257);
+            this.txtNumAdrLiv.Name = "txtNumAdrLiv";
+            this.txtNumAdrLiv.Size = new System.Drawing.Size(195, 20);
+            this.txtNumAdrLiv.TabIndex = 68;
             // 
-            // NomVilleLivClientTxt
+            // label6
             // 
-            this.NomVilleLivClientTxt.Location = new System.Drawing.Point(399, 67);
-            this.NomVilleLivClientTxt.Name = "NomVilleLivClientTxt";
-            this.NomVilleLivClientTxt.Size = new System.Drawing.Size(100, 20);
-            this.NomVilleLivClientTxt.TabIndex = 17;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(411, 256);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(176, 18);
+            this.label6.TabIndex = 67;
+            this.label6.Text = " Num Adresse livraison :  ";
             // 
-            // CPLivClientTxt
+            // txtVilleAdrFact
             // 
-            this.CPLivClientTxt.Location = new System.Drawing.Point(398, 94);
-            this.CPLivClientTxt.Name = "CPLivClientTxt";
-            this.CPLivClientTxt.Size = new System.Drawing.Size(100, 20);
-            this.CPLivClientTxt.TabIndex = 18;
+            this.txtVilleAdrFact.Location = new System.Drawing.Point(584, 232);
+            this.txtVilleAdrFact.Name = "txtVilleAdrFact";
+            this.txtVilleAdrFact.Size = new System.Drawing.Size(195, 20);
+            this.txtVilleAdrFact.TabIndex = 66;
             // 
-            // NumLivClientTxt
+            // txtRueAdrFact
             // 
-            this.NumLivClientTxt.Location = new System.Drawing.Point(398, 125);
-            this.NumLivClientTxt.Name = "NumLivClientTxt";
-            this.NumLivClientTxt.Size = new System.Drawing.Size(100, 20);
-            this.NumLivClientTxt.TabIndex = 19;
+            this.txtRueAdrFact.Location = new System.Drawing.Point(584, 206);
+            this.txtRueAdrFact.Name = "txtRueAdrFact";
+            this.txtRueAdrFact.Size = new System.Drawing.Size(195, 20);
+            this.txtRueAdrFact.TabIndex = 65;
             // 
-            // RueLivClientTxt
+            // label5
             // 
-            this.RueLivClientTxt.Location = new System.Drawing.Point(398, 155);
-            this.RueLivClientTxt.Name = "RueLivClientTxt";
-            this.RueLivClientTxt.Size = new System.Drawing.Size(100, 20);
-            this.RueLivClientTxt.TabIndex = 20;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(409, 205);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(178, 18);
+            this.label5.TabIndex = 64;
+            this.label5.Text = "Rue Adresse facturation : ";
             // 
-            // NumFacClientTxt
+            // label4
             // 
-            this.NumFacClientTxt.Location = new System.Drawing.Point(662, 66);
-            this.NumFacClientTxt.Name = "NumFacClientTxt";
-            this.NumFacClientTxt.Size = new System.Drawing.Size(100, 20);
-            this.NumFacClientTxt.TabIndex = 21;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(406, 232);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(181, 18);
+            this.label4.TabIndex = 63;
+            this.label4.Text = " Ville Adresse facturation : ";
             // 
-            // RueFacClientTxt
+            // txtEmail
             // 
-            this.RueFacClientTxt.Location = new System.Drawing.Point(662, 94);
-            this.RueFacClientTxt.Name = "RueFacClientTxt";
-            this.RueFacClientTxt.Size = new System.Drawing.Size(100, 20);
-            this.RueFacClientTxt.TabIndex = 22;
+            this.txtEmail.Location = new System.Drawing.Point(94, 287);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.TabIndex = 62;
             // 
-            // VilleFacClientTxt
+            // txtNumAdrFact
             // 
-            this.VilleFacClientTxt.Location = new System.Drawing.Point(662, 124);
-            this.VilleFacClientTxt.Name = "VilleFacClientTxt";
-            this.VilleFacClientTxt.Size = new System.Drawing.Size(100, 20);
-            this.VilleFacClientTxt.TabIndex = 23;
+            this.txtNumAdrFact.Location = new System.Drawing.Point(584, 179);
+            this.txtNumAdrFact.Name = "txtNumAdrFact";
+            this.txtNumAdrFact.Size = new System.Drawing.Size(195, 20);
+            this.txtNumAdrFact.TabIndex = 61;
             // 
-            // CPFacClientTxt
+            // label3
             // 
-            this.CPFacClientTxt.Location = new System.Drawing.Point(662, 154);
-            this.CPFacClientTxt.Name = "CPFacClientTxt";
-            this.CPFacClientTxt.Size = new System.Drawing.Size(100, 20);
-            this.CPFacClientTxt.TabIndex = 24;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(400, 179);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(187, 18);
+            this.label3.TabIndex = 60;
+            this.label3.Text = " Num Adresse facturation : ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(35, 286);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 18);
+            this.label2.TabIndex = 59;
+            this.label2.Text = "Email :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(48, 260);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 18);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "Fax :";
+            // 
+            // txtTel
+            // 
+            this.txtTel.Location = new System.Drawing.Point(94, 235);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(100, 20);
+            this.txtTel.TabIndex = 57;
+            // 
+            // txtFax
+            // 
+            this.txtFax.Location = new System.Drawing.Point(94, 261);
+            this.txtFax.Name = "txtFax";
+            this.txtFax.Size = new System.Drawing.Size(100, 20);
+            this.txtFax.TabIndex = 56;
+            // 
+            // Tel
+            // 
+            this.Tel.AutoSize = true;
+            this.Tel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tel.Location = new System.Drawing.Point(52, 234);
+            this.Tel.Name = "Tel";
+            this.Tel.Size = new System.Drawing.Size(36, 18);
+            this.Tel.TabIndex = 55;
+            this.Tel.Text = "Tel :";
+            // 
+            // txtNom
+            // 
+            this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNom.Location = new System.Drawing.Point(94, 206);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(100, 24);
+            this.txtNom.TabIndex = 54;
+            this.txtNom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblNom
+            // 
+            this.lblNom.AutoSize = true;
+            this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblNom.Location = new System.Drawing.Point(39, 206);
+            this.lblNom.Name = "lblNom";
+            this.lblNom.Size = new System.Drawing.Size(49, 18);
+            this.lblNom.TabIndex = 53;
+            this.lblNom.Text = "Nom :";
+            // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(94, 178);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 22);
+            this.txtId.TabIndex = 52;
+            this.txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.Location = new System.Drawing.Point(11, 179);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(77, 18);
+            this.lblId.TabIndex = 51;
+            this.lblId.Text = "Identifiant :";
+            // 
+            // btnModifier
+            // 
+            this.btnModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btnModifier.Location = new System.Drawing.Point(299, 359);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(195, 37);
+            this.btnModifier.TabIndex = 50;
+            this.btnModifier.Text = "Ajouter un client";
+            this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
+            // 
+            // labelModModif
+            // 
+            this.labelModModif.AutoSize = true;
+            this.labelModModif.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelModModif.Location = new System.Drawing.Point(262, 54);
+            this.labelModModif.Name = "labelModModif";
+            this.labelModModif.Size = new System.Drawing.Size(256, 29);
+            this.labelModModif.TabIndex = 48;
+            this.labelModModif.Text = "AJOUT D\'UN CLIENT";
+            this.labelModModif.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FormAjoutClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.CPFacClientTxt);
-            this.Controls.Add(this.VilleFacClientTxt);
-            this.Controls.Add(this.RueFacClientTxt);
-            this.Controls.Add(this.NumFacClientTxt);
-            this.Controls.Add(this.RueLivClientTxt);
-            this.Controls.Add(this.NumLivClientTxt);
-            this.Controls.Add(this.CPLivClientTxt);
-            this.Controls.Add(this.NomVilleLivClientTxt);
-            this.Controls.Add(this.EmailClientTxt);
-            this.Controls.Add(this.FaxClientTxt);
-            this.Controls.Add(this.TelClientTxt);
-            this.Controls.Add(this.NomClientTxt);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtCpAdrFact);
+            this.Controls.Add(this.txtCpAdrLiv);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtVilleAdrLiv);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtRueAdrLiv);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtNumAdrLiv);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtVilleAdrFact);
+            this.Controls.Add(this.txtRueAdrFact);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtNumAdrFact);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.AjoutClientBtn);
+            this.Controls.Add(this.txtTel);
+            this.Controls.Add(this.txtFax);
+            this.Controls.Add(this.Tel);
+            this.Controls.Add(this.txtNom);
+            this.Controls.Add(this.lblNom);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.lblId);
+            this.Controls.Add(this.btnModifier);
+            this.Controls.Add(this.labelModModif);
             this.Name = "FormAjoutClient";
             this.Text = "FormAjoutClient";
             this.ResumeLayout(false);
@@ -297,30 +349,33 @@
 
         #endregion
 
-        private System.Windows.Forms.Button AjoutClientBtn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtCpAdrFact;
+        private System.Windows.Forms.TextBox txtCpAdrLiv;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox NomClientTxt;
-        private System.Windows.Forms.TextBox TelClientTxt;
-        private System.Windows.Forms.TextBox FaxClientTxt;
-        private System.Windows.Forms.TextBox EmailClientTxt;
-        private System.Windows.Forms.TextBox NomVilleLivClientTxt;
-        private System.Windows.Forms.TextBox CPLivClientTxt;
-        private System.Windows.Forms.TextBox NumLivClientTxt;
-        private System.Windows.Forms.TextBox RueLivClientTxt;
-        private System.Windows.Forms.TextBox NumFacClientTxt;
-        private System.Windows.Forms.TextBox RueFacClientTxt;
-        private System.Windows.Forms.TextBox VilleFacClientTxt;
-        private System.Windows.Forms.TextBox CPFacClientTxt;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtVilleAdrLiv;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtRueAdrLiv;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtNumAdrLiv;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtVilleAdrFact;
+        private System.Windows.Forms.TextBox txtRueAdrFact;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtNumAdrFact;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTel;
+        private System.Windows.Forms.TextBox txtFax;
+        private System.Windows.Forms.Label Tel;
+        private System.Windows.Forms.TextBox txtNom;
+        private System.Windows.Forms.Label lblNom;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Button btnModifier;
+        private System.Windows.Forms.Label labelModModif;
     }
 }

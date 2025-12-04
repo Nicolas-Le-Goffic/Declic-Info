@@ -75,5 +75,45 @@ namespace Declic_Info
                 MessageBox.Show("Erreur : " + ex.Message);
             }
         }
+
+        private void categorieComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void prixVenteProduittxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void libelleProduitTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ajoutProduitbdd_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
