@@ -187,7 +187,14 @@
             this.label4.Text = "Devis :";
             // 
             // button10
-            // 
+            //
+            this.button7.Location = new System.Drawing.Point(630, 209);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(158, 56);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "Suppression de clients";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             this.button10.Location = new System.Drawing.Point(333, 259);
             this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button10.Name = "button10";

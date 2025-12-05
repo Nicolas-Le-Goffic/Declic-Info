@@ -56,6 +56,7 @@
             this.comboDevis.Name = "comboDevis";
             this.comboDevis.Size = new System.Drawing.Size(517, 24);
             this.comboDevis.TabIndex = 77;
+            this.comboDevis.Click += new System.EventHandler(this.comboDevis_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -180,6 +181,7 @@
             this.btnModif.TabIndex = 49;
             this.btnModif.Text = "Modifier";
             this.btnModif.UseVisualStyleBackColor = true;
+            this.btnModif.Click += new System.EventHandler(this.btnModif_Click);
             // 
             // labelModModif
             // 
@@ -227,7 +229,7 @@
             this.dateDevisPicker.Size = new System.Drawing.Size(194, 22);
             this.dateDevisPicker.TabIndex = 82;
             // 
-            // FormModifSupprimerDevis
+            // FormModificationDevis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -250,7 +252,7 @@
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnModif);
             this.Controls.Add(this.labelModModif);
-            this.Name = "FormModifSupprimerDevis";
+            this.Name = "FormModificationDevis";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

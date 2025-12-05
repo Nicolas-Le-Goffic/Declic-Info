@@ -9,11 +9,12 @@ namespace Declic_InfoDAL
     {
         private static StatutDAO unStatutDAO;
 
-        // Singleton
-        public static StatutDAO GetInstance()
+        public static StatutDAO GetStatutDAO()
         {
             if (unStatutDAO == null)
+            {
                 unStatutDAO = new StatutDAO();
+            }
             return unStatutDAO;
         }
 
@@ -22,73 +23,67 @@ namespace Declic_InfoDAL
         // Récupérer tous les statuts
         public static List<StatutBO> GetStatuts()
         {
-            List<StatutBO> lesStatuts = new List<StatutBO>();
+            int idStatut;
+            string nomStatut;
+            StatutBO unStatut;
 
             SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            List<StatutBO> lesStatuts = new List<StatutBO>();
+
+
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
-            cmd.CommandText = "SELECT id_statut, nom_statut FROM Statut;";
+            cmd.CommandText = "SELECT * FROM Statut";
+            SqlDataReader monreader = cmd.ExecuteReader();
 
-            SqlDataReader lecteur = cmd.ExecuteReader();
-
-            while (lecteur.Read())
+            while (monreader.Read())
             {
-                StatutBO statut = new StatutBO(
-                    (int)lecteur["id_statut"],
-                    lecteur["nom_statut"].ToString()
-                );
-                lesStatuts.Add(statut);
+                idStatut = Int32.Parse(monreader["id_statut"].ToString());
+                if (monreader["nom_statut"] == DBNull.Value)
+                {
+                    nomStatut = default(string);
+                }
+                else
+                {
+                    nomStatut = monreader["nom_statut"].ToString();
+                }
+
+                unStatut = new StatutBO(idStatut, nomStatut);
+
+                lesStatuts.Add(unStatut);
             }
 
-            lecteur.Close();
             maConnexion.Close();
-
             return lesStatuts;
         }
 
         // Récupérer un statut par ID
         public static StatutBO GetStatutById(int id)
         {
-            StatutBO statut = null;
+            int idStatut;
+            string nomStatut;
+            StatutBO unStatut = null;
 
             SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
-            cmd.CommandText = "SELECT id_statut, nom_statut FROM Statut WHERE id_statut = @id;";
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "SELECT * FROM Statut WHERE id_statut = @idStatut";
+            cmd.Parameters.AddWithValue("@idStatut", id);
 
-            SqlDataReader lecteur = cmd.ExecuteReader();
+            SqlDataReader reader = cmd.ExecuteReader();
 
-            if (lecteur.Read())
+            if (reader.Read()) 
             {
-                statut = new StatutBO(
-                    (int)lecteur["id_statut"],
-                    lecteur["nom_statut"].ToString()
-                );
+                idStatut = Int32.Parse(reader["id_statut"].ToString());
+                nomStatut = reader["nom_statut"] == DBNull.Value ? null : reader["nom_statut"].ToString();
+
+                unStatut = new StatutBO(idStatut, nomStatut);
             }
 
-            lecteur.Close();
             maConnexion.Close();
-
-            return statut;
+            return unStatut;   
         }
 
-        // Exemple d'ajout d'un nouveau statut
-        public static int AjoutStatut(StatutBO unStatut)
-        {
-            int nbEnr;
-
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = maConnexion;
-            cmd.CommandText = "INSERT INTO Statut (nom_statut) VALUES (@nom);";
-            cmd.Parameters.AddWithValue("@nom", unStatut.NomStatut);
-
-            nbEnr = cmd.ExecuteNonQuery();
-
-            maConnexion.Close();
-
-            return nbEnr;
-        }
     }
 }

@@ -11,9 +11,8 @@ namespace Declic_InfoBLL
 {
     public class GestionDevis
     {
-        private static GestionDevis uneGestionDevis; // objet BLL
+        private static GestionDevis uneGestionDevis;
 
-        // Accesseur en lecture
         public static GestionDevis GetGestionDevis()
         {
             if (uneGestionDevis == null)
@@ -24,9 +23,10 @@ namespace Declic_InfoBLL
         }
 
         // Définit la chaîne de connexion grâce à la méthode SetchaineConnexion de la DAL
-        public static void SetchaineConnexion(string value)
+        public static void SetchaineConnexion(ConnectionStringSettings chset)
         {
-            ConnexionBD.GetConnexionBD().SetchaineConnexion(value);
+            string chaine = chset.ConnectionString;
+            ConnexionBD.GetConnexionBD().SetchaineConnexion(chaine);
         }
 
         // Méthode qui renvoi l'objet Utilisateur en l'ajoutant à la

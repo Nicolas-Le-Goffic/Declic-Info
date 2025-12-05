@@ -8,7 +8,6 @@ namespace Declic_InfoBLL
 {
     public class GestionStatut
     {
-
         private static GestionStatut uneGestionStatut;
 
         public static GestionStatut GetGestionStatut()

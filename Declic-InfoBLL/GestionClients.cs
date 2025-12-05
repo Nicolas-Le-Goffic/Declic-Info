@@ -1,4 +1,4 @@
-using Declic_InfoBO; // Référence la couche BO
+﻿using Declic_InfoBO; // Référence la couche BO
 using Declic_InfoDAL; // Référence la couche DAL
 using System;
 using System.Collections.Generic;
@@ -61,4 +61,3 @@ namespace Declic_InfoBLL
 
     }
 }
-

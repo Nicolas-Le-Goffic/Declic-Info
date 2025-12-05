@@ -14,9 +14,7 @@ namespace Declic_Info
             InitializeComponent();
 
             // Récupération chaîne de connexion
-            GestionDevis.SetchaineConnexion(
-                ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"].ConnectionString
-            );
+            GestionCategories.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"]);
 
             // Chargement des clients
             dataGridView1.DataSource = GestionClients.GetClients();
