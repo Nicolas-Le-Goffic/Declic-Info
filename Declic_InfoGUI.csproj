@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormModificationDevis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModificationDevis.Designer.cs">
+      <DependentUpon>FormModificationDevis.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAjoutDevis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     </Compile>
     <Compile Include="FormModificationProduit.Designer.cs">
       <DependentUpon>FormModificationProduit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSuppressionDevis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuppressionDevis.Designer.cs">
+      <DependentUpon>FormSuppressionDevis.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSuppressionClient.cs">
       <SubType>Form</SubType>
@@ -113,6 +125,9 @@
       <DependentUpon>GESTION_COMMERCIALEDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormModificationDevis.resx">
+      <DependentUpon>FormModificationDevis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAjoutDevis.resx">
       <DependentUpon>FormAjoutDevis.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormModificationProduit.resx">
       <DependentUpon>FormModificationProduit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuppressionDevis.resx">
+      <DependentUpon>FormSuppressionDevis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSuppressionProduit.resx">
       <DependentUpon>FormSuppressionProduit.cs</DependentUpon>

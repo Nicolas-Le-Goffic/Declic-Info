@@ -19,8 +19,7 @@ namespace Declic_InfoBO
         private float remiseGlobale;
 
         // Constructeur complet
-        public DevisBO(int idDevis, DateTime dateDevis, float tauxTVA, float tauxRemiseGlobale,
-                       float montantHT, ClientBO client, StatutBO statut)
+        public DevisBO(int idDevis, DateTime dateDevis, float tauxTVA, float tauxRemiseGlobale,float montantHT, ClientBO client, StatutBO statut)
         {
             this.idDevis = idDevis;
             this.dateDevis = dateDevis;
@@ -33,8 +32,7 @@ namespace Declic_InfoBO
         }
 
         // Constructeur sans ID (pour nouveau devis)
-        public DevisBO(DateTime dateDevis, float tauxTVA, float tauxRemiseGlobale,
-                       float montantHT, ClientBO client, StatutBO statut)
+        public DevisBO(DateTime dateDevis, float tauxTVA, float tauxRemiseGlobale, float montantHT, ClientBO client, StatutBO statut)
         {
             this.dateDevis = dateDevis;
             this.tauxTVA = tauxTVA;
@@ -63,43 +61,34 @@ namespace Declic_InfoBO
             set => dateDevis = value;
         }
 
-        public float TauxTVA
+        public float TauxTVADevis
         {
             get => tauxTVA;
             set => tauxTVA = value;
         }
 
-        public float TauxRemiseGlobale
+        public float TauxRemiseGloDevis
         {
             get => tauxRemiseGlobale;
             set => tauxRemiseGlobale = value;
         }
 
-        public float MontantHT
+        public float MontantHtHorsRemisDevise
         {
             get => montantHT;
             set => montantHT = value;
         }
 
-        public ClientBO Client
+        public ClientBO DevisClient
         {
             get => client;
             set => client = value;
         }
 
-        public StatutBO Statut
+        public StatutBO DevisStatut
         {
             get => statut;
             set => statut = value;
         }
-
-        
-
-        public override string ToString()
-        {
-            return $"Devis #{IdDevis} - {Client?.NomClient} - {DateDevis.ToShortDateString()} - {MontantHT}€ HT - Statut : {Statut?.NomStatut}";
-        }
-
-
     }
 }

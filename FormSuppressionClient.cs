@@ -40,10 +40,27 @@ namespace Declic_Info
                     MessageBox.Show("Vous devez saisir un client !");
                     return;
                 }
-
-                ClientBO client = (ClientBO)clientComboBox.SelectedItem;
-                GestionClients.SupprimerClient(client.CodeClient);
-                this.Close();
+                var confirm = MessageBox.Show("Voulez-vous vraiment supprimer ce client ?",
+                              "Confirmation", MessageBoxButtons.YesNo);
+                if (confirm == DialogResult.Yes)
+                {
+                    ClientBO client = (ClientBO)clientComboBox.SelectedItem;
+                    bool verifSupClient = GestionClients.SupprimerClient(client.CodeClient);
+                    if (verifSupClient == false)
+                    {
+                        MessageBox.Show(
+                            "Impossible de supprimer ce client car il a commandé encore un ou plusieurs devis.",
+                            "Suppression impossible",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning
+                        );
+                    }
+                    else
+                    {
+                        MessageBox.Show("Le Client a été supprimé !");
+                        this.Close();
+                    }
+                }
             }
             catch (Exception ex)
             {

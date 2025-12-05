@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Declic_InfoBO; // Référence la couche BO
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Declic_InfoBO; // Référence la couche BO
+using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Net.Sockets;
+using System.Text;
 
 
 namespace Declic_InfoDAL
@@ -107,10 +108,10 @@ namespace Declic_InfoDAL
             {
                 int nbEnr;
 
-                // Connexion à la BD
-                SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            // Connexion à la BD
 
-                SqlCommand cmd = new SqlCommand();
+            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlCommand cmd = new SqlCommand();
                 cmd.Connection = maConnexion;
                 cmd.CommandText = @"UPDATE Produit
                         SET libelle_produit = @libelle,
@@ -128,6 +129,6 @@ namespace Declic_InfoDAL
                 maConnexion.Close();
 
                 return nbEnr;
-            }
+        }
     }
 }

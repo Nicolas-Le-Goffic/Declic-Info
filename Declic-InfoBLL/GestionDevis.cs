@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
-using Declic_InfoBO;
-using Declic_InfoDAL;
+﻿using Declic_InfoBO; // Référence la couche BO
+using Declic_InfoDAL; // Référence la couche DAL
+using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Declic_InfoBLL
 {
@@ -35,7 +39,19 @@ namespace Declic_InfoBLL
 
         public List<DevisBO> GetDevis()
         {
-            return DevisDAO.GetDevisDAO().GetDevis();
+            return DevisDAO.GetDevis();
+        }
+        public static DevisBO GetUnDevis(int unIdDevis)
+        {
+            return DevisDAO.GetUnDevis(unIdDevis);
+        }
+        public static bool SupprimerDevis(int idDevis)
+        {
+            return DevisDAO.SupprimerDevis(idDevis);
+        }
+        public static int ModificationDevis(DevisBO unDevis)
+        {
+            return DevisDAO.ModificationDevis(unDevis);
         }
     }
 }

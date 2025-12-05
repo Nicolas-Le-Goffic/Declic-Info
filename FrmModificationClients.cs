@@ -75,8 +75,6 @@ namespace Declic_Info
         {
             // Validation des champs numériques
             if (!int.TryParse(txtId.Text, out int codeClient) ||
-                !int.TryParse(txtTel.Text, out int numTel) ||
-                !int.TryParse(txtFax.Text, out int numFax) ||
                 !int.TryParse(txtNumAdrFact.Text, out int numAdrFact) ||
                 !int.TryParse(txtCpAdrFact.Text, out int cpAdrFact) ||
                 !int.TryParse(txtNumAdrLiv.Text, out int numAdrLiv) ||
@@ -89,8 +87,8 @@ namespace Declic_Info
             ClientBO client = new ClientBO(
                 codeClient,
                 txtNom.Text,
-                numTel,
-                numFax,
+                txtTel.Text,
+                txtFax.Text,
                 txtEmail.Text,
                 numAdrFact,
                 txtRueAdrFact.Text,

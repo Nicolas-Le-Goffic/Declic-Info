@@ -27,7 +27,7 @@ namespace Declic_Info
         {
             try
             {
-                var liste = GestionDevis.GetGestionDevis().GetDevis();
+                var liste = GestionDevis.GetDevis();
                 dgvDevis.DataSource = liste;
                 dgvDevis.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }

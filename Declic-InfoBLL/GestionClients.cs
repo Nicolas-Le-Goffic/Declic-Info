@@ -43,9 +43,9 @@ namespace Declic_InfoBLL
         {
             return ClientDAO.GetUnClient(unIdClient);
         }
-        public static void SupprimerClient(int idClient)
+        public static bool SupprimerClient(int idClient)
         {
-            ClientDAO.SupprimerClient(idClient);
+            return ClientDAO.SupprimerClient(idClient);
         }
         public static int ModificationClient(ClientBO unClient)
         {
