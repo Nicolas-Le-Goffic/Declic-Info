@@ -9,15 +9,13 @@ namespace Declic_InfoBO
 {
     public class StatutBO
     {
-        public int idStatut;
-        public string nomStatut;
-
+        private int idStatut;
+        private string nomStatut;
         public StatutBO(int idStatut, string nomStatut)
         {
             this.idStatut = idStatut;
             this.nomStatut = nomStatut;
         }
-
         public int IdStatut
         {
             get => idStatut;
@@ -30,7 +28,7 @@ namespace Declic_InfoBO
         }
         public override string ToString()
         {
-            return NomStatut;
+            return nomStatut;   // C’est ce qui sera affiché dans la ComboBox
         }
     }
 }

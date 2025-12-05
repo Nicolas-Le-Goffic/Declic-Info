@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAjoutDevis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAjoutDevis.Designer.cs">
+      <DependentUpon>FormAjoutDevis.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAjoutClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
       <DependentUpon>GESTION_COMMERCIALEDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAjoutDevis.resx">
+      <DependentUpon>FormAjoutDevis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAjoutClient.resx">
       <DependentUpon>FormAjoutClient.cs</DependentUpon>
     </EmbeddedResource>
