@@ -87,9 +87,7 @@ namespace Declic_Info
             }
 
             // Vérification des nombres
-            if (!int.TryParse(txtTel.Text, out int tel) ||
-                !int.TryParse(txtFax.Text, out int fax) ||
-                !int.TryParse(txtNumAdrFact.Text, out int numFact) ||
+            if (!int.TryParse(txtNumAdrFact.Text, out int numFact) ||
                 !int.TryParse(txtCpAdrFact.Text, out int cpFact) ||
                 !int.TryParse(txtNumAdrLiv.Text, out int numLiv) ||
                 !int.TryParse(txtCpAdrLiv.Text, out int cpLiv))
@@ -110,8 +108,8 @@ namespace Declic_Info
                 // Création du client
                 ClientBO c = new ClientBO(
                     txtNom.Text,
-                    tel,
-                    fax,
+                    txtTel.Text,
+                    txtFax.Text,
                     txtEmail.Text,
                     numFact,
                     txtRueAdrFact.Text,

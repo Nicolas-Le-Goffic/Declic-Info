@@ -25,12 +25,15 @@ namespace Declic_Info
 
             // Charger les clients dans la ComboBox
             LoadDevis();
+            LoadClients();
+            LoadStatuts();
 
             // Désactiver les champs et bouton modifier
             SetTextBoxesEnabled(false);
             btnModifier.Enabled = false;
 
-            // Brancher l'événement du bouton Modifier
+            // Brancher les événements
+            comboDevis.SelectedIndexChanged += comboDevis_SelectedIndexChanged;
             btnModif.Click += btnModif_Click;
         }
         private void LoadDevis()
@@ -39,10 +42,28 @@ namespace Declic_Info
 
             comboDevis.DataSource = null; // réinitialisation
             comboDevis.DataSource = devis;
-            comboDevis.DisplayMember = "Devis";  // ce que l'utilisateur voit
+            comboDevis.DisplayMember = "idDevis";  // ce que l'utilisateur voit
             comboDevis.ValueMember = "idDevis";   // valeur réelle
         }
-        private void comboClients_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void LoadClients()
+        {
+            List<ClientBO> clients = GestionClients.GetClients();
+            comboBoxClient.DataSource = null;
+            comboBoxClient.DataSource = clients;
+            comboBoxClient.DisplayMember = "NomClient";
+            comboBoxClient.ValueMember = "CodeClient";
+        }
+        private void LoadStatuts()
+        {
+            List<StatutBO> statuts = GestionStatut.GetStatuts();
+            comboboxStatut.DataSource = null;
+            comboboxStatut.DataSource = statuts;
+            comboboxStatut.DisplayMember = "NomStatut";
+            comboboxStatut.ValueMember = "IdStatut";
+        }
+
+        private void comboDevis_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboDevis.SelectedItem == null) return;
 
@@ -53,6 +74,8 @@ namespace Declic_Info
             txtTauxTVADevis.Text = devis.TauxTVADevis.ToString();
             txtTauxRemiseGloDevis.Text = devis.TauxRemiseGloDevis.ToString();
             txtMontantHTHorsRemiseDevis.Text = devis.MontantHtHorsRemisDevise.ToString();
+            comboBoxClient.SelectedValue = devis.DevisClient.CodeClient;
+            comboboxStatut.SelectedValue = devis.DevisStatut.IdStatut;
 
             btnModif.Enabled = true;
             btnModifier.Enabled = false;
@@ -102,6 +125,8 @@ namespace Declic_Info
             txtTauxTVADevis.Enabled = enabled;
             txtTauxRemiseGloDevis.Enabled = enabled;
             txtMontantHTHorsRemiseDevis.Enabled = enabled;
+            comboboxStatut.Enabled = enabled;
+            comboBoxClient.Enabled = enabled;
         }
         private void btnsupprimer_Click(object sender, EventArgs e)
         {

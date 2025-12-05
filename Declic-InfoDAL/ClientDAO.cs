@@ -26,8 +26,8 @@ namespace Declic_InfoDAL
 
             // Récupération des valeurs du BO
             string nom_client = unClient.NomClient;
-            int numTelClient = unClient.NumTelClient;
-            int numFaxClient = unClient.NumFaxClient;
+            string numTelClient = unClient.NumTelClient;
+            string numFaxClient = unClient.NumFaxClient;
             string emailClient = unClient.EmailClient;
             int numAdrFactClient = unClient.NumAdrFactClient;
             string rueAdrFactClient = unClient.RueAdrFactClient;

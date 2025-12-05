@@ -45,7 +45,10 @@ namespace Declic_InfoBO
             
         }
 
-        
+        public DevisBO()
+        {
+
+        }
 
         // Propriétés
         public int IdDevis
@@ -62,32 +65,32 @@ namespace Declic_InfoBO
 
         public float TauxTVADevis
         {
-            get => tauxTVADevis;
-            set => tauxTVADevis = value;
+            get => tauxTVA;
+            set => tauxTVA = value;
         }
 
         public float TauxRemiseGloDevis
         {
-            get => tauxRemiseGloDevis;
-            set => tauxRemiseGloDevis = value;
+            get => tauxRemiseGlobale;
+            set => tauxRemiseGlobale = value;
         }
 
         public float MontantHtHorsRemisDevise
         {
-            get => montantHtHorsRemisDevise;
-            set => montantHtHorsRemisDevise = value;
+            get => montantHT;
+            set => montantHT = value;
         }
 
         public ClientBO DevisClient
         {
-            get => devisClient;
-            set => devisClient = value;
+            get => client;
+            set => client = value;
         }
 
         public StatutBO DevisStatut
         {
-            get => devisStatut;
-            set => devisStatut = value;
+            get => statut;
+            set => statut = value;
         }
     }
 }

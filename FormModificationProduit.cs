@@ -105,7 +105,7 @@ namespace Declic_Info
 
             libelleProduitTxt.Text = produit.LibelleProduit;
             prixVenteProduittxt.Text = produit.PrixVenteProduit.ToString();
-            categorieComboBox.SelectedItem = produit.CategorieProduit;
+            categorieComboBox.SelectedValue = produit.CategorieProduit.IdCategorie;
 
             SetTextBoxesEnabled(false);
             btnModif.Enabled = true;           // Permet d’activer la modification

@@ -57,6 +57,7 @@ namespace Declic_Info
                     }
                     else
                     {
+                        MessageBox.Show("Le Client a été supprimé !");
                         this.Close();
                     }
                 }

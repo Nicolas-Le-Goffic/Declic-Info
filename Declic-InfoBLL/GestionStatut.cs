@@ -27,7 +27,7 @@ namespace Declic_InfoBLL
         }
 
         // Récupérer tous les statuts
-        public List<StatutBO> GetStatuts()
+        public static List<StatutBO> GetStatuts()
         {
             return StatutDAO.GetStatuts();
         }

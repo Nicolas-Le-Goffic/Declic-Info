@@ -42,10 +42,9 @@
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnModif = new System.Windows.Forms.Button();
             this.labelModModif = new System.Windows.Forms.Label();
-            this.btnsupprimer = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxClient = new System.Windows.Forms.ComboBox();
+            this.comboboxStatut = new System.Windows.Forms.ComboBox();
             this.dateDevisPicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
@@ -169,6 +168,7 @@
             this.btnModifier.TabIndex = 50;
             this.btnModifier.Text = "Appliquer les modifications";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // btnModif
             // 
@@ -185,25 +185,13 @@
             // 
             this.labelModModif.AutoSize = true;
             this.labelModModif.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelModModif.Location = new System.Drawing.Point(274, 46);
+            this.labelModModif.Location = new System.Drawing.Point(455, 42);
             this.labelModModif.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelModModif.Name = "labelModModif";
-            this.labelModModif.Size = new System.Drawing.Size(721, 37);
+            this.labelModModif.Size = new System.Drawing.Size(427, 37);
             this.labelModModif.TabIndex = 48;
-            this.labelModModif.Text = "MODIFICATION OU SUPPRESSION DES DEVIS";
+            this.labelModModif.Text = "MODIFICATION DES DEVIS";
             this.labelModModif.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btnsupprimer
-            // 
-            this.btnsupprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnsupprimer.Location = new System.Drawing.Point(156, 105);
-            this.btnsupprimer.Margin = new System.Windows.Forms.Padding(4);
-            this.btnsupprimer.Name = "btnsupprimer";
-            this.btnsupprimer.Size = new System.Drawing.Size(149, 46);
-            this.btnsupprimer.TabIndex = 78;
-            this.btnsupprimer.Text = "Supprimer";
-            this.btnsupprimer.UseVisualStyleBackColor = true;
-            this.btnsupprimer.Click += new System.EventHandler(this.btnsupprimer_Click);
             // 
             // label3
             // 
@@ -216,21 +204,21 @@
             this.label3.TabIndex = 79;
             this.label3.Text = "Statut du devis";
             // 
-            // comboBox1
+            // comboBoxClient
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(579, 231);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(239, 24);
-            this.comboBox1.TabIndex = 80;
+            this.comboBoxClient.FormattingEnabled = true;
+            this.comboBoxClient.Location = new System.Drawing.Point(579, 231);
+            this.comboBoxClient.Name = "comboBoxClient";
+            this.comboBoxClient.Size = new System.Drawing.Size(239, 24);
+            this.comboBoxClient.TabIndex = 80;
             // 
-            // comboBox2
+            // comboboxStatut
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(873, 231);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(202, 24);
-            this.comboBox2.TabIndex = 81;
+            this.comboboxStatut.FormattingEnabled = true;
+            this.comboboxStatut.Location = new System.Drawing.Point(873, 231);
+            this.comboboxStatut.Name = "comboboxStatut";
+            this.comboboxStatut.Size = new System.Drawing.Size(202, 24);
+            this.comboboxStatut.TabIndex = 81;
             // 
             // dateDevisPicker
             // 
@@ -245,10 +233,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1342, 527);
             this.Controls.Add(this.dateDevisPicker);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboboxStatut);
+            this.Controls.Add(this.comboBoxClient);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnsupprimer);
             this.Controls.Add(this.comboDevis);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtMontantHTHorsRemiseDevis);
@@ -286,10 +273,9 @@
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnModif;
         private System.Windows.Forms.Label labelModModif;
-        private System.Windows.Forms.Button btnsupprimer;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxClient;
+        private System.Windows.Forms.ComboBox comboboxStatut;
         private System.Windows.Forms.DateTimePicker dateDevisPicker;
     }
 }
