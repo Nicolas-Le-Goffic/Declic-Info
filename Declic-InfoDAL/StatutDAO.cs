@@ -18,7 +18,9 @@ namespace Declic_InfoDAL
             return unStatutDAO;
         }
 
-        // Récupère tous les statuts
+        private StatutDAO() { }
+
+        // Récupérer tous les statuts
         public static List<StatutBO> GetStatuts()
         {
             int idStatut;
@@ -55,8 +57,8 @@ namespace Declic_InfoDAL
             return lesStatuts;
         }
 
-       
-        public static StatutBO GetStatut(int idUnStatut)
+        // Récupérer un statut par ID
+        public static StatutBO GetStatutById(int id)
         {
             int idStatut;
             string nomStatut;

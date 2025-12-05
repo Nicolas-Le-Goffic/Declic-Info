@@ -24,7 +24,7 @@ namespace Declic_Info
             List<DevisBO> listeDevis = GestionDevis.GetDevis();
             foreach (DevisBO devis in listeDevis)
             {
-                devisCombobox.Items.Add(devis);
+                devisCombobox.Items.Add(devis.IdDevis);
             }
         }
 
