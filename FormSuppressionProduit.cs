@@ -43,21 +43,7 @@ namespace Declic_Info
 
                 ProduitBO produit = (ProduitBO)produitComboBox.SelectedItem;
 
-                // Message de confirmation
-                DialogResult result = MessageBox.Show(
-                    $"Voulez-vous vraiment supprimer le produit : {produit.LibelleProduit} ?",
-                    "Confirmation",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning
-                );
-
-                // Si l'utilisateur clique sur "No", on annule
-                if (result == DialogResult.No)
-                {
-                    return;
-                }
-
-                // Suppression
+                // Appel à la BLL pour suppression
                 GestionProduits.SupprimerProduit(produit.CodeProduit);
 
                 MessageBox.Show("Le produit a été supprimé avec succès !");

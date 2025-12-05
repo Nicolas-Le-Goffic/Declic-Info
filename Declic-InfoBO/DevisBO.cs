@@ -43,11 +43,11 @@ namespace Declic_InfoBO
             
         }
 
-        
         public DevisBO()
         {
 
         }
+
         // Propriétés
         public int IdDevis
         {
