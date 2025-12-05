@@ -97,5 +97,11 @@ namespace Declic_Info
             FormSuppressionDevis frm = new FormSuppressionDevis();
             frm.ShowDialog();
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            FormAjoutDevis frm = new FormAjoutDevis();
+            frm.ShowDialog();
+        }
     }
 }
