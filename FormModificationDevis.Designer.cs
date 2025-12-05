@@ -1,6 +1,6 @@
 ﻿namespace Declic_Info
 {
-    partial class FormModifSupprimerDevis
+    partial class FormModificationDevis
     {
         /// <summary>
         /// Required designer variable.

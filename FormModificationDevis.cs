@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace Declic_Info
 {
-    public partial class FormModifSupprimerDevis : Form
+    public partial class FormModificationDevis : Form
     {
-        public FormModifSupprimerDevis()
+        public FormModificationDevis()
         {
             InitializeComponent();
 
@@ -102,8 +102,7 @@ namespace Declic_Info
                 MessageBox.Show("Veuillez saisir des valeurs numériques valides !", "Erreur");
                 return;
             }
-
-            DevisBO devis = new DevisBO();
+            DevisBO devis = new DevisBO(idDevis,dateDevisPicker.Value,TauxTVADevis,TauxRemiseGloDevis,MontantHtHorsRemisDevise, (ClientBO)comboBoxClient.SelectedItem,(StatutBO)comboboxStatut.SelectedItem);
 
             // Appliquer la modification
             GestionDevis.ModificationDevis(devis);

@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormModifSupprimerDevis.cs">
+    <Compile Include="FormModificationDevis.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormModifSupprimerDevis.Designer.cs">
-      <DependentUpon>FormModifSupprimerDevis.cs</DependentUpon>
+    <Compile Include="FormModificationDevis.Designer.cs">
+      <DependentUpon>FormModificationDevis.cs</DependentUpon>
     </Compile>
     <Compile Include="FormAjoutClient.cs">
       <SubType>Form</SubType>
@@ -70,6 +70,12 @@
     </Compile>
     <Compile Include="FormModificationProduit.Designer.cs">
       <DependentUpon>FormModificationProduit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSuppressionDevis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuppressionDevis.Designer.cs">
+      <DependentUpon>FormSuppressionDevis.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSuppressionClient.cs">
       <SubType>Form</SubType>
@@ -113,8 +119,8 @@
       <DependentUpon>GESTION_COMMERCIALEDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormModifSupprimerDevis.resx">
-      <DependentUpon>FormModifSupprimerDevis.cs</DependentUpon>
+    <EmbeddedResource Include="FormModificationDevis.resx">
+      <DependentUpon>FormModificationDevis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAjoutClient.resx">
       <DependentUpon>FormAjoutClient.cs</DependentUpon>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormModificationProduit.resx">
       <DependentUpon>FormModificationProduit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuppressionDevis.resx">
+      <DependentUpon>FormSuppressionDevis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSuppressionProduit.resx">
       <DependentUpon>FormSuppressionProduit.cs</DependentUpon>

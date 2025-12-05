@@ -19,8 +19,7 @@ namespace Declic_InfoBO
         private float remiseGlobale;
 
         // Constructeur complet
-        public DevisBO(int idDevis, DateTime dateDevis, float tauxTVA, float tauxRemiseGlobale,
-                       float montantHT, ClientBO client, StatutBO statut)
+        public DevisBO(int idDevis, DateTime dateDevis, float tauxTVA, float tauxRemiseGlobale,float montantHT, ClientBO client, StatutBO statut)
         {
             this.idDevis = idDevis;
             this.dateDevis = dateDevis;
@@ -33,8 +32,7 @@ namespace Declic_InfoBO
         }
 
         // Constructeur sans ID (pour nouveau devis)
-        public DevisBO(DateTime dateDevis, float tauxTVA, float tauxRemiseGlobale,
-                       float montantHT, ClientBO client, StatutBO statut)
+        public DevisBO(DateTime dateDevis, float tauxTVA, float tauxRemiseGlobale, float montantHT, ClientBO client, StatutBO statut)
         {
             this.dateDevis = dateDevis;
             this.tauxTVA = tauxTVA;

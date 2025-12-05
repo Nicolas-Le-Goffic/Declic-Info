@@ -178,8 +178,8 @@ namespace Declic_InfoDAL
             cmd.Parameters.AddWithValue("@tauxTVADevis", devis.TauxTVADevis);
             cmd.Parameters.AddWithValue("@tauxRemiseGloDevis", devis.TauxRemiseGloDevis);
             cmd.Parameters.AddWithValue("@montantHTHorsRemisDevise", devis.MontantHtHorsRemisDevise);
-            cmd.Parameters.AddWithValue("@codeClient", devis.DevisClient);
-            cmd.Parameters.AddWithValue("@idStatut", devis.DevisStatut);
+            cmd.Parameters.AddWithValue("@codeClient", devis.DevisClient.CodeClient);
+            cmd.Parameters.AddWithValue("@idStatut", devis.DevisStatut.IdStatut);
             cmd.Parameters.AddWithValue("@idDevis", devis.IdDevis);
 
             nbEnr = cmd.ExecuteNonQuery();

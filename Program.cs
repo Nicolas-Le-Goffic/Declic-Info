@@ -19,7 +19,7 @@ namespace Declic_Info
             GestionUtilisateurs.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"].ConnectionString);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormModifSupprimerDevis());
+            Application.Run(new FrmLogin());
         }
     }
 }
