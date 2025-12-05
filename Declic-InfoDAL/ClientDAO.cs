@@ -25,8 +25,8 @@ namespace Declic_InfoDAL
         {
             int codeClient;
             string nomClient;
-            int numTelClient;
-            int numFaxClient;
+            string numTelClient;
+            string numFaxClient;
             string emailClient;
             int numAdrFactClient;
             string rueAdrFactClient;
@@ -62,8 +62,8 @@ namespace Declic_InfoDAL
                 {
                     nomClient = monReader["nom_client"].ToString();
                 }
-                numTelClient = Int32.Parse(monReader["num_tel_client"].ToString());
-                numFaxClient = Int32.Parse(monReader["num_fax_client"].ToString());
+                numTelClient = monReader["num_tel_client"].ToString();
+                numFaxClient = monReader["num_fax_client"].ToString();
                 if (monReader["email_client"] == DBNull.Value)
                 {
                     emailClient = default(string);
@@ -279,9 +279,6 @@ namespace Declic_InfoDAL
             // Fermeture de la connexion
             maConnexion.Close();
             return nbEnr;
-                }
-
-           
-        
+        }
     }
 }

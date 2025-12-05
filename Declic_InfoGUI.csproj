@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormModifSupprimerDevis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifSupprimerDevis.Designer.cs">
+      <DependentUpon>FormModifSupprimerDevis.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSuppressionClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
       <DependentUpon>GESTION_COMMERCIALEDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormModifSupprimerDevis.resx">
+      <DependentUpon>FormModifSupprimerDevis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>

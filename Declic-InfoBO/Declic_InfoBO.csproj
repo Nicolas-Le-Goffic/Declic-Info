@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StatutBO.cs" />
+    <Compile Include="DevisBO.cs" />
     <Compile Include="ClientBO.cs" />
     <Compile Include="Utilisateur.cs" />
     <Compile Include="ProduitBO.cs" />

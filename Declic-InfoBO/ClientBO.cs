@@ -10,8 +10,8 @@ namespace Declic_InfoBO
     {
         private int codeClient;
         private string nomClient;
-        private int numTelClient;
-        private int numFaxClient;
+        private string numTelClient;
+        private string numFaxClient;
         private string emailClient;
         private int numAdrFactClient;
         private string rueAdrFactClient;
@@ -23,7 +23,7 @@ namespace Declic_InfoBO
         private int cpAdrLivClient;
 
 
-        public ClientBO(int codeClient, string nomClient, int numTelClient, int numFaxClient, string emailClient, int numAdrFactClient, string rueAdrFactClient, string villeAdrFactClient, int cpAdrFactClient, int numAdrLivClient, string rueAdrLivClient, string villeAdrLivClient, int cpAdrLivClient)
+        public ClientBO(int codeClient, string nomClient, string numTelClient, string numFaxClient, string emailClient, int numAdrFactClient, string rueAdrFactClient, string villeAdrFactClient, int cpAdrFactClient, int numAdrLivClient, string rueAdrLivClient, string villeAdrLivClient, int cpAdrLivClient)
         {
             this.codeClient = codeClient;
             this.nomClient = nomClient;
@@ -39,7 +39,7 @@ namespace Declic_InfoBO
             this.villeAdrLivClient = villeAdrLivClient;
             this.cpAdrLivClient = cpAdrLivClient;
         }
-        public ClientBO(string nomClient, int numTelClient, int numFaxClient, string emailClient, int numAdrFactClient, string rueAdrFactClient, string villeAdrFactClient, int cpAdrFactClient, int numAdrLivClient, string rueAdrLivClient, string villeAdrLivClient, int cpAdrLivClient)
+        public ClientBO(string nomClient, string numTelClient, string numFaxClient, string emailClient, int numAdrFactClient, string rueAdrFactClient, string villeAdrFactClient, int cpAdrFactClient, int numAdrLivClient, string rueAdrLivClient, string villeAdrLivClient, int cpAdrLivClient)
         {
             this.nomClient = nomClient;
             this.numTelClient = numTelClient;
@@ -69,12 +69,12 @@ namespace Declic_InfoBO
             get => nomClient;
             set => nomClient = value;
         }
-        public int NumTelClient
+        public string NumTelClient
         {
             get => numTelClient;
             set => numTelClient = value;
         }
-        public int NumFaxClient
+        public string NumFaxClient
         {
             get => numFaxClient;
             set => numFaxClient = value;
