@@ -26,14 +26,9 @@ namespace Declic_Info
         {
             var liste = GestionClients.GetInfosClients();
 
-            dgvDevis.DataSource = liste;
+            dgvClients.DataSource = liste;
 
-            dgvDevis.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        }
-
-        private void dgvClients_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            dgvClients.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }

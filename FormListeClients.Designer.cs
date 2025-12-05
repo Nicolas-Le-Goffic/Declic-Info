@@ -28,40 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvDevis = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDevis)).BeginInit();
+            this.dgvClients = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvDevis
+            // dgvClients
             // 
-            this.dgvDevis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDevis.Location = new System.Drawing.Point(24, 13);
-            this.dgvDevis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dgvDevis.Name = "dgvDevis";
-            this.dgvDevis.RowHeadersWidth = 51;
-            this.dgvDevis.RowTemplate.Height = 24;
-            this.dgvDevis.Size = new System.Drawing.Size(1163, 355);
-            this.dgvDevis.TabIndex = 0;
-            this.dgvDevis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClients_CellContentClick);
+            this.dgvClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClients.Location = new System.Drawing.Point(32, 16);
+            this.dgvClients.Name = "dgvClients";
+            this.dgvClients.RowHeadersWidth = 51;
+            this.dgvClients.RowTemplate.Height = 24;
+            this.dgvClients.Size = new System.Drawing.Size(1551, 437);
+            this.dgvClients.TabIndex = 0;
             // 
             // FormListeClient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.dgvDevis);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvClients);
             this.Name = "FormListeClient";
             this.Text = "FormListeClient";
             this.Load += new System.EventHandler(this.FormListeClient_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDevis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvDevis;
+        private System.Windows.Forms.DataGridView dgvClients;
     }
 }
 

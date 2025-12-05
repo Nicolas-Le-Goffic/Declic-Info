@@ -183,6 +183,16 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Devis :";
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(630, 209);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(158, 56);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "Suppression de clients";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // PageAccueilGestCom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

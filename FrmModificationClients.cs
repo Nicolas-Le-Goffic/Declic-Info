@@ -148,10 +148,5 @@ namespace Declic_Info
             txtVilleAdrLiv.Clear();
             txtCpAdrLiv.Clear();
         }
-
-        private void btnModif_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
