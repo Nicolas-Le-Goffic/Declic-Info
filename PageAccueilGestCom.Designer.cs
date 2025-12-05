@@ -132,10 +132,10 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(333, 79);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Location = new System.Drawing.Point(472, 76);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(153, 41);
+            this.button6.Size = new System.Drawing.Size(118, 41);
             this.button6.TabIndex = 8;
             this.button6.Text = "Suppression de produits";
             this.button6.UseVisualStyleBackColor = true;
@@ -185,10 +185,9 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(472, 170);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button7.Location = new System.Drawing.Point(630, 209);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(118, 46);
+            this.button7.Size = new System.Drawing.Size(158, 56);
             this.button7.TabIndex = 9;
             this.button7.Text = "Suppression de clients";
             this.button7.UseVisualStyleBackColor = true;
