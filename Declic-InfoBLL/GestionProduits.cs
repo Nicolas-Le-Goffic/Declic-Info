@@ -41,5 +41,19 @@ namespace Declic_InfoBLL
         {
             return ProduitDAO.GetunProduitDAO().GetProduits();
         }
+
+
+        //SUPPRESSION PRODUIT ET MODIFICATION
+
+        public static void SupprimerProduit(int idProduit)
+        {
+            ProduitDAO.SupprimerProduit(idProduit);
+        }
+
+        public static int ModificationProduit(ProduitBO unProduit)
+        {
+            return ProduitDAO.ModificationProduit(unProduit);
+        }
+
     }
 }

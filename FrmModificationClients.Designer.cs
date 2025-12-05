@@ -362,7 +362,6 @@
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnModif);
             this.Controls.Add(this.labelModModif);
-
             this.Name = "FrmModificationClients";
             this.Text = "Form1";
             this.ResumeLayout(false);
