@@ -8,7 +8,6 @@ namespace Declic_InfoDAL
     {
         private static DevisDAO unDevisDAO;
 
-        // Singleton
         public static DevisDAO GetUnDevisDAO()
         {
             if (unDevisDAO == null)

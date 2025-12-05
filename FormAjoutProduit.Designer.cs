@@ -40,9 +40,10 @@
             // 
             // ajoutProduitbtn
             // 
-            this.ajoutProduitbtn.Location = new System.Drawing.Point(249, 313);
+            this.ajoutProduitbtn.Location = new System.Drawing.Point(187, 254);
+            this.ajoutProduitbtn.Margin = new System.Windows.Forms.Padding(2);
             this.ajoutProduitbtn.Name = "ajoutProduitbtn";
-            this.ajoutProduitbtn.Size = new System.Drawing.Size(257, 87);
+            this.ajoutProduitbtn.Size = new System.Drawing.Size(193, 71);
             this.ajoutProduitbtn.TabIndex = 0;
             this.ajoutProduitbtn.Text = "Ajouter le produit";
             this.ajoutProduitbtn.UseVisualStyleBackColor = true;
@@ -50,50 +51,56 @@
             // 
             // libelleProduitTxt
             // 
-            this.libelleProduitTxt.Location = new System.Drawing.Point(209, 109);
+            this.libelleProduitTxt.Location = new System.Drawing.Point(157, 89);
+            this.libelleProduitTxt.Margin = new System.Windows.Forms.Padding(2);
             this.libelleProduitTxt.Name = "libelleProduitTxt";
-            this.libelleProduitTxt.Size = new System.Drawing.Size(365, 22);
+            this.libelleProduitTxt.Size = new System.Drawing.Size(275, 20);
             this.libelleProduitTxt.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(75, 112);
+            this.label1.Location = new System.Drawing.Point(56, 91);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 16);
+            this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Libellé du produit";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 206);
+            this.label2.Location = new System.Drawing.Point(42, 167);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 16);
+            this.label2.Size = new System.Drawing.Size(102, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Catégorie du produit";
             // 
             // categorieComboBox
             // 
             this.categorieComboBox.FormattingEnabled = true;
-            this.categorieComboBox.Location = new System.Drawing.Point(209, 206);
+            this.categorieComboBox.Location = new System.Drawing.Point(157, 167);
+            this.categorieComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.categorieComboBox.Name = "categorieComboBox";
-            this.categorieComboBox.Size = new System.Drawing.Size(239, 24);
+            this.categorieComboBox.Size = new System.Drawing.Size(180, 21);
             this.categorieComboBox.TabIndex = 4;
             // 
             // prixVenteProduittxt
             // 
-            this.prixVenteProduittxt.Location = new System.Drawing.Point(209, 155);
+            this.prixVenteProduittxt.Location = new System.Drawing.Point(157, 126);
+            this.prixVenteProduittxt.Margin = new System.Windows.Forms.Padding(2);
             this.prixVenteProduittxt.Name = "prixVenteProduittxt";
-            this.prixVenteProduittxt.Size = new System.Drawing.Size(101, 22);
+            this.prixVenteProduittxt.Size = new System.Drawing.Size(77, 20);
             this.prixVenteProduittxt.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 155);
+            this.label3.Location = new System.Drawing.Point(28, 126);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 16);
+            this.label3.Size = new System.Drawing.Size(119, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Prix de vente du produit";
             // 
@@ -101,17 +108,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(185, 24);
+            this.label4.Location = new System.Drawing.Point(139, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(421, 52);
+            this.label4.Size = new System.Drawing.Size(338, 39);
             this.label4.TabIndex = 7;
             this.label4.Text = "Ajoutez un Produit !";
             // 
             // ajoutProduitbdd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.prixVenteProduittxt);
@@ -120,6 +128,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.libelleProduitTxt);
             this.Controls.Add(this.ajoutProduitbtn);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ajoutProduitbdd";
             this.Text = "ajoutProduit";
             this.ResumeLayout(false);

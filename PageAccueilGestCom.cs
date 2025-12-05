@@ -56,5 +56,12 @@ namespace Declic_Info
             FormListeClient frm = new FormListeClient();
             frm.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormAjoutDevis frm = new FormAjoutDevis();
+            frm.ShowDialog();
+
+        }
     }
 }

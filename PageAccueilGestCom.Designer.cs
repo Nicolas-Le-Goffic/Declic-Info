@@ -42,9 +42,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(44, 209);
+            this.button1.Location = new System.Drawing.Point(33, 170);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 56);
+            this.button1.Size = new System.Drawing.Size(116, 46);
             this.button1.TabIndex = 0;
             this.button1.Text = "Liste de clients";
             this.button1.UseVisualStyleBackColor = true;
@@ -52,19 +53,22 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(236, 209);
+            this.button2.Location = new System.Drawing.Point(177, 170);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(164, 56);
+            this.button2.Size = new System.Drawing.Size(123, 46);
             this.button2.TabIndex = 1;
             this.button2.Text = "Ajout de clients";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 36);
+            this.label1.Location = new System.Drawing.Point(31, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 16);
+            this.label1.Size = new System.Drawing.Size(183, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Bienvenue sur Gestion Commerciale !";
             // 
@@ -72,17 +76,19 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 167);
+            this.label2.Location = new System.Drawing.Point(31, 136);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 16);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Clients :";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(444, 209);
+            this.button3.Location = new System.Drawing.Point(333, 170);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(158, 56);
+            this.button3.Size = new System.Drawing.Size(118, 46);
             this.button3.TabIndex = 4;
             this.button3.Text = "Modification de clients";
             this.button3.UseVisualStyleBackColor = true;
@@ -92,17 +98,19 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 64);
+            this.label3.Location = new System.Drawing.Point(31, 52);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 16);
+            this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Produits";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(44, 94);
+            this.button4.Location = new System.Drawing.Point(33, 76);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(155, 50);
+            this.button4.Size = new System.Drawing.Size(116, 41);
             this.button4.TabIndex = 6;
             this.button4.Text = "Liste de produits";
             this.button4.UseVisualStyleBackColor = true;
@@ -110,9 +118,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(236, 97);
+            this.button5.Location = new System.Drawing.Point(177, 79);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(164, 50);
+            this.button5.Size = new System.Drawing.Size(123, 41);
             this.button5.TabIndex = 7;
             this.button5.Text = "Ajout de produits";
             this.button5.UseVisualStyleBackColor = true;
@@ -120,18 +129,20 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(444, 97);
+            this.button6.Location = new System.Drawing.Point(333, 79);
+            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(204, 50);
+            this.button6.Size = new System.Drawing.Size(153, 41);
             this.button6.TabIndex = 8;
             this.button6.Text = "Modification et suppression de produits";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(630, 209);
+            this.button7.Location = new System.Drawing.Point(472, 170);
+            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(158, 56);
+            this.button7.Size = new System.Drawing.Size(118, 46);
             this.button7.TabIndex = 9;
             this.button7.Text = "Suppression de clients";
             this.button7.UseVisualStyleBackColor = true;
@@ -139,9 +150,9 @@
             // 
             // PageAccueilGestCom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -152,6 +163,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PageAccueilGestCom";
             this.Text = "Accueil";
             this.ResumeLayout(false);
