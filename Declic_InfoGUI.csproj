@@ -53,6 +53,24 @@
     <Compile Include="FormModifSupprimerDevis.Designer.cs">
       <DependentUpon>FormModifSupprimerDevis.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAjoutClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAjoutClient.Designer.cs">
+      <DependentUpon>FormAjoutClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListeDevis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListeDevis.Designer.cs">
+      <DependentUpon>FormListeDevis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModificationProduit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModificationProduit.Designer.cs">
+      <DependentUpon>FormModificationProduit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSuppressionClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +82,12 @@
     </Compile>
     <Compile Include="FormListeClients.Designer.cs">
       <DependentUpon>FormListeClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSuppressionProduit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuppressionProduit.Designer.cs">
+      <DependentUpon>FormSuppressionProduit.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmModificationClients.cs">
       <SubType>Form</SubType>
@@ -91,6 +115,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormModifSupprimerDevis.resx">
       <DependentUpon>FormModifSupprimerDevis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAjoutClient.resx">
+      <DependentUpon>FormAjoutClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListeDevis.resx">
+      <DependentUpon>FormListeDevis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModificationProduit.resx">
+      <DependentUpon>FormModificationProduit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuppressionProduit.resx">
+      <DependentUpon>FormSuppressionProduit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

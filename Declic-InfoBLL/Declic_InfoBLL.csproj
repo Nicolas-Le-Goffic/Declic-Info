@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="GestionDevis.cs" />
     <Compile Include="GestionClients.cs" />
+    <Compile Include="GestionDevis.cs" />
+    <Compile Include="GestionStatut.cs" />
     <Compile Include="GestionUtilisateurs.cs" />
   </ItemGroup>
   <ItemGroup>

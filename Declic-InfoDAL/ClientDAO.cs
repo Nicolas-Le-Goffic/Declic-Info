@@ -19,6 +19,65 @@ namespace Declic_InfoDAL
             return unClientDAO;
         }
 
+        // Cette méthode insert un nouvel utilisateur passé en paramètre dans la BD
+        public static int AjoutClient(ClientBO unClient)
+        {
+            int nbEnr;
+
+            // Récupération des valeurs du BO
+            string nom_client = unClient.NomClient;
+            int numTelClient = unClient.NumTelClient;
+            int numFaxClient = unClient.NumFaxClient;
+            string emailClient = unClient.EmailClient;
+            int numAdrFactClient = unClient.NumAdrFactClient;
+            string rueAdrFactClient = unClient.RueAdrFactClient;
+            string villeAdrFactClient = unClient.VilleAdFactClient;
+            int cpAdrFactClient = unClient.CpAdrFactClient;
+            int numAdrLivClient = unClient.NumAdrLivClient;
+            string rueAdrLivClient = unClient.RueAdrLivClient;
+            string villeAdrLivClient = unClient.VilleAdrLivClient;
+            int cpAdrLivClient = unClient.CpAdrLivClient;
+
+            // Connexion
+            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = maConnexion;
+
+            cmd.CommandText = @"
+        INSERT INTO Client 
+        (nom_client, num_tel_client, num_fax_client, email_client, 
+         num_adr_fact_client, rue_adr_fact_client, ville_adr_fact_client, cp_adr_fact_client,
+         num_adr_liv_client, rue_adr_liv_client, ville_adr_liv_client, cp_adr_liv_client)
+        VALUES
+        (@nom, @tel, @fax, @mail,
+         @numFact, @rueFact, @villeFact, @cpFact,
+         @numLiv, @rueLiv, @villeLiv, @cpLiv)
+    ";
+
+            // Paramètres
+            cmd.Parameters.AddWithValue("@nom", nom_client);
+            cmd.Parameters.AddWithValue("@tel", numTelClient);
+            cmd.Parameters.AddWithValue("@fax", numFaxClient);
+            cmd.Parameters.AddWithValue("@mail", emailClient);
+            cmd.Parameters.AddWithValue("@numFact", numAdrFactClient);
+            cmd.Parameters.AddWithValue("@rueFact", rueAdrFactClient);
+            cmd.Parameters.AddWithValue("@villeFact", villeAdrFactClient);
+            cmd.Parameters.AddWithValue("@cpFact", cpAdrFactClient);
+            cmd.Parameters.AddWithValue("@numLiv", numAdrLivClient);
+            cmd.Parameters.AddWithValue("@rueLiv", rueAdrLivClient);
+            cmd.Parameters.AddWithValue("@villeLiv", villeAdrLivClient);
+            cmd.Parameters.AddWithValue("@cpLiv", cpAdrLivClient);
+
+            // Exécution
+            nbEnr = cmd.ExecuteNonQuery();
+
+            // Fermeture
+            maConnexion.Close();
+
+            return nbEnr;
+        }
+
         // Cette méthode retourne une List contenant les objets Utilisateurs contenus dans la table Identification
 
         public static List<ClientBO> GetInfosClients()
@@ -239,7 +298,7 @@ namespace Declic_InfoDAL
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = maConnexion;
-            cmd.CommandText = @"UPDATE Client 
+                cmd.CommandText = @"UPDATE Client 
                     SET nom_client = @nomClient,
                         num_tel_client = @numTelClient,
                         num_fax_client = @numFaxClient,

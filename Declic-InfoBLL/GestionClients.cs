@@ -52,5 +52,12 @@ namespace Declic_InfoBLL
             return ClientDAO.ModificationClient(unClient);
         }
 
+        // Méthode qui renvoi l'objet Utilisateur en l'ajoutant à la
+        // BD avec la méthode AjoutUtilisateur de la DAL
+        public static int CreerClient(ClientBO ut)
+        {
+            return ClientDAO.AjoutClient(ut);
+        }
+
     }
 }

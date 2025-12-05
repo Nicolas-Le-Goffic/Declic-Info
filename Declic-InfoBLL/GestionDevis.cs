@@ -11,9 +11,8 @@ namespace Declic_InfoBLL
 {
     public class GestionDevis
     {
-        private static GestionDevis uneGestionDevis; // objet BLL
+        private static GestionDevis uneGestionDevis;
 
-        // Accesseur en lecture
         public static GestionDevis GetGestionDevis()
         {
             if (uneGestionDevis == null)

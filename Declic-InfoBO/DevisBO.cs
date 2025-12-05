@@ -10,37 +10,44 @@ namespace Declic_InfoBO
     {
         private int idDevis;
         private DateTime dateDevis;
-        private float tauxTVADevis;
-        private float tauxRemiseGloDevis;
-        private float montantHtHorsRemisDevise;
-        private ClientBO devisClient;
-        private StatutBO devisStatut;
+        private float tauxTVA;
+        private float tauxRemiseGlobale;
+        private float montantHT;
+        private ClientBO client;
+        private StatutBO statut;
 
-        public DevisBO(int idDevis, DateTime dateDevis, float tauxTVADevis, float tauxRemiseGloDevis, float montantHtHorsRemisDevise, ClientBO devisClient, StatutBO devisStatut)
+        private float remiseGlobale;
+
+        // Constructeur complet
+        public DevisBO(int idDevis, DateTime dateDevis, float tauxTVA, float tauxRemiseGlobale,
+                       float montantHT, ClientBO client, StatutBO statut)
         {
             this.idDevis = idDevis;
             this.dateDevis = dateDevis;
-            this.tauxTVADevis = tauxTVADevis;
-            this.tauxRemiseGloDevis = tauxRemiseGloDevis;
-            this.montantHtHorsRemisDevise = montantHtHorsRemisDevise;
-            this.devisClient = devisClient;
-            this.devisStatut = devisStatut;
+            this.tauxTVA = tauxTVA;
+            this.tauxRemiseGlobale = tauxRemiseGlobale;
+            this.montantHT = montantHT;
+            this.client = client;
+            this.statut = statut;
+           
         }
 
-
-        public DevisBO(DateTime dateDevis, float tauxTVADevis, float tauxRemiseGloDevis, float montantHtHorsRemisDevise, ClientBO devisClient, StatutBO devisStatut)
+        // Constructeur sans ID (pour nouveau devis)
+        public DevisBO(DateTime dateDevis, float tauxTVA, float tauxRemiseGlobale,
+                       float montantHT, ClientBO client, StatutBO statut)
         {
             this.dateDevis = dateDevis;
-            this.tauxTVADevis = tauxTVADevis;
-            this.tauxRemiseGloDevis = tauxRemiseGloDevis;
-            this.montantHtHorsRemisDevise = montantHtHorsRemisDevise;
-            this.devisClient = devisClient;
-            this.devisStatut = devisStatut;
+            this.tauxTVA = tauxTVA;
+            this.tauxRemiseGlobale = tauxRemiseGlobale;
+            this.montantHT = montantHT;
+            this.client = client;
+            this.statut = statut;
+            
         }
-        public DevisBO()
-        {
 
-        }
+        
+
+        // Propriétés
         public int IdDevis
         {
             get => idDevis;
