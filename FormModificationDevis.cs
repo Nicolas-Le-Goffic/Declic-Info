@@ -150,9 +150,6 @@ namespace Declic_Info
             comboboxStatut.Enabled = enabled;
             comboBoxClient.Enabled = enabled;
         }
-        private void btnsupprimer_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }
