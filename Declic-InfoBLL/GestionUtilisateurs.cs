@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Declic_InfoDAL;
 using Declic_InfoBO;
-using Declic_InfoBLL;
+
 
 namespace Declic_InfoBLL
 {

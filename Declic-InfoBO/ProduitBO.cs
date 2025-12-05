@@ -46,5 +46,10 @@ namespace Declic_InfoBO
             get => categorieProduit;
             set => categorieProduit = value;
         }
+        public override string ToString()
+        {
+            return $"{LibelleProduit} (#{CodeProduit})";
+        }
+
     }
 }

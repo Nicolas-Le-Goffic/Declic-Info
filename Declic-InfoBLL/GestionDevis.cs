@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Declic_InfoDAL;
+﻿using System.Collections.Generic;
 using Declic_InfoBO;
-using Declic_InfoBLL;
+using Declic_InfoDAL;
+using System.Configuration;
 
 namespace Declic_InfoBLL
 {
@@ -35,6 +31,11 @@ namespace Declic_InfoBLL
         {
             return DevisDAO.AjoutDevis(unDevis);
         }
+      
 
+        public List<DevisBO> GetDevis()
+        {
+            return DevisDAO.GetDevisDAO().GetDevis();
+        }
     }
 }

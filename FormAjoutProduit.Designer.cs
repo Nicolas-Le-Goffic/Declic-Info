@@ -56,6 +56,7 @@
             this.libelleProduitTxt.Name = "libelleProduitTxt";
             this.libelleProduitTxt.Size = new System.Drawing.Size(275, 20);
             this.libelleProduitTxt.TabIndex = 1;
+            this.libelleProduitTxt.TextChanged += new System.EventHandler(this.libelleProduitTxt_TextChanged);
             // 
             // label1
             // 
@@ -66,6 +67,7 @@
             this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Libellé du produit";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -76,6 +78,7 @@
             this.label2.Size = new System.Drawing.Size(102, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Catégorie du produit";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // categorieComboBox
             // 
@@ -85,6 +88,7 @@
             this.categorieComboBox.Name = "categorieComboBox";
             this.categorieComboBox.Size = new System.Drawing.Size(180, 21);
             this.categorieComboBox.TabIndex = 4;
+            this.categorieComboBox.SelectedIndexChanged += new System.EventHandler(this.categorieComboBox_SelectedIndexChanged);
             // 
             // prixVenteProduittxt
             // 
@@ -93,6 +97,7 @@
             this.prixVenteProduittxt.Name = "prixVenteProduittxt";
             this.prixVenteProduittxt.Size = new System.Drawing.Size(77, 20);
             this.prixVenteProduittxt.TabIndex = 5;
+            this.prixVenteProduittxt.TextChanged += new System.EventHandler(this.prixVenteProduittxt_TextChanged);
             // 
             // label3
             // 
@@ -103,6 +108,19 @@
             this.label3.Size = new System.Drawing.Size(119, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Prix de vente du produit";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(139, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(338, 39);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Ajoutez un Produit !";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label4
             // 
@@ -131,6 +149,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ajoutProduitbdd";
             this.Text = "ajoutProduit";
+            this.Load += new System.EventHandler(this.ajoutProduitbdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

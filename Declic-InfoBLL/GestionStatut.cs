@@ -1,12 +1,25 @@
-﻿using Declic_InfoBO;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Configuration;
+using Declic_InfoBO;
 using Declic_InfoDAL;
-using System.Collections.Generic;
 
 namespace Declic_InfoBLL
 {
     public class GestionStatut
     {
-        public static List<StatutBO> GetStatuts()
+
+        private static GestionStatut uneGestionStatut;
+
+        public static GestionStatut GetGestionStatut()
+        {
+            if (uneGestionStatut == null)
+            { 
+                uneGestionStatut = new GestionStatut();
+            }
+            return uneGestionStatut;
+        }
+         public static List<StatutBO> GetStatuts()
         {
             return StatutDAO.GetInstance().GetStatuts();
         }
@@ -15,6 +28,34 @@ namespace Declic_InfoBLL
         {
             return StatutDAO.GetInstance().GetStatutById(id);
         }
-    }
 
+        // Définit la chaîne de connexion grâce à la méthode SetchaineConnexion de la DAL
+        public static void SetchaineConnexion(ConnectionStringSettings chset)
+        {
+            string chaine = chset.ConnectionString;
+            ConnexionBD.GetConnexionBD().SetchaineConnexion(chaine);
+        }
+
+        // Récupérer tous les statuts
+        public List<StatutBO> GetStatuts()
+        {
+            return StatutDAO.GetStatuts();
+        }
+
+        // Récupérer un statut par ID
+        /*
+        public static List<StatutBO> GetStatut(int unIdStatut)
+        {
+            return StatutDAO.GetStatut(unIdStatut);
+        }
+        */
+        public static StatutBO GetStatut(int unIdStatut)
+        {
+            return StatutDAO.GetStatut(unIdStatut);
+        }
+
+
+
+
+    }
 }

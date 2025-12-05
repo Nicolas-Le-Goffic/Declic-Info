@@ -10,37 +10,47 @@ namespace Declic_InfoBO
     {
         private int idDevis;
         private DateTime dateDevis;
-        private float tauxTVADevis;
-        private float tauxRemiseGloDevis;
-        private float montantHtHorsRemisDevise;
-        private ClientBO devisClient;
-        private StatutBO devisStatut;
+        private float tauxTVA;
+        private float tauxRemiseGlobale;
+        private float montantHT;
+        private ClientBO client;
+        private StatutBO statut;
 
-        public DevisBO(int idDevis, DateTime dateDevis, float tauxTVADevis, float tauxRemiseGloDevis, float montantHtHorsRemisDevise, ClientBO devisClient, StatutBO devisStatut)
+        private float remiseGlobale;
+
+        // Constructeur complet
+        public DevisBO(int idDevis, DateTime dateDevis, float tauxTVA, float tauxRemiseGlobale,
+                       float montantHT, ClientBO client, StatutBO statut)
         {
             this.idDevis = idDevis;
             this.dateDevis = dateDevis;
-            this.tauxTVADevis = tauxTVADevis;
-            this.tauxRemiseGloDevis = tauxRemiseGloDevis;
-            this.montantHtHorsRemisDevise = montantHtHorsRemisDevise;
-            this.devisClient = devisClient;
-            this.devisStatut = devisStatut;
+            this.tauxTVA = tauxTVA;
+            this.tauxRemiseGlobale = tauxRemiseGlobale;
+            this.montantHT = montantHT;
+            this.client = client;
+            this.statut = statut;
+           
         }
 
-
-        public DevisBO(DateTime dateDevis, float tauxTVADevis, float tauxRemiseGloDevis, float montantHtHorsRemisDevise, ClientBO devisClient, StatutBO devisStatut)
+        // Constructeur sans ID (pour nouveau devis)
+        public DevisBO(DateTime dateDevis, float tauxTVA, float tauxRemiseGlobale,
+                       float montantHT, ClientBO client, StatutBO statut)
         {
             this.dateDevis = dateDevis;
-            this.tauxTVADevis = tauxTVADevis;
-            this.tauxRemiseGloDevis = tauxRemiseGloDevis;
-            this.montantHtHorsRemisDevise = montantHtHorsRemisDevise;
-            this.devisClient = devisClient;
-            this.devisStatut = devisStatut;
+            this.tauxTVA = tauxTVA;
+            this.tauxRemiseGlobale = tauxRemiseGlobale;
+            this.montantHT = montantHT;
+            this.client = client;
+            this.statut = statut;
+            
         }
+
+        
         public DevisBO()
         {
 
         }
+        // Propriétés
         public int IdDevis
         {
             get => idDevis;
@@ -53,34 +63,43 @@ namespace Declic_InfoBO
             set => dateDevis = value;
         }
 
-        public float TauxTVADevis
+        public float TauxTVA
         {
-            get => tauxTVADevis;
-            set => tauxTVADevis = value;
+            get => tauxTVA;
+            set => tauxTVA = value;
         }
 
-        public float TauxRemiseGloDevis
+        public float TauxRemiseGlobale
         {
-            get => tauxRemiseGloDevis;
-            set => tauxRemiseGloDevis = value;
+            get => tauxRemiseGlobale;
+            set => tauxRemiseGlobale = value;
         }
 
-        public float MontantHtHorsRemisDevise
+        public float MontantHT
         {
-            get => montantHtHorsRemisDevise;
-            set => montantHtHorsRemisDevise = value;
+            get => montantHT;
+            set => montantHT = value;
         }
 
-        public ClientBO DevisClient
+        public ClientBO Client
         {
-            get => devisClient;
-            set => devisClient = value;
+            get => client;
+            set => client = value;
         }
 
-        public StatutBO DevisStatut
+        public StatutBO Statut
         {
-            get => devisStatut;
-            set => devisStatut = value;
+            get => statut;
+            set => statut = value;
         }
+
+        
+
+        public override string ToString()
+        {
+            return $"Devis #{IdDevis} - {Client?.NomClient} - {DateDevis.ToShortDateString()} - {MontantHT}€ HT - Statut : {Statut?.NomStatut}";
+        }
+
+
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Declic_InfoBO; // Référence la couche BO
 using System.Data.SqlClient;
+using System.Net.Sockets;
 
 
 namespace Declic_InfoDAL
@@ -70,14 +71,63 @@ namespace Declic_InfoDAL
                 string nom_categorie = monReader["nom_categorie"].ToString();
                 CategorieBO categorieProduit = new CategorieBO(id_categorie, nom_categorie);
 
-                ProduitBO unProduit = new ProduitBO(code_produit, libelle_produit , prix_vente_produit, categorieProduit);
+                ProduitBO unProduit = new ProduitBO(code_produit, libelle_produit, prix_vente_produit, categorieProduit);
 
                 lesProduits.Add(unProduit);
             }
+            
 
+            // Fermeture de la connexion
             maConnexion.Close();
 
             return lesProduits;
+
+            
         }
+            //Methode supprimer un produit
+            public static void SupprimerProduit(int id)
+            {
+                // Connexion à la BD
+                SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = maConnexion;
+                cmd.CommandText = "DELETE FROM Produit WHERE code_produit = @Id";
+                cmd.Parameters.AddWithValue("@Id", id);
+
+                cmd.ExecuteNonQuery(); // exécute la suppression
+
+                // Fermeture de la connexion
+                maConnexion.Close();
+            }
+
+
+            // Cette méthode modifie un utilisateur passé en paramètre dans la BD
+            public static int ModificationProduit(ProduitBO unProduit)
+            {
+                int nbEnr;
+
+                // Connexion à la BD
+                SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = maConnexion;
+                cmd.CommandText = @"UPDATE Produit
+                        SET libelle_produit = @libelle,
+                            prix_vente_produit = @prix,
+                            id_categorie = @categorie
+                        WHERE code_produit = @id";
+
+                cmd.Parameters.AddWithValue("@libelle", unProduit.LibelleProduit);
+                cmd.Parameters.AddWithValue("@prix", unProduit.PrixVenteProduit);
+                cmd.Parameters.AddWithValue("@categorie", unProduit.CategorieProduit.IdCategorie);
+                cmd.Parameters.AddWithValue("@id", unProduit.CodeProduit);
+
+                nbEnr = cmd.ExecuteNonQuery();
+
+                maConnexion.Close();
+
+                return nbEnr;
+            }
     }
 }
