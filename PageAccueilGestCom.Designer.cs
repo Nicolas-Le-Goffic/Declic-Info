@@ -132,10 +132,10 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(584, 94);
+            this.button6.Location = new System.Drawing.Point(608, 94);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(204, 50);
+            this.button6.Size = new System.Drawing.Size(178, 50);
             this.button6.TabIndex = 8;
             this.button6.Text = "Suppression de produits";
             this.button6.UseVisualStyleBackColor = true;
@@ -186,7 +186,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(444, 319);
+            this.button10.Location = new System.Drawing.Point(420, 318);
             this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(157, 57);
@@ -197,10 +197,10 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(629, 319);
+            this.button11.Location = new System.Drawing.Point(608, 320);
             this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(157, 57);
+            this.button11.Size = new System.Drawing.Size(178, 55);
             this.button11.TabIndex = 14;
             this.button11.Text = "Suppression de devis";
             this.button11.UseVisualStyleBackColor = true;
