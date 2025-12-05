@@ -42,9 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GestionDevis.cs" />
     <Compile Include="GestionClients.cs" />
     <Compile Include="GestionStatut.cs" />
+    <Compile Include="GestionDevis.cs" />
     <Compile Include="GestionUtilisateurs.cs" />
   </ItemGroup>
   <ItemGroup>

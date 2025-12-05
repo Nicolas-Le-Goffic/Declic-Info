@@ -57,6 +57,11 @@ namespace Declic_Info
             frm.ShowDialog();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormAjoutDevis frm = new FormAjoutDevis();
+            frm.ShowDialog();
+        }
         private void button6_Click(object sender, EventArgs e)
         {
             FormSuppressionProduit frm = new FormSuppressionProduit();

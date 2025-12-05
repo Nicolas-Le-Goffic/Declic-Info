@@ -8,6 +8,7 @@ namespace Declic_InfoBLL
 {
     public class GestionStatut
     {
+
         private static GestionStatut uneGestionStatut;
 
         public static GestionStatut GetGestionStatut()
@@ -17,6 +18,15 @@ namespace Declic_InfoBLL
                 uneGestionStatut = new GestionStatut();
             }
             return uneGestionStatut;
+        }
+         public static List<StatutBO> GetStatuts()
+        {
+            return StatutDAO.GetInstance().GetStatuts();
+        }
+
+        public static StatutBO GetStatutById(int id)
+        {
+            return StatutDAO.GetInstance().GetStatutById(id);
         }
 
         // Définit la chaîne de connexion grâce à la méthode SetchaineConnexion de la DAL

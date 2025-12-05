@@ -146,5 +146,6 @@ namespace Declic_Info
             txtVilleAdrLiv.Clear();
             txtCpAdrLiv.Clear();
         }
+
     }
 }
