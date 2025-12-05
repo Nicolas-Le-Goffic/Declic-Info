@@ -37,7 +37,7 @@ namespace Declic_InfoBLL
         }
       
 
-        public List<DevisBO> GetDevis()
+        public static List<DevisBO> GetDevis()
         {
             return DevisDAO.GetDevis();
         }
