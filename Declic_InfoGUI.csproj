@@ -53,6 +53,12 @@
     <Compile Include="FormModificationDevis.Designer.cs">
       <DependentUpon>FormModificationDevis.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAjoutDevis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAjoutDevis.Designer.cs">
+      <DependentUpon>FormAjoutDevis.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAjoutClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormModificationDevis.resx">
       <DependentUpon>FormModificationDevis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAjoutDevis.resx">
+      <DependentUpon>FormAjoutDevis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAjoutClient.resx">
       <DependentUpon>FormAjoutClient.cs</DependentUpon>

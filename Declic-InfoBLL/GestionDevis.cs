@@ -29,8 +29,15 @@ namespace Declic_InfoBLL
             ConnexionBD.GetConnexionBD().SetchaineConnexion(chaine);
         }
 
-        // Méthode qui renvoit une List d'objets Utilisateur en faisant appel à la méthode GetUtilisateurs() de la DAL
-        public static List<DevisBO> GetDevis()
+        // Méthode qui renvoi l'objet Utilisateur en l'ajoutant à la
+        // BD avec la méthode AjoutUtilisateur de la DAL
+        public static int CreerDevis(DevisBO unDevis)
+        {
+            return DevisDAO.AjoutDevis(unDevis);
+        }
+      
+
+        public List<DevisBO> GetDevis()
         {
             return DevisDAO.GetDevis();
         }
@@ -46,6 +53,5 @@ namespace Declic_InfoBLL
         {
             return DevisDAO.ModificationDevis(unDevis);
         }
-
     }
 }
