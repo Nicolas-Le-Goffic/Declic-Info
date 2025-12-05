@@ -30,7 +30,6 @@
         {
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.libelleDateTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.libelleMontantHTHorsRemiseTxt = new System.Windows.Forms.TextBox();
@@ -43,6 +42,7 @@
             this.libelleRemiseGloTxt = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,20 +60,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(116, 269);
+            this.label3.Location = new System.Drawing.Point(78, 266);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 14;
             this.label3.Text = "Date :";
-            // 
-            // libelleDateTxt
-            // 
-            this.libelleDateTxt.Location = new System.Drawing.Point(156, 266);
-            this.libelleDateTxt.Margin = new System.Windows.Forms.Padding(2);
-            this.libelleDateTxt.Name = "libelleDateTxt";
-            this.libelleDateTxt.Size = new System.Drawing.Size(74, 20);
-            this.libelleDateTxt.TabIndex = 13;
             // 
             // label2
             // 
@@ -117,7 +109,7 @@
             // statutComboBox
             // 
             this.statutComboBox.FormattingEnabled = true;
-            this.statutComboBox.Location = new System.Drawing.Point(294, 266);
+            this.statutComboBox.Location = new System.Drawing.Point(382, 263);
             this.statutComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.statutComboBox.Name = "statutComboBox";
             this.statutComboBox.Size = new System.Drawing.Size(180, 21);
@@ -126,7 +118,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(249, 269);
+            this.label5.Location = new System.Drawing.Point(337, 266);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 13);
@@ -136,7 +128,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(496, 269);
+            this.label6.Location = new System.Drawing.Point(584, 266);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 13);
@@ -145,7 +137,7 @@
             // 
             // libelleTVATxt
             // 
-            this.libelleTVATxt.Location = new System.Drawing.Point(554, 266);
+            this.libelleTVATxt.Location = new System.Drawing.Point(642, 263);
             this.libelleTVATxt.Margin = new System.Windows.Forms.Padding(2);
             this.libelleTVATxt.Name = "libelleTVATxt";
             this.libelleTVATxt.Size = new System.Drawing.Size(74, 20);
@@ -187,11 +179,19 @@
             this.dataGridView1.Size = new System.Drawing.Size(540, 150);
             this.dataGridView1.TabIndex = 23;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(119, 264);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 24;
+            // 
             // FormAjoutDevis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -202,7 +202,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.libelleDateTxt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.libelleMontantHTHorsRemiseTxt);
@@ -219,7 +218,6 @@
 
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox libelleDateTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox libelleMontantHTHorsRemiseTxt;
@@ -232,5 +230,6 @@
         private System.Windows.Forms.TextBox libelleRemiseGloTxt;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

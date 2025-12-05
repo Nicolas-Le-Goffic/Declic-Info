@@ -47,11 +47,9 @@ namespace Declic_Info
 
                 var statut = (StatutBO)statutComboBox.SelectedItem;
 
-                if (!DateTime.TryParse(libelleDateTxt.Text, out DateTime dateDevis))
-                {
-                    MessageBox.Show("Date invalide.");
-                    return;
-                }
+                // Récupération de la date via DateTimePicker
+                DateTime dateDevis = dateTimePicker1.Value;
+
 
                 if (!decimal.TryParse(libelleTVATxt.Text, out decimal tva))
                 {
@@ -86,7 +84,6 @@ namespace Declic_Info
                 MessageBox.Show("Devis enregistré avec succès !");
 
                 // Réinitialisation
-                libelleDateTxt.Clear();
                 libelleTVATxt.Clear();
                 libelleRemiseGloTxt.Clear();
                 libelleMontantHTHorsRemiseTxt.Clear();

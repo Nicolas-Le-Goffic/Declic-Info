@@ -35,19 +35,21 @@
             // dgvClients
             // 
             this.dgvClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClients.Location = new System.Drawing.Point(32, 16);
+            this.dgvClients.Location = new System.Drawing.Point(24, 13);
+            this.dgvClients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvClients.Name = "dgvClients";
             this.dgvClients.RowHeadersWidth = 51;
             this.dgvClients.RowTemplate.Height = 24;
-            this.dgvClients.Size = new System.Drawing.Size(1551, 437);
+            this.dgvClients.Size = new System.Drawing.Size(1163, 314);
             this.dgvClients.TabIndex = 0;
             // 
             // FormListeClient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(891, 469);
             this.Controls.Add(this.dgvClients);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormListeClient";
             this.Text = "FormListeClient";
             this.Load += new System.EventHandler(this.FormListeClient_Load);
