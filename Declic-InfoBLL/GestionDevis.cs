@@ -11,8 +11,9 @@ namespace Declic_InfoBLL
 {
     public class GestionDevis
     {
-        private static GestionDevis uneGestionDevis;
+        private static GestionDevis uneGestionDevis; // objet BLL
 
+        // Accesseur en lecture
         public static GestionDevis GetGestionDevis()
         {
             if (uneGestionDevis == null)
@@ -23,14 +24,20 @@ namespace Declic_InfoBLL
         }
 
         // Définit la chaîne de connexion grâce à la méthode SetchaineConnexion de la DAL
-        public static void SetchaineConnexion(ConnectionStringSettings chset)
+        public static void SetchaineConnexion(string value)
         {
-            string chaine = chset.ConnectionString;
-            ConnexionBD.GetConnexionBD().SetchaineConnexion(chaine);
+            ConnexionBD.GetConnexionBD().SetchaineConnexion(value);
         }
 
-        // Méthode qui renvoit une List d'objets Utilisateur en faisant appel à la méthode GetUtilisateurs() de la DAL
-        public static List<DevisBO> GetDevis()
+        // Méthode qui renvoi l'objet Utilisateur en l'ajoutant à la
+        // BD avec la méthode AjoutUtilisateur de la DAL
+        public static int CreerDevis(DevisBO unDevis)
+        {
+            return DevisDAO.AjoutDevis(unDevis);
+        }
+      
+
+        public List<DevisBO> GetDevis()
         {
             return DevisDAO.GetDevis();
         }
@@ -46,6 +53,5 @@ namespace Declic_InfoBLL
         {
             return DevisDAO.ModificationDevis(unDevis);
         }
-
     }
 }

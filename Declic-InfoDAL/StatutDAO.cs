@@ -9,79 +9,86 @@ namespace Declic_InfoDAL
     {
         private static StatutDAO unStatutDAO;
 
-        public static StatutDAO GetStatutDAO()
+        // Singleton
+        public static StatutDAO GetInstance()
         {
             if (unStatutDAO == null)
-            {
                 unStatutDAO = new StatutDAO();
-            }
             return unStatutDAO;
         }
 
-        // Récupère tous les statuts
-        public static List<StatutBO> GetStatuts()
-        {
-            int idStatut;
-            string nomStatut;
-            StatutBO unStatut;
+        private StatutDAO() { }
 
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+        // Récupérer tous les statuts
+        public List<StatutBO> GetStatuts()
+        {
             List<StatutBO> lesStatuts = new List<StatutBO>();
 
-
+            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
-            cmd.CommandText = "SELECT * FROM Statut";
-            SqlDataReader monreader = cmd.ExecuteReader();
+            cmd.CommandText = "SELECT id_statut, nom_statut FROM Statut;";
 
-            while (monreader.Read())
+            SqlDataReader lecteur = cmd.ExecuteReader();
+
+            while (lecteur.Read())
             {
-                idStatut = Int32.Parse(monreader["id_statut"].ToString());
-                if (monreader["nom_statut"] == DBNull.Value)
-                {
-                    nomStatut = default(string);
-                }
-                else
-                {
-                    nomStatut = monreader["nom_statut"].ToString();
-                }
-
-                unStatut = new StatutBO(idStatut, nomStatut);
-
-                lesStatuts.Add(unStatut);
+                StatutBO statut = new StatutBO(
+                    (int)lecteur["id_statut"],
+                    lecteur["nom_statut"].ToString()
+                );
+                lesStatuts.Add(statut);
             }
 
+            lecteur.Close();
             maConnexion.Close();
+
             return lesStatuts;
         }
 
-       
-        public static StatutBO GetStatut(int idUnStatut)
+        // Récupérer un statut par ID
+        public StatutBO GetStatutById(int id)
         {
-            int idStatut;
-            string nomStatut;
-            StatutBO unStatut = null;
+            StatutBO statut = null;
 
             SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
-
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
-            cmd.CommandText = "SELECT * FROM Statut WHERE id_statut = @idStatut";
-            cmd.Parameters.AddWithValue("@idStatut", idUnStatut);
+            cmd.CommandText = "SELECT id_statut, nom_statut FROM Statut WHERE id_statut = @id;";
+            cmd.Parameters.AddWithValue("@id", id);
 
-            SqlDataReader reader = cmd.ExecuteReader();
+            SqlDataReader lecteur = cmd.ExecuteReader();
 
-            if (reader.Read()) 
+            if (lecteur.Read())
             {
-                idStatut = Int32.Parse(reader["id_statut"].ToString());
-                nomStatut = reader["nom_statut"] == DBNull.Value ? null : reader["nom_statut"].ToString();
-
-                unStatut = new StatutBO(idStatut, nomStatut);
+                statut = new StatutBO(
+                    (int)lecteur["id_statut"],
+                    lecteur["nom_statut"].ToString()
+                );
             }
 
+            lecteur.Close();
             maConnexion.Close();
-            return unStatut;   
+
+            return statut;
         }
 
+        // Exemple d'ajout d'un nouveau statut
+        public static int AjoutStatut(StatutBO unStatut)
+        {
+            int nbEnr;
+
+            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = maConnexion;
+            cmd.CommandText = "INSERT INTO Statut (nom_statut) VALUES (@nom);";
+            cmd.Parameters.AddWithValue("@nom", unStatut.NomStatut);
+
+            nbEnr = cmd.ExecuteNonQuery();
+
+            maConnexion.Close();
+
+            return nbEnr;
+        }
     }
 }
