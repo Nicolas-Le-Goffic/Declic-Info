@@ -80,9 +80,21 @@ namespace Declic_Info
             frm.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button10_Click(object sender, EventArgs e)
+        {
+            FormModificationDevis frm = new FormModificationDevis();
+            frm.ShowDialog();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
         {
             FormAjoutClient frm = new FormAjoutClient();
+            frm.ShowDialog();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            FormSuppressionDevis frm = new FormSuppressionDevis();
             frm.ShowDialog();
         }
     }

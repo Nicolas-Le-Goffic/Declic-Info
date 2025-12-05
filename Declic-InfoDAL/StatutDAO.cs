@@ -20,7 +20,7 @@ namespace Declic_InfoDAL
         private StatutDAO() { }
 
         // Récupérer tous les statuts
-        public List<StatutBO> GetStatuts()
+        public static List<StatutBO> GetStatuts()
         {
             List<StatutBO> lesStatuts = new List<StatutBO>();
 
@@ -47,7 +47,7 @@ namespace Declic_InfoDAL
         }
 
         // Récupérer un statut par ID
-        public StatutBO GetStatutById(int id)
+        public static StatutBO GetStatutById(int id)
         {
             StatutBO statut = null;
 

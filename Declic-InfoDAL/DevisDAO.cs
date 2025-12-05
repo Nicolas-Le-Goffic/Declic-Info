@@ -58,7 +58,7 @@ namespace Declic_InfoDAL
 
             return nbEnr;
         }
-        public List<DevisBO> GetDevis()
+        public static List<DevisBO> GetDevis()
         {
             List<DevisBO> lesDevis = new List<DevisBO>();
 
