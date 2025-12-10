@@ -176,14 +176,8 @@ namespace Declic_InfoDAL
 
                 SqlDataReader monReader = cmd.ExecuteReader();
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
-                // Code 547 = violation de contrainte FK
-                if (ex.Number == 547)
-                {
-                    maConnexion.Close();
-                    return false;
-                }
             }
             // Fermeture de la connexion
             maConnexion.Close();
