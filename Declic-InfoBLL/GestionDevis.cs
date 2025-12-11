@@ -10,8 +10,13 @@ namespace Declic_InfoBLL
 {
     public class GestionDevis
     {
+<<<<<<< HEAD
         private static GestionDevis uneGestionDevis;// objet BLL
         // Accesseur en lecture
+=======
+        private static GestionDevis uneGestionDevis;
+
+>>>>>>> 419044fdfd7a991ca83814bfd469f0ad1a112939
         public static GestionDevis GetGestionDevis()
         {
             if (uneGestionDevis == null)
@@ -21,10 +26,15 @@ namespace Declic_InfoBLL
             return uneGestionDevis;
         }
         // Définit la chaîne de connexion grâce à la méthode SetchaineConnexion de la DAL
+<<<<<<< HEAD
 
         public static void SetchaineConnexion(string value)
+=======
+        public static void SetchaineConnexion(ConnectionStringSettings chset)
+>>>>>>> 419044fdfd7a991ca83814bfd469f0ad1a112939
         {
-            ConnexionBD.GetConnexionBD().SetchaineConnexion(value);
+            string chaine = chset.ConnectionString;
+            ConnexionBD.GetConnexionBD().SetchaineConnexion(chaine);
         }
 
         public static int CreerDevis(DevisBO unDevis)

@@ -41,7 +41,7 @@
             // ajoutProduitbtn
             // 
             this.ajoutProduitbtn.Location = new System.Drawing.Point(187, 254);
-            this.ajoutProduitbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.ajoutProduitbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ajoutProduitbtn.Name = "ajoutProduitbtn";
             this.ajoutProduitbtn.Size = new System.Drawing.Size(193, 71);
             this.ajoutProduitbtn.TabIndex = 0;
@@ -52,7 +52,7 @@
             // libelleProduitTxt
             // 
             this.libelleProduitTxt.Location = new System.Drawing.Point(157, 89);
-            this.libelleProduitTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.libelleProduitTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.libelleProduitTxt.Name = "libelleProduitTxt";
             this.libelleProduitTxt.Size = new System.Drawing.Size(275, 20);
             this.libelleProduitTxt.TabIndex = 1;
@@ -82,7 +82,7 @@
             // 
             this.categorieComboBox.FormattingEnabled = true;
             this.categorieComboBox.Location = new System.Drawing.Point(157, 167);
-            this.categorieComboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.categorieComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.categorieComboBox.Name = "categorieComboBox";
             this.categorieComboBox.Size = new System.Drawing.Size(180, 21);
             this.categorieComboBox.TabIndex = 4;
@@ -90,7 +90,7 @@
             // prixVenteProduittxt
             // 
             this.prixVenteProduittxt.Location = new System.Drawing.Point(157, 126);
-            this.prixVenteProduittxt.Margin = new System.Windows.Forms.Padding(2);
+            this.prixVenteProduittxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.prixVenteProduittxt.Name = "prixVenteProduittxt";
             this.prixVenteProduittxt.Size = new System.Drawing.Size(77, 20);
             this.prixVenteProduittxt.TabIndex = 5;
@@ -120,10 +120,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(139, 20);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(185, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(338, 39);
+            this.label4.Size = new System.Drawing.Size(421, 52);
             this.label4.TabIndex = 7;
             this.label4.Text = "Ajoutez un Produit !";
             // 
@@ -140,7 +139,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.libelleProduitTxt);
             this.Controls.Add(this.ajoutProduitbtn);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ajoutProduitbdd";
             this.Text = "ajoutProduit";
             this.ResumeLayout(false);
