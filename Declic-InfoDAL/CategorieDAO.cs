@@ -31,6 +31,7 @@ namespace Declic_InfoDAL
             CategorieBO uneCategorie;
 
             // Connexion à la BD
+
             SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
 
             // Création d'une liste vide d'objets Utilisateurs

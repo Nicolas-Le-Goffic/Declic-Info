@@ -69,7 +69,7 @@ namespace Declic_InfoDAL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
             cmd.CommandText = "SELECT * FROM Statut WHERE id_statut = @idStatut";
-            cmd.Parameters.AddWithValue("@idStatut", idUnStatut);
+            cmd.Parameters.AddWithValue("@idStatut", id);
 
             SqlDataReader reader = cmd.ExecuteReader();
 

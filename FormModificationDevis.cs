@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace Declic_Info
 {
     public partial class FormModificationDevis : Form
     {
+        List<ContenirBO> produitsDevis;
+        List<ContenirBO> suppressionsEnAttente = new List<ContenirBO>();
         public FormModificationDevis()
         {
             InitializeComponent();
@@ -36,6 +39,7 @@ namespace Declic_Info
             comboDevis.SelectedIndexChanged += comboDevis_SelectedIndexChanged;
             btnModif.Click += btnModif_Click;
         }
+
         private void LoadDevis()
         {
             List<DevisBO> devis = GestionDevis.GetDevis();
@@ -76,10 +80,56 @@ namespace Declic_Info
             txtMontantHTHorsRemiseDevis.Text = devis.MontantHtHorsRemisDevise.ToString();
             comboBoxClient.SelectedValue = devis.DevisClient.CodeClient;
             comboboxStatut.SelectedValue = devis.DevisStatut.IdStatut;
-
+            produitsDevis = GestionContenir.SelectDevisContenir(devis);
+            dgvProduit.DataSource = produitsDevis;
+            AjouterColonneSuppression();
             btnModif.Enabled = true;
             btnModifier.Enabled = false;
             SetTextBoxesEnabled(false);
+            
+        }
+        private void AjouterColonneSuppression()
+        {
+            if (!dgvProduit.Columns.Contains("btnSupprimer"))
+            {
+                DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+                btn.Name = "btnSupprimer";
+                btn.HeaderText = "Supprimer";
+                btn.Text = "Supprimer Produit";
+                btn.UseColumnTextForButtonValue = true;
+                btn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+                dgvProduit.Columns.Add(btn);
+            }
+        }
+        private void SupprimerLigne(int rowIndex)
+        {
+            DevisBO devis = (DevisBO)dgvProduit.Rows[rowIndex].Cells["Devis"].Value;
+            int idDevis = devis.IdDevis;
+            ProduitBO produit = (ProduitBO)dgvProduit.Rows[rowIndex].Cells["Produit"].Value;
+            int codeProduit = produit.CodeProduit;
+
+            int quantite = Convert.ToInt32(dgvProduit.Rows[rowIndex].Cells["Quantite"].Value);
+            int remise = Convert.ToInt32(dgvProduit.Rows[rowIndex].Cells["pourcentage_remise_ligne"].Value);
+
+            DialogResult result = MessageBox.Show(
+                "Supprimer ce produit du devis ?",
+                "Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (result != DialogResult.Yes)
+                return;
+            ContenirBO contenir = new ContenirBO(devis, produit, quantite, remise);
+            suppressionsEnAttente.Add(contenir);
+            // Retirer la ligne du DGV
+            produitsDevis.RemoveAt(rowIndex);
+            dgvProduit.DataSource = null;
+            dgvProduit.DataSource = produitsDevis;
+
+
+            MessageBox.Show("Produit supprimé du devis !");
         }
 
         private void btnModif_Click(object sender, EventArgs e)
@@ -125,6 +175,10 @@ namespace Declic_Info
                 MessageBox.Show("Veuillez saisir un Statut à modifier", "Erreur");
                 return;
             }
+            foreach (ContenirBO liaison in suppressionsEnAttente)
+            {
+                GestionContenir.SupContenir(liaison.Devis.IdDevis, liaison.Produit.CodeProduit);
+            }
             DevisBO devis = new DevisBO(idDevis, DateDevis, TauxTVADevis,TauxRemiseGloDevis,MontantHtHorsRemisDevise, (ClientBO)comboBoxClient.SelectedItem,(StatutBO)comboboxStatut.SelectedItem);
 
             // Appliquer la modification
@@ -150,9 +204,13 @@ namespace Declic_Info
             comboboxStatut.Enabled = enabled;
             comboBoxClient.Enabled = enabled;
         }
-        private void btnsupprimer_Click(object sender, EventArgs e)
-        {
 
+        private void dgvProduit_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvProduit.Columns["btnSupprimer"].Index)
+            {
+                SupprimerLigne(e.RowIndex);
+            }
         }
     }
 }

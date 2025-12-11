@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.comboDevis = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtMontantHTHorsRemiseDevis = new System.Windows.Forms.TextBox();
@@ -46,13 +47,20 @@
             this.comboBoxClient = new System.Windows.Forms.ComboBox();
             this.comboboxStatut = new System.Windows.Forms.ComboBox();
             this.dateDevisPicker = new System.Windows.Forms.DateTimePicker();
+            this.dgvProduit = new System.Windows.Forms.DataGridView();
+            this.gESTIONCOMMERCIALEDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gESTION_COMMERCIALEDataSet = new Declic_Info.GESTION_COMMERCIALEDataSet();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gESTIONCOMMERCIALEDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gESTION_COMMERCIALEDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // comboDevis
             // 
             this.comboDevis.FormattingEnabled = true;
-            this.comboDevis.Location = new System.Drawing.Point(395, 124);
-            this.comboDevis.Margin = new System.Windows.Forms.Padding(4);
+            this.comboDevis.Location = new System.Drawing.Point(337, 114);
+            this.comboDevis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboDevis.Name = "comboDevis";
             this.comboDevis.Size = new System.Drawing.Size(517, 24);
             this.comboDevis.TabIndex = 77;
@@ -61,7 +69,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(621, 188);
+            this.label8.Location = new System.Drawing.Point(115, 383);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(133, 24);
@@ -70,8 +78,8 @@
             // 
             // txtMontantHTHorsRemiseDevis
             // 
-            this.txtMontantHTHorsRemiseDevis.Location = new System.Drawing.Point(368, 349);
-            this.txtMontantHTHorsRemiseDevis.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMontantHTHorsRemiseDevis.Location = new System.Drawing.Point(309, 338);
+            this.txtMontantHTHorsRemiseDevis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMontantHTHorsRemiseDevis.Name = "txtMontantHTHorsRemiseDevis";
             this.txtMontantHTHorsRemiseDevis.Size = new System.Drawing.Size(132, 22);
             this.txtMontantHTHorsRemiseDevis.TabIndex = 62;
@@ -80,7 +88,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(143, 349);
+            this.label2.Location = new System.Drawing.Point(85, 338);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(212, 24);
@@ -91,7 +99,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(157, 314);
+            this.label1.Location = new System.Drawing.Point(99, 304);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(198, 24);
@@ -100,16 +108,16 @@
             // 
             // txtTauxTVADevis
             // 
-            this.txtTauxTVADevis.Location = new System.Drawing.Point(368, 285);
-            this.txtTauxTVADevis.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTauxTVADevis.Location = new System.Drawing.Point(309, 274);
+            this.txtTauxTVADevis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTauxTVADevis.Name = "txtTauxTVADevis";
             this.txtTauxTVADevis.Size = new System.Drawing.Size(132, 22);
             this.txtTauxTVADevis.TabIndex = 57;
             // 
             // txtTauxRemiseGloDevis
             // 
-            this.txtTauxRemiseGloDevis.Location = new System.Drawing.Point(368, 317);
-            this.txtTauxRemiseGloDevis.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTauxRemiseGloDevis.Location = new System.Drawing.Point(309, 306);
+            this.txtTauxRemiseGloDevis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTauxRemiseGloDevis.Name = "txtTauxRemiseGloDevis";
             this.txtTauxRemiseGloDevis.Size = new System.Drawing.Size(132, 22);
             this.txtTauxRemiseGloDevis.TabIndex = 56;
@@ -118,7 +126,7 @@
             // 
             this.Tel.AutoSize = true;
             this.Tel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tel.Location = new System.Drawing.Point(183, 282);
+            this.Tel.Location = new System.Drawing.Point(125, 272);
             this.Tel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Tel.Name = "Tel";
             this.Tel.Size = new System.Drawing.Size(172, 24);
@@ -129,7 +137,7 @@
             // 
             this.lblNom.AutoSize = true;
             this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblNom.Location = new System.Drawing.Point(221, 249);
+            this.lblNom.Location = new System.Drawing.Point(163, 239);
             this.lblNom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(134, 24);
@@ -140,8 +148,8 @@
             // 
             this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(368, 215);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtId.Location = new System.Drawing.Point(309, 206);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(132, 26);
             this.txtId.TabIndex = 52;
@@ -151,7 +159,7 @@
             // 
             this.lblId.AutoSize = true;
             this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblId.Location = new System.Drawing.Point(257, 216);
+            this.lblId.Location = new System.Drawing.Point(199, 206);
             this.lblId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(98, 24);
@@ -161,8 +169,8 @@
             // btnModifier
             // 
             this.btnModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnModifier.Location = new System.Drawing.Point(536, 428);
-            this.btnModifier.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModifier.Location = new System.Drawing.Point(51, 574);
+            this.btnModifier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(260, 46);
             this.btnModifier.TabIndex = 50;
@@ -173,8 +181,8 @@
             // btnModif
             // 
             this.btnModif.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnModif.Location = new System.Drawing.Point(1026, 105);
-            this.btnModif.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModif.Location = new System.Drawing.Point(99, 102);
+            this.btnModif.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModif.Name = "btnModif";
             this.btnModif.Size = new System.Drawing.Size(149, 46);
             this.btnModif.TabIndex = 49;
@@ -185,7 +193,7 @@
             // 
             this.labelModModif.AutoSize = true;
             this.labelModModif.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelModModif.Location = new System.Drawing.Point(455, 42);
+            this.labelModModif.Location = new System.Drawing.Point(361, 52);
             this.labelModModif.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelModModif.Name = "labelModModif";
             this.labelModModif.Size = new System.Drawing.Size(427, 37);
@@ -197,7 +205,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(907, 188);
+            this.label3.Location = new System.Drawing.Point(364, 383);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 24);
@@ -207,7 +215,8 @@
             // comboBoxClient
             // 
             this.comboBoxClient.FormattingEnabled = true;
-            this.comboBoxClient.Location = new System.Drawing.Point(579, 231);
+            this.comboBoxClient.Location = new System.Drawing.Point(72, 426);
+            this.comboBoxClient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxClient.Name = "comboBoxClient";
             this.comboBoxClient.Size = new System.Drawing.Size(239, 24);
             this.comboBoxClient.TabIndex = 80;
@@ -215,23 +224,62 @@
             // comboboxStatut
             // 
             this.comboboxStatut.FormattingEnabled = true;
-            this.comboboxStatut.Location = new System.Drawing.Point(873, 231);
+            this.comboboxStatut.Location = new System.Drawing.Point(331, 426);
+            this.comboboxStatut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboboxStatut.Name = "comboboxStatut";
-            this.comboboxStatut.Size = new System.Drawing.Size(202, 24);
+            this.comboboxStatut.Size = new System.Drawing.Size(201, 24);
             this.comboboxStatut.TabIndex = 81;
             // 
             // dateDevisPicker
             // 
-            this.dateDevisPicker.Location = new System.Drawing.Point(368, 251);
+            this.dateDevisPicker.Location = new System.Drawing.Point(309, 241);
+            this.dateDevisPicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateDevisPicker.Name = "dateDevisPicker";
-            this.dateDevisPicker.Size = new System.Drawing.Size(194, 22);
+            this.dateDevisPicker.Size = new System.Drawing.Size(193, 22);
             this.dateDevisPicker.TabIndex = 82;
             // 
-            // FormModifSupprimerDevis
+            // dgvProduit
+            // 
+            this.dgvProduit.AllowUserToOrderColumns = true;
+            this.dgvProduit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduit.Location = new System.Drawing.Point(709, 206);
+            this.dgvProduit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvProduit.Name = "dgvProduit";
+            this.dgvProduit.RowHeadersWidth = 51;
+            this.dgvProduit.RowTemplate.Height = 24;
+            this.dgvProduit.Size = new System.Drawing.Size(947, 331);
+            this.dgvProduit.TabIndex = 83;
+            this.dgvProduit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduit_CellContentClick);
+            // 
+            // gESTIONCOMMERCIALEDataSetBindingSource
+            // 
+            this.gESTIONCOMMERCIALEDataSetBindingSource.DataSource = this.gESTION_COMMERCIALEDataSet;
+            this.gESTIONCOMMERCIALEDataSetBindingSource.Position = 0;
+            // 
+            // gESTION_COMMERCIALEDataSet
+            // 
+            this.gESTION_COMMERCIALEDataSet.DataSetName = "GESTION_COMMERCIALEDataSet";
+            this.gESTION_COMMERCIALEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(791, 156);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(462, 37);
+            this.label4.TabIndex = 84;
+            this.label4.Text = "Liste des produits dans le devis";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // FormModificationDevis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1342, 527);
+            this.ClientSize = new System.Drawing.Size(1743, 686);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dgvProduit);
             this.Controls.Add(this.dateDevisPicker);
             this.Controls.Add(this.comboboxStatut);
             this.Controls.Add(this.comboBoxClient);
@@ -250,8 +298,12 @@
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnModif);
             this.Controls.Add(this.labelModModif);
-            this.Name = "FormModifSupprimerDevis";
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "FormModificationDevis";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gESTIONCOMMERCIALEDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gESTION_COMMERCIALEDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +329,9 @@
         private System.Windows.Forms.ComboBox comboBoxClient;
         private System.Windows.Forms.ComboBox comboboxStatut;
         private System.Windows.Forms.DateTimePicker dateDevisPicker;
+        private System.Windows.Forms.DataGridView dgvProduit;
+        private System.Windows.Forms.BindingSource gESTIONCOMMERCIALEDataSetBindingSource;
+        private GESTION_COMMERCIALEDataSet gESTION_COMMERCIALEDataSet;
+        private System.Windows.Forms.Label label4;
     }
 }

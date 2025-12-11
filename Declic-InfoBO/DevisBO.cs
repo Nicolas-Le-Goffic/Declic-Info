@@ -16,6 +16,7 @@ namespace Declic_InfoBO
         private ClientBO client;
         private StatutBO statut;
 
+
         private float remiseGlobale;
 
         // Constructeur complet
@@ -89,6 +90,11 @@ namespace Declic_InfoBO
         {
             get => statut;
             set => statut = value;
+        }
+
+        public override string ToString()
+        {
+            return $"{idDevis}";
         }
     }
 }
