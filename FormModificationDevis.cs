@@ -93,7 +93,6 @@ namespace Declic_Info
         private void btnModifier_Click(object sender, EventArgs e)
         {
             // Validation des champs numériques
-<<<<<<< HEAD
             if (!int.TryParse(txtId.Text, out int idDevis) ||
                 !float.TryParse(txtTauxTVADevis.Text, out float TauxTVADevis) ||
                 !float.TryParse(txtTauxRemiseGloDevis.Text, out float TauxRemiseGloDevis) ||
@@ -104,41 +103,6 @@ namespace Declic_Info
                 return;
             }
             DevisBO devis = new DevisBO(idDevis,dateDevisPicker.Value,TauxTVADevis,TauxRemiseGloDevis, (ClientBO)comboBoxClient.SelectedItem,(StatutBO)comboboxStatut.SelectedItem);
-=======
-            if (!int.TryParse(txtId.Text, out int idDevis)){
-                MessageBox.Show("Veuillez saisir un devis à modifier", "Erreur");
-                return;
-            }
-             if(!float.TryParse(txtTauxTVADevis.Text, out float TauxTVADevis)) {
-                MessageBox.Show("Veuillez saisir un Taux de TVA valide à modifier", "Erreur");
-                return;
-            }
-            if (!float.TryParse(txtTauxRemiseGloDevis.Text, out float TauxRemiseGloDevis)) {
-                MessageBox.Show("Veuillez saisir un Taux de Remise Global valide à modifier", "Erreur");
-                return;
-            }
-            if (!float.TryParse(txtMontantHTHorsRemiseDevis.Text,out float MontantHtHorsRemisDevise))
-            {
-                MessageBox.Show("Veuillez saisir un Montant Hors Taxes valide à modifier", "Erreur");
-                return;
-            }
-            if (!DateTime.TryParse(dateDevisPicker.Value.ToString(), out DateTime DateDevis))
-            {
-                MessageBox.Show("Veuillez saisir une Date valide à modifier", "Erreur");
-                return;
-            }
-            if (comboBoxClient.SelectedItem == null)
-            {
-                MessageBox.Show("Veuillez saisir un Client à modifier", "Erreur");
-                return;
-            }
-            if (comboboxStatut.SelectedItem == null)
-            {
-                MessageBox.Show("Veuillez saisir un Statut à modifier", "Erreur");
-                return;
-            }
-            DevisBO devis = new DevisBO(idDevis, DateDevis, TauxTVADevis,TauxRemiseGloDevis,MontantHtHorsRemisDevise, (ClientBO)comboBoxClient.SelectedItem,(StatutBO)comboboxStatut.SelectedItem);
->>>>>>> 419044fdfd7a991ca83814bfd469f0ad1a112939
 
             // Appliquer la modification
             GestionDevis.ModificationDevis(devis);

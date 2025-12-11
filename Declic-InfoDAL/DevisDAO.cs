@@ -185,7 +185,7 @@ namespace Declic_InfoDAL
                 cmd.Parameters.AddWithValue("@Id", id);
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 if (ex.Number == 547) // contrainte FK
                 {
