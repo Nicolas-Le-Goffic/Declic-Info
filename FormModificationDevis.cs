@@ -73,7 +73,7 @@ namespace Declic_Info
             dateDevisPicker.Value = devis.DateDevis;
             txtTauxTVADevis.Text = devis.TauxTVADevis.ToString();
             txtTauxRemiseGloDevis.Text = devis.TauxRemiseGloDevis.ToString();
-            txtMontantHTHorsRemiseDevis.Text = devis.MontantHtHorsRemisDevise.ToString();
+            txtMontantHTHorsRemiseDevis.Text = devis.MontantHtHorsRemise.ToString();
             comboBoxClient.SelectedValue = devis.DevisClient.CodeClient;
             comboboxStatut.SelectedValue = devis.DevisStatut.IdStatut;
 
@@ -96,13 +96,13 @@ namespace Declic_Info
             if (!int.TryParse(txtId.Text, out int idDevis) ||
                 !float.TryParse(txtTauxTVADevis.Text, out float TauxTVADevis) ||
                 !float.TryParse(txtTauxRemiseGloDevis.Text, out float TauxRemiseGloDevis) ||
-                !float.TryParse(txtMontantHTHorsRemiseDevis.Text,out float MontantHtHorsRemisDevise))
+                !float.TryParse(txtMontantHTHorsRemiseDevis.Text,out float MontantHtHorsRemise))
 
             {
                 MessageBox.Show("Veuillez saisir des valeurs numériques valides !", "Erreur");
                 return;
             }
-            DevisBO devis = new DevisBO(idDevis,dateDevisPicker.Value,TauxTVADevis,TauxRemiseGloDevis,MontantHtHorsRemisDevise, (ClientBO)comboBoxClient.SelectedItem,(StatutBO)comboboxStatut.SelectedItem);
+            DevisBO devis = new DevisBO(idDevis,dateDevisPicker.Value,TauxTVADevis,TauxRemiseGloDevis, (ClientBO)comboBoxClient.SelectedItem,(StatutBO)comboboxStatut.SelectedItem);
 
             // Appliquer la modification
             GestionDevis.ModificationDevis(devis);
