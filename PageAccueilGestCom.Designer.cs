@@ -44,6 +44,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -91,7 +92,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(333, 170);
+            this.button3.Location = new System.Drawing.Point(315, 170);
             this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(118, 46);
@@ -135,10 +136,10 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(438, 76);
+            this.button6.Location = new System.Drawing.Point(456, 76);
             this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(153, 41);
+            this.button6.Size = new System.Drawing.Size(134, 41);
             this.button6.TabIndex = 8;
             this.button6.Text = "Suppression de produits";
             this.button6.UseVisualStyleBackColor = true;
@@ -146,10 +147,10 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(472, 170);
+            this.button7.Location = new System.Drawing.Point(456, 170);
             this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(118, 46);
+            this.button7.Size = new System.Drawing.Size(134, 46);
             this.button7.TabIndex = 9;
             this.button7.Text = "Suppression de clients";
             this.button7.UseVisualStyleBackColor = true;
@@ -187,15 +188,8 @@
             this.label4.Text = "Devis :";
             // 
             // button10
-            //
-            this.button7.Location = new System.Drawing.Point(630, 209);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(158, 56);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "Suppression de clients";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            this.button10.Location = new System.Drawing.Point(333, 259);
+            // 
+            this.button10.Location = new System.Drawing.Point(315, 258);
             this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(118, 46);
@@ -206,10 +200,10 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(472, 259);
+            this.button11.Location = new System.Drawing.Point(456, 260);
             this.button11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(118, 46);
+            this.button11.Size = new System.Drawing.Size(134, 45);
             this.button11.TabIndex = 14;
             this.button11.Text = "Suppression de devis";
             this.button11.UseVisualStyleBackColor = true;
@@ -226,11 +220,22 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(34, 325);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 16;
+            this.button13.Text = "Synthèse";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // PageAccueilGestCom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
@@ -273,5 +278,6 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
     }
 }

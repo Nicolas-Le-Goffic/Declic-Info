@@ -45,6 +45,7 @@
     <Compile Include="DevisBO.cs" />
     <Compile Include="ClientBO.cs" />
     <Compile Include="StatutBO.cs" />
+    <Compile Include="SyntheseClientBO.cs" />
     <Compile Include="Utilisateur.cs" />
     <Compile Include="ProduitBO.cs" />
     <Compile Include="CategorieBO.cs" />

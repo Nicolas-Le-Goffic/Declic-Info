@@ -101,6 +101,12 @@
     <Compile Include="FormSuppressionProduit.Designer.cs">
       <DependentUpon>FormSuppressionProduit.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSynthese.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSynthese.Designer.cs">
+      <DependentUpon>FormSynthese.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmModificationClients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSuppressionProduit.resx">
       <DependentUpon>FormSuppressionProduit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSynthese.resx">
+      <DependentUpon>FormSynthese.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

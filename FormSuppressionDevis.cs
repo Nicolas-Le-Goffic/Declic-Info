@@ -43,8 +43,8 @@ namespace Declic_Info
                               "Confirmation", MessageBoxButtons.YesNo);
                 if (confirm == DialogResult.Yes)
                 {
-                    DevisBO Devis = (DevisBO)devisCombobox.SelectedItem;
-                    bool verifSupClient = GestionDevis.SupprimerDevis(Devis.IdDevis);
+                    int.TryParse(devisCombobox.SelectedItem.ToString(), out int id);
+                    bool verifSupClient = GestionDevis.SupprimerDevis(id);
                     MessageBox.Show("Le Devis a été supprimé !");
                     this.Close();
                 }
