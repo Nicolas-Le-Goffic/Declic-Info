@@ -40,7 +40,6 @@ namespace Declic_InfoBO
         {
         }
 
-<<<<<<< HEAD
         public List<ContenirBO> Lignes { get; set; } = new List<ContenirBO>();
 
         public decimal TotalHTHorsRemise => Lignes.Sum(l => l.SousTotalHT);
@@ -66,9 +65,6 @@ namespace Declic_InfoBO
             set { /* setter présent si tu veux l'assigner depuis la BDD */ }
         }
 
-=======
-        // Propriétés
->>>>>>> 419044fdfd7a991ca83814bfd469f0ad1a112939
         public int IdDevis
         {
             get => idDevis;

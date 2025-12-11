@@ -17,15 +17,10 @@ namespace Declic_Info
         {
             InitializeComponent();
 
-<<<<<<< HEAD
             // Connexion BDD
             GestionDevis.SetchaineConnexion(
                 ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"].ConnectionString
             );
-=======
-            // Récupération chaîne de connexion
-            GestionCategories.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"]);
->>>>>>> 419044fdfd7a991ca83814bfd469f0ad1a112939
 
             // Clients
             dataGridViewClients.DataSource = GestionClients.GetInfosClients();
