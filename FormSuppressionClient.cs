@@ -18,8 +18,6 @@ namespace Declic_Info
         public FormSuppressionClient()
         {
             InitializeComponent();
-            // Récupération de chaîne de connexion à la BD à l'ouverture du formulaire
-            GestionCategories.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"]);
 
 
             List<ClientBO> listeClients = GestionClients.GetClients();
@@ -68,9 +66,5 @@ namespace Declic_Info
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

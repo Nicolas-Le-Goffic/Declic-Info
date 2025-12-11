@@ -39,8 +39,8 @@ namespace Declic_InfoDAL
             int cpAdrLivClient = unClient.CpAdrLivClient;
 
             // Connexion
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
-
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
 
@@ -98,8 +98,8 @@ namespace Declic_InfoDAL
             ClientBO unClient;
 
             // Connexion à la BD
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
-
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
             // Création d'une liste vide d'objets Utilisateurs
             List<ClientBO> lesClients = new List<ClientBO>();
 
@@ -185,8 +185,8 @@ namespace Declic_InfoDAL
             ClientBO unClient;
 
             // Connexion à la BD
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
-
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
             // Création d'une liste vide d'objets Utilisateurs
             List<ClientBO> lesClients = new List<ClientBO>();
 
@@ -223,8 +223,8 @@ namespace Declic_InfoDAL
             string nomClient;
             ClientBO unClient;
             // Connexion à la BD
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
-
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
             // Création d'une liste vide d'objets Utilisateurs
             List<ClientBO> lesClients = new List<ClientBO>();
 
@@ -260,8 +260,8 @@ namespace Declic_InfoDAL
         public static bool SupprimerClient(int id)
         {
             // Connexion à la BD
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
-
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
             // Création d'une liste vide d'objets Utilisateurs
             List<ClientBO> lesClients = new List<ClientBO>();
             try
@@ -294,8 +294,8 @@ namespace Declic_InfoDAL
                 int nbEnr;
 
                 // Connexion à la BD
-                SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
-
+                SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+                maConnexion.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = maConnexion;
                 cmd.CommandText = @"UPDATE Client 

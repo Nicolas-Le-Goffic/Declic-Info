@@ -19,8 +19,6 @@ namespace Declic_Info
         public FormSuppressionProduit()
         {
             InitializeComponent();
-            // Récupération de chaîne de connexion à la BD à l'ouverture du formulaire
-            GestionProduits.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"]);
 
             // Charger la liste des produits dans la ComboBox
             List<ProduitBO> listeProduits = GestionProduits.GetProduits();

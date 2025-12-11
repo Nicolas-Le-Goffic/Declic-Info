@@ -33,7 +33,8 @@ namespace Declic_InfoDAL
             int idCategorie = unProduit.CategorieProduit.IdCategorie;
 
             // Connexion à la BD
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
@@ -53,7 +54,8 @@ namespace Declic_InfoDAL
         {
             List<ProduitBO> lesProduits = new List<ProduitBO>();
 
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
             cmd.CommandText = @"
@@ -89,8 +91,8 @@ namespace Declic_InfoDAL
             public static void SupprimerProduit(int id)
             {
                 // Connexion à la BD
-                SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
-
+                SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+                maConnexion.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = maConnexion;
                 cmd.CommandText = "DELETE FROM Produit WHERE code_produit = @Id";
@@ -110,7 +112,8 @@ namespace Declic_InfoDAL
 
             // Connexion à la BD
 
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
             SqlCommand cmd = new SqlCommand();
                 cmd.Connection = maConnexion;
                 cmd.CommandText = @"UPDATE Produit

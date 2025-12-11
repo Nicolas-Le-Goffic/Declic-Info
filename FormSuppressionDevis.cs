@@ -18,8 +18,6 @@ namespace Declic_Info
         public FormSuppressionDevis()
         {
             InitializeComponent();
-            // Récupération de chaîne de connexion à la BD à l'ouverture du formulaire
-            GestionCategories.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"]);
 
             List<DevisBO> listeDevis = GestionDevis.GetDevis();
             foreach (DevisBO devis in listeDevis)

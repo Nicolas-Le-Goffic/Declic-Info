@@ -43,7 +43,16 @@ namespace Declic_InfoBO
             this.statut = statut;
             
         }
+        public DevisBO(int idDevis, DateTime dateDevis, float tauxTVA, float montantHT, ClientBO client, StatutBO statut)
+        {
+            this.idDevis = idDevis;
+            this.dateDevis = dateDevis;
+            this.tauxTVA = tauxTVA;
+            this.montantHT = montantHT;
+            this.client = client;
+            this.statut = statut;
 
+        }
         public DevisBO()
         {
 

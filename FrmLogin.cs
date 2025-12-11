@@ -18,8 +18,6 @@ namespace Declic_Info
         public FrmLogin()
         {
             InitializeComponent();
-            GestionUtilisateurs.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"].ConnectionString);
-
         }
 
         private void btnConnexion_Click(object sender, EventArgs e)

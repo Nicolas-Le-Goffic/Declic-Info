@@ -12,10 +12,6 @@ namespace Declic_Info
         public FormAjoutDevis()
         {
             InitializeComponent();
-
-            // Récupération chaîne de connexion
-            GestionCategories.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"]);
-
             // Chargement des clients
             dataGridView1.DataSource = GestionClients.GetClients();
 

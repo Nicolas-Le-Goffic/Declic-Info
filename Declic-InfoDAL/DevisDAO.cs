@@ -35,7 +35,8 @@ namespace Declic_InfoDAL
             int idStatut = unDevis.DevisStatut.IdStatut;
 
             // Connexion BD
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
 
@@ -62,7 +63,8 @@ namespace Declic_InfoDAL
         {
             List<DevisBO> lesDevis = new List<DevisBO>();
 
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
             cmd.CommandText = @"
@@ -70,7 +72,7 @@ namespace Declic_InfoDAL
                 FROM Devis d, client c, statut s
                 WHERE d.code_client = c.code_client
                 AND d.id_statut = s.id_statut ";
-
+            
             SqlDataReader monReader = cmd.ExecuteReader();
 
             while (monReader.Read())
@@ -113,7 +115,8 @@ namespace Declic_InfoDAL
         {
             DevisBO unDevis = new DevisBO();
 
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
             cmd.CommandText = @"
@@ -164,7 +167,8 @@ namespace Declic_InfoDAL
         public static bool SupprimerDevis(int id)
         {
             // Connexion à la BD
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
 
             try
             {
@@ -195,7 +199,8 @@ namespace Declic_InfoDAL
             int nbEnr;
 
             // Connexion à la BD
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;

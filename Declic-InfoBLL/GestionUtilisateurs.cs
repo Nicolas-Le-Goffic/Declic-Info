@@ -30,8 +30,8 @@ namespace Declic_InfoBLL
                 }
                 // Méthode qui renvoit une List d'objets Utilisateur en faisant appel à la méthode VerifUtilisateurs() de la DAL
                 public static bool VerifUtilisateur(Utilisateur unUtilisateur)
-                        {
-                            return UtilisateurDAO.VerifUtilisateur(unUtilisateur);
+                {
+                    return UtilisateurDAO.VerifUtilisateur(unUtilisateur);
                 }
         }
     }

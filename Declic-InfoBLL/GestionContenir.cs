@@ -48,5 +48,9 @@ namespace Declic_InfoBLL
         {
             return ContenirDAO.SelectDevisContenir(devis);
         }
+        public static List<ProduitBO> SelectProduitsSansDevis(DevisBO devis)
+        {
+            return ContenirDAO.SelectProduitsSansDevis(devis);
+        }
     }
 }

@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.comboDevis = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtMontantHTHorsRemiseDevis = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTauxTVADevis = new System.Windows.Forms.TextBox();
             this.txtTauxRemiseGloDevis = new System.Windows.Forms.TextBox();
@@ -51,16 +49,24 @@
             this.gESTIONCOMMERCIALEDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gESTION_COMMERCIALEDataSet = new Declic_Info.GESTION_COMMERCIALEDataSet();
             this.label4 = new System.Windows.Forms.Label();
+            this.dgvProduitsHorsDevis = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gESTIONCOMMERCIALEDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gESTION_COMMERCIALEDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduitsHorsDevis)).BeginInit();
             this.SuspendLayout();
             // 
             // comboDevis
             // 
             this.comboDevis.FormattingEnabled = true;
             this.comboDevis.Location = new System.Drawing.Point(337, 114);
-            this.comboDevis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboDevis.Margin = new System.Windows.Forms.Padding(4);
             this.comboDevis.Name = "comboDevis";
             this.comboDevis.Size = new System.Drawing.Size(517, 24);
             this.comboDevis.TabIndex = 77;
@@ -76,25 +82,6 @@
             this.label8.TabIndex = 71;
             this.label8.Text = "Client du devis";
             // 
-            // txtMontantHTHorsRemiseDevis
-            // 
-            this.txtMontantHTHorsRemiseDevis.Location = new System.Drawing.Point(309, 338);
-            this.txtMontantHTHorsRemiseDevis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtMontantHTHorsRemiseDevis.Name = "txtMontantHTHorsRemiseDevis";
-            this.txtMontantHTHorsRemiseDevis.Size = new System.Drawing.Size(132, 22);
-            this.txtMontantHTHorsRemiseDevis.TabIndex = 62;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(85, 338);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(212, 24);
-            this.label2.TabIndex = 59;
-            this.label2.Text = "Montant HT hors remise";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -109,7 +96,7 @@
             // txtTauxTVADevis
             // 
             this.txtTauxTVADevis.Location = new System.Drawing.Point(309, 274);
-            this.txtTauxTVADevis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTauxTVADevis.Margin = new System.Windows.Forms.Padding(4);
             this.txtTauxTVADevis.Name = "txtTauxTVADevis";
             this.txtTauxTVADevis.Size = new System.Drawing.Size(132, 22);
             this.txtTauxTVADevis.TabIndex = 57;
@@ -117,7 +104,7 @@
             // txtTauxRemiseGloDevis
             // 
             this.txtTauxRemiseGloDevis.Location = new System.Drawing.Point(309, 306);
-            this.txtTauxRemiseGloDevis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTauxRemiseGloDevis.Margin = new System.Windows.Forms.Padding(4);
             this.txtTauxRemiseGloDevis.Name = "txtTauxRemiseGloDevis";
             this.txtTauxRemiseGloDevis.Size = new System.Drawing.Size(132, 22);
             this.txtTauxRemiseGloDevis.TabIndex = 56;
@@ -149,7 +136,7 @@
             this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtId.Location = new System.Drawing.Point(309, 206);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(132, 26);
             this.txtId.TabIndex = 52;
@@ -170,7 +157,7 @@
             // 
             this.btnModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.btnModifier.Location = new System.Drawing.Point(51, 574);
-            this.btnModifier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModifier.Margin = new System.Windows.Forms.Padding(4);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(260, 46);
             this.btnModifier.TabIndex = 50;
@@ -182,7 +169,7 @@
             // 
             this.btnModif.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.btnModif.Location = new System.Drawing.Point(99, 102);
-            this.btnModif.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModif.Margin = new System.Windows.Forms.Padding(4);
             this.btnModif.Name = "btnModif";
             this.btnModif.Size = new System.Drawing.Size(149, 46);
             this.btnModif.TabIndex = 49;
@@ -247,7 +234,7 @@
             this.dgvProduit.Name = "dgvProduit";
             this.dgvProduit.RowHeadersWidth = 51;
             this.dgvProduit.RowTemplate.Height = 24;
-            this.dgvProduit.Size = new System.Drawing.Size(947, 331);
+            this.dgvProduit.Size = new System.Drawing.Size(812, 138);
             this.dgvProduit.TabIndex = 83;
             this.dgvProduit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduit_CellContentClick);
             // 
@@ -273,11 +260,88 @@
             this.label4.Text = "Liste des produits dans le devis";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // dgvProduitsHorsDevis
+            // 
+            this.dgvProduitsHorsDevis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduitsHorsDevis.Location = new System.Drawing.Point(579, 451);
+            this.dgvProduitsHorsDevis.Name = "dgvProduitsHorsDevis";
+            this.dgvProduitsHorsDevis.RowHeadersWidth = 51;
+            this.dgvProduitsHorsDevis.Size = new System.Drawing.Size(554, 188);
+            this.dgvProduitsHorsDevis.TabIndex = 85;
+            this.dgvProduitsHorsDevis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
+            this.label5.Location = new System.Drawing.Point(617, 422);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(468, 26);
+            this.label5.TabIndex = 86;
+            this.label5.Text = "Liste des produits qui ne sont pas dans le devis";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
+            this.label6.Location = new System.Drawing.Point(1145, 422);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(207, 26);
+            this.label6.TabIndex = 87;
+            this.label6.Text = "Quantité de produits";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1150, 466);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(202, 22);
+            this.textBox1.TabIndex = 88;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(1400, 466);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(202, 22);
+            this.textBox2.TabIndex = 90;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
+            this.label7.Location = new System.Drawing.Point(1385, 422);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(237, 26);
+            this.label7.TabIndex = 89;
+            this.label7.Text = "Pourcentage de remise";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.button1.Location = new System.Drawing.Point(1150, 531);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(260, 46);
+            this.button1.TabIndex = 91;
+            this.button1.Text = "Ajouter un produit dans le devis";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormModificationDevis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1743, 686);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.dgvProduitsHorsDevis);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvProduit);
             this.Controls.Add(this.dateDevisPicker);
@@ -286,8 +350,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboDevis);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtMontantHTHorsRemiseDevis);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTauxTVADevis);
             this.Controls.Add(this.txtTauxRemiseGloDevis);
@@ -304,6 +366,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gESTIONCOMMERCIALEDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gESTION_COMMERCIALEDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduitsHorsDevis)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,8 +376,6 @@
 
         private System.Windows.Forms.ComboBox comboDevis;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtMontantHTHorsRemiseDevis;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTauxTVADevis;
         private System.Windows.Forms.TextBox txtTauxRemiseGloDevis;
@@ -333,5 +394,12 @@
         private System.Windows.Forms.BindingSource gESTIONCOMMERCIALEDataSetBindingSource;
         private GESTION_COMMERCIALEDataSet gESTION_COMMERCIALEDataSet;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dgvProduitsHorsDevis;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Configuration;
 using System.Data.SqlClient;
 
 namespace Declic_InfoDAL
@@ -11,7 +12,7 @@ namespace Declic_InfoDAL
     {
         private SqlConnection maConnexion;
         private static ConnexionBD uneConnexionBD; // instance d'une connexion
-        private string chaineConnexion; // chaîne de connexion à la BD
+        private static string chaineConnexion = ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"].ConnectionString; // chaîne de connexion à la BD
 
         // Accesseur en lecture de la chaîne de connexion
         public string GetchaineConnexion()
@@ -38,20 +39,9 @@ namespace Declic_InfoDAL
         // Constructeur privé
         private ConnexionBD(){}
 
-        public SqlConnection GetSqlConnexion()
+        public static SqlConnection GetSqlConnexion()
         {
-            if (maConnexion == null)
-            {
-                maConnexion = new SqlConnection();
-            }
-            maConnexion.ConnectionString = chaineConnexion;
-
-            // Si la connexion est fermée, on l’ouvre
-            if (maConnexion.State == System.Data.ConnectionState.Closed)
-            {
-                maConnexion.Open();
-            }
-            return maConnexion;
+            return new SqlConnection(chaineConnexion);
         }
 
         public void CloseConnexion()

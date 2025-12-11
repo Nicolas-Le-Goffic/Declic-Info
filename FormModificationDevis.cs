@@ -17,14 +17,11 @@ namespace Declic_Info
     public partial class FormModificationDevis : Form
     {
         List<ContenirBO> produitsDevis;
+        List<ProduitBO> produitsHorsDevis;
         List<ContenirBO> suppressionsEnAttente = new List<ContenirBO>();
         public FormModificationDevis()
         {
             InitializeComponent();
-
-            // Connexion BD
-            GestionUtilisateurs.SetchaineConnexion(
-                ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"].ConnectionString);
 
             // Charger les clients dans la ComboBox
             LoadDevis();
@@ -77,17 +74,19 @@ namespace Declic_Info
             dateDevisPicker.Value = devis.DateDevis;
             txtTauxTVADevis.Text = devis.TauxTVADevis.ToString();
             txtTauxRemiseGloDevis.Text = devis.TauxRemiseGloDevis.ToString();
-            txtMontantHTHorsRemiseDevis.Text = devis.MontantHtHorsRemisDevise.ToString();
             comboBoxClient.SelectedValue = devis.DevisClient.CodeClient;
             comboboxStatut.SelectedValue = devis.DevisStatut.IdStatut;
             produitsDevis = GestionContenir.SelectDevisContenir(devis);
             dgvProduit.DataSource = produitsDevis;
+            produitsHorsDevis = GestionContenir.SelectProduitsSansDevis(devis);
+            dgvProduitsHorsDevis.DataSource = produitsHorsDevis;
             AjouterColonneSuppression();
             btnModif.Enabled = true;
             btnModifier.Enabled = false;
             SetTextBoxesEnabled(false);
             
         }
+
         private void AjouterColonneSuppression()
         {
             if (!dgvProduit.Columns.Contains("btnSupprimer"))
@@ -155,11 +154,6 @@ namespace Declic_Info
                 MessageBox.Show("Veuillez saisir un Taux de Remise Global valide à modifier", "Erreur");
                 return;
             }
-            if (!float.TryParse(txtMontantHTHorsRemiseDevis.Text,out float MontantHtHorsRemisDevise))
-            {
-                MessageBox.Show("Veuillez saisir un Montant Hors Taxes valide à modifier", "Erreur");
-                return;
-            }
             if (!DateTime.TryParse(dateDevisPicker.Value.ToString(), out DateTime DateDevis))
             {
                 MessageBox.Show("Veuillez saisir une Date valide à modifier", "Erreur");
@@ -179,7 +173,7 @@ namespace Declic_Info
             {
                 GestionContenir.SupContenir(liaison.Devis.IdDevis, liaison.Produit.CodeProduit);
             }
-            DevisBO devis = new DevisBO(idDevis, DateDevis, TauxTVADevis,TauxRemiseGloDevis,MontantHtHorsRemisDevise, (ClientBO)comboBoxClient.SelectedItem,(StatutBO)comboboxStatut.SelectedItem);
+            DevisBO devis = new DevisBO(idDevis, DateDevis, TauxTVADevis,TauxRemiseGloDevis, (ClientBO)comboBoxClient.SelectedItem,(StatutBO)comboboxStatut.SelectedItem);
 
             // Appliquer la modification
             GestionDevis.ModificationDevis(devis);
@@ -200,7 +194,6 @@ namespace Declic_Info
             dateDevisPicker.Enabled = enabled;
             txtTauxTVADevis.Enabled = enabled;
             txtTauxRemiseGloDevis.Enabled = enabled;
-            txtMontantHTHorsRemiseDevis.Enabled = enabled;
             comboboxStatut.Enabled = enabled;
             comboBoxClient.Enabled = enabled;
         }
@@ -211,6 +204,16 @@ namespace Declic_Info
             {
                 SupprimerLigne(e.RowIndex);
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -32,9 +32,10 @@ namespace Declic_InfoDAL
             int pourcentage_remise_ligne = unContenir.Pourcentage_remise_ligne;
 
             // Connexion
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
-
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
             SqlCommand cmd = new SqlCommand();
+
             cmd.Connection = maConnexion;
 
             cmd.CommandText = @"
@@ -69,7 +70,8 @@ namespace Declic_InfoDAL
             int pourcentage_remise_ligne = unContenir.Pourcentage_remise_ligne;
 
             // Connexion
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
@@ -97,7 +99,8 @@ namespace Declic_InfoDAL
 
         public static bool SupContenir(int idDevis, int codeProduit)
         {
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
 
             try
             {
@@ -126,7 +129,8 @@ namespace Declic_InfoDAL
         {
             List<ContenirBO> listeContenir = new List<ContenirBO>();
 
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
             cmd.CommandText = @"SELECT p.*,cat.nom_categorie,c.quantite, c.pourcentage_remise_ligne
@@ -136,7 +140,6 @@ namespace Declic_InfoDAL
                     WHERE c.id_devis = @idDevis";
 
             cmd.Parameters.AddWithValue("@idDevis", devis.IdDevis);
-
             SqlDataReader monReader = cmd.ExecuteReader();
 
             while (monReader.Read())
@@ -159,5 +162,38 @@ namespace Declic_InfoDAL
 
             return listeContenir;
         }
-    }
+        public static List<ProduitBO> SelectProduitsSansDevis(DevisBO devis)
+        {
+            List<ProduitBO> lesProduits = new List<ProduitBO>();
+
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = maConnexion;
+            cmd.CommandText = @"SELECT * FROM Produit
+                                JOIN Categorie ON Categorie.id_categorie = Produit.id_categorie
+                                WHERE code_produit NOT IN (
+                                    SELECT code_produit FROM Contenir WHERE id_devis = @idDevis )";
+            cmd.Parameters.AddWithValue("@idDevis", devis.IdDevis);
+            SqlDataReader monReader = cmd.ExecuteReader();
+
+            while (monReader.Read())
+            {
+                int code_produit = Int32.Parse(monReader["code_produit"].ToString());
+                string libelle_produit = monReader["libelle_produit"].ToString();
+                float prix_vente_produit = float.Parse(monReader["prix_vente_produit"].ToString());
+                int id_categorie = Int32.Parse(monReader["id_categorie"].ToString());
+                string nom_categorie = monReader["nom_categorie"].ToString();
+                CategorieBO categorieProduit = new CategorieBO(id_categorie, nom_categorie);
+
+                ProduitBO unProduit = new ProduitBO(code_produit, libelle_produit, prix_vente_produit, categorieProduit);
+
+                lesProduits.Add(unProduit);
+            }
+
+            maConnexion.Close();
+
+            return lesProduits;
+        }
+    }   
 }

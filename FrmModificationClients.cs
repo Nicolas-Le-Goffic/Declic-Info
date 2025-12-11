@@ -13,10 +13,6 @@ namespace Declic_Info
         {
             InitializeComponent();
 
-            // Connexion BD
-            GestionUtilisateurs.SetchaineConnexion(
-                ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"].ConnectionString);
-
             // Charger les clients dans la ComboBox
             LoadClients();
 
