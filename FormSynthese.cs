@@ -9,8 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Declic_InfoBO;
-using Declic_InfoBLL;
 
 namespace Declic_Info
 {
