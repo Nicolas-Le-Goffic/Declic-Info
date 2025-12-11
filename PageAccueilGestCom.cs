@@ -98,5 +98,11 @@ namespace Declic_Info
             FormAjoutDevis frm = new FormAjoutDevis();
             frm.ShowDialog();
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            FormSynthese frm = new FormSynthese();
+            frm.ShowDialog();
+        }
     }
 }
