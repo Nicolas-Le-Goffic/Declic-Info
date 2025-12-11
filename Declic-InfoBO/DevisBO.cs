@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Declic_InfoBO
 {
@@ -12,43 +10,65 @@ namespace Declic_InfoBO
         private DateTime dateDevis;
         private float tauxTVA;
         private float tauxRemiseGlobale;
-        private float montantHT;
         private ClientBO client;
         private StatutBO statut;
 
-        private float remiseGlobale;
-
         // Constructeur complet
-        public DevisBO(int idDevis, DateTime dateDevis, float tauxTVA, float tauxRemiseGlobale,float montantHT, ClientBO client, StatutBO statut)
+        public DevisBO(int idDevis, DateTime dateDevis, float tauxTVA,
+                       float tauxRemiseGlobale, ClientBO client, StatutBO statut)
         {
             this.idDevis = idDevis;
             this.dateDevis = dateDevis;
             this.tauxTVA = tauxTVA;
             this.tauxRemiseGlobale = tauxRemiseGlobale;
-            this.montantHT = montantHT;
             this.client = client;
             this.statut = statut;
-           
         }
 
-        // Constructeur sans ID (pour nouveau devis)
-        public DevisBO(DateTime dateDevis, float tauxTVA, float tauxRemiseGlobale, float montantHT, ClientBO client, StatutBO statut)
+        // Constructeur sans ID
+        public DevisBO(DateTime dateDevis, float tauxTVA,
+                       float tauxRemiseGlobale, ClientBO client, StatutBO statut)
         {
             this.dateDevis = dateDevis;
             this.tauxTVA = tauxTVA;
             this.tauxRemiseGlobale = tauxRemiseGlobale;
-            this.montantHT = montantHT;
             this.client = client;
             this.statut = statut;
-            
         }
 
         public DevisBO()
         {
-
         }
 
+<<<<<<< HEAD
+        public List<ContenirBO> Lignes { get; set; } = new List<ContenirBO>();
+
+        public decimal TotalHTHorsRemise => Lignes.Sum(l => l.SousTotalHT);
+        public decimal TotalRemiseLignes => Lignes.Sum(l => l.MontantRemiseHT);
+        public decimal TotalHTApresRemisesLignes => Lignes.Sum(l => l.TotalLigneHT);
+
+        public decimal RemiseGlobaleHT
+            => TotalHTApresRemisesLignes * ((decimal)tauxRemiseGlobale / 100m);
+
+        public decimal TotalHTFinal
+            => TotalHTApresRemisesLignes - RemiseGlobaleHT;
+
+        public decimal MontantTVA
+            => TotalHTFinal * ((decimal)tauxTVA / 100m);
+
+        public decimal TotalTTC
+            => TotalHTFinal + MontantTVA;
+
+        // Montant stocké dans la colonne montant_HT_hors_remis_devise
+        public float MontantHtHorsRemise
+        {
+            get => (float)TotalHTApresRemisesLignes;
+            set { /* setter présent si tu veux l'assigner depuis la BDD */ }
+        }
+
+=======
         // Propriétés
+>>>>>>> 419044fdfd7a991ca83814bfd469f0ad1a112939
         public int IdDevis
         {
             get => idDevis;
@@ -71,12 +91,6 @@ namespace Declic_InfoBO
         {
             get => tauxRemiseGlobale;
             set => tauxRemiseGlobale = value;
-        }
-
-        public float MontantHtHorsRemisDevise
-        {
-            get => montantHT;
-            set => montantHT = value;
         }
 
         public ClientBO DevisClient

@@ -8,48 +8,31 @@ namespace Declic_InfoBO
 {
     public class ProduitBO
     {
-        private int codeProduit;
-        private string libelleProduit;
-        private float prixVenteProduit;
-        private CategorieBO categorieProduit;
+        public int CodeProduit { get; set; }
+        public string LibelleProduit { get; set; }
+        public float PrixVenteProduit { get; set; }
+        public CategorieBO CategorieProduit { get; set; }
 
-        public ProduitBO(int codeProduit, string libelleProduit, float prixVenteProduit, CategorieBO categorieProduit)
+        public ProduitBO(int codeProduit, string libelleProduit,
+                         float prixVenteProduit, CategorieBO categorieProduit)
         {
-            this.codeProduit = codeProduit;
-            this.libelleProduit = libelleProduit;
-            this.prixVenteProduit = prixVenteProduit;
-            this.categorieProduit = categorieProduit;
+            CodeProduit = codeProduit;
+            LibelleProduit = libelleProduit;
+            PrixVenteProduit = prixVenteProduit;
+            CategorieProduit = categorieProduit;
         }
-        public ProduitBO(string libelleProduit, float prixVenteProduit, CategorieBO categorieProduit)
+
+        public ProduitBO(string libelleProduit, float prixVenteProduit,
+                         CategorieBO categorieProduit)
         {
-            this.libelleProduit = libelleProduit;
-            this.prixVenteProduit = prixVenteProduit;
-            this.categorieProduit = categorieProduit;
+            LibelleProduit = libelleProduit;
+            PrixVenteProduit = prixVenteProduit;
+            CategorieProduit = categorieProduit;
         }
-        public int CodeProduit
-        {
-            get => codeProduit;
-            set => codeProduit = value;
-        }
-        public string LibelleProduit
-        {
-            get => libelleProduit;
-            set => libelleProduit = value;
-        }
-        public float PrixVenteProduit
-        {
-            get => prixVenteProduit;
-            set => prixVenteProduit = value;
-        }
-        public CategorieBO CategorieProduit
-        {
-            get => categorieProduit;
-            set => categorieProduit = value;
-        }
+
         public override string ToString()
         {
             return $"{LibelleProduit} (#{CodeProduit})";
         }
-
     }
 }

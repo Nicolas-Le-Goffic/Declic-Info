@@ -73,7 +73,7 @@ namespace Declic_Info
             dateDevisPicker.Value = devis.DateDevis;
             txtTauxTVADevis.Text = devis.TauxTVADevis.ToString();
             txtTauxRemiseGloDevis.Text = devis.TauxRemiseGloDevis.ToString();
-            txtMontantHTHorsRemiseDevis.Text = devis.MontantHtHorsRemisDevise.ToString();
+            txtMontantHTHorsRemiseDevis.Text = devis.MontantHtHorsRemise.ToString();
             comboBoxClient.SelectedValue = devis.DevisClient.CodeClient;
             comboboxStatut.SelectedValue = devis.DevisStatut.IdStatut;
 
@@ -93,6 +93,18 @@ namespace Declic_Info
         private void btnModifier_Click(object sender, EventArgs e)
         {
             // Validation des champs numériques
+<<<<<<< HEAD
+            if (!int.TryParse(txtId.Text, out int idDevis) ||
+                !float.TryParse(txtTauxTVADevis.Text, out float TauxTVADevis) ||
+                !float.TryParse(txtTauxRemiseGloDevis.Text, out float TauxRemiseGloDevis) ||
+                !float.TryParse(txtMontantHTHorsRemiseDevis.Text,out float MontantHtHorsRemise))
+
+            {
+                MessageBox.Show("Veuillez saisir des valeurs numériques valides !", "Erreur");
+                return;
+            }
+            DevisBO devis = new DevisBO(idDevis,dateDevisPicker.Value,TauxTVADevis,TauxRemiseGloDevis, (ClientBO)comboBoxClient.SelectedItem,(StatutBO)comboboxStatut.SelectedItem);
+=======
             if (!int.TryParse(txtId.Text, out int idDevis)){
                 MessageBox.Show("Veuillez saisir un devis à modifier", "Erreur");
                 return;
@@ -126,6 +138,7 @@ namespace Declic_Info
                 return;
             }
             DevisBO devis = new DevisBO(idDevis, DateDevis, TauxTVADevis,TauxRemiseGloDevis,MontantHtHorsRemisDevise, (ClientBO)comboBoxClient.SelectedItem,(StatutBO)comboboxStatut.SelectedItem);
+>>>>>>> 419044fdfd7a991ca83814bfd469f0ad1a112939
 
             // Appliquer la modification
             GestionDevis.ModificationDevis(devis);
