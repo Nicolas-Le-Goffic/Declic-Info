@@ -52,8 +52,8 @@
             this.dgvProduitsHorsDevis = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtQuantite = new System.Windows.Forms.TextBox();
+            this.txtRemise = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduit)).BeginInit();
@@ -292,21 +292,21 @@
             this.label6.TabIndex = 87;
             this.label6.Text = "Quantité de produits";
             // 
-            // textBox1
+            // txtQuantite
             // 
-            this.textBox1.Location = new System.Drawing.Point(1150, 466);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 22);
-            this.textBox1.TabIndex = 88;
+            this.txtQuantite.Location = new System.Drawing.Point(1150, 466);
+            this.txtQuantite.Margin = new System.Windows.Forms.Padding(4);
+            this.txtQuantite.Name = "txtQuantite";
+            this.txtQuantite.Size = new System.Drawing.Size(202, 22);
+            this.txtQuantite.TabIndex = 88;
             // 
-            // textBox2
+            // txtRemise
             // 
-            this.textBox2.Location = new System.Drawing.Point(1400, 466);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(202, 22);
-            this.textBox2.TabIndex = 90;
+            this.txtRemise.Location = new System.Drawing.Point(1400, 466);
+            this.txtRemise.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRemise.Name = "txtRemise";
+            this.txtRemise.Size = new System.Drawing.Size(202, 22);
+            this.txtRemise.TabIndex = 90;
             // 
             // label7
             // 
@@ -324,10 +324,11 @@
             this.button1.Location = new System.Drawing.Point(1150, 531);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(260, 46);
+            this.button1.Size = new System.Drawing.Size(295, 46);
             this.button1.TabIndex = 91;
             this.button1.Text = "Ajouter un produit dans le devis";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormModificationDevis
             // 
@@ -335,9 +336,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1743, 686);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtRemise);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtQuantite);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dgvProduitsHorsDevis);
@@ -396,8 +397,8 @@
         private System.Windows.Forms.DataGridView dgvProduitsHorsDevis;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtQuantite;
+        private System.Windows.Forms.TextBox txtRemise;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
     }

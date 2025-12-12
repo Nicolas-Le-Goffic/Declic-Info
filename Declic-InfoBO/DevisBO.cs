@@ -38,7 +38,7 @@ namespace Declic_InfoBO
         {
         }
 
-        public List<ContenirBO> Lignes { get; set; } = new List<ContenirBO>();
+        public List<ContenirCalculs> Lignes { get; set; } = new List<ContenirCalculs>();
 
         public decimal TotalHTHorsRemise => Lignes.Sum(l => l.SousTotalHT);
         public decimal TotalRemiseLignes => Lignes.Sum(l => l.MontantRemiseHT);

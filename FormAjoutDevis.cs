@@ -10,7 +10,7 @@ namespace Declic_Info
 {
     public partial class FormAjoutDevis : Form
     {
-        private BindingList<ContenirBO> lignes = new BindingList<ContenirBO>();
+        private BindingList<ContenirCalculs> lignes = new BindingList<ContenirCalculs>();
         private BindingList<ProduitBO> produits = new BindingList<ProduitBO>();
 
         public FormAjoutDevis()
@@ -161,7 +161,7 @@ namespace Declic_Info
             else
             {
 
-                var nouvelleLigne = new ContenirBO()
+                var nouvelleLigne = new ContenirCalculs()
                 {
                     CodeProduit = code,
                     Quantite = 1,
@@ -178,7 +178,7 @@ namespace Declic_Info
         {
             if (dgvLignes.SelectedRows.Count > 0)
             {
-                var ligne = (ContenirBO)dgvLignes.SelectedRows[0].DataBoundItem;
+                var ligne = (ContenirCalculs)dgvLignes.SelectedRows[0].DataBoundItem;
                 lignes.Remove(ligne);
                 RecalculerTotaux();
             }
@@ -192,7 +192,7 @@ namespace Declic_Info
         {
             if (e.RowIndex < 0) return;
 
-            var ligne = (ContenirBO)dgvLignes.Rows[e.RowIndex].DataBoundItem;
+            var ligne = (ContenirCalculs)dgvLignes.Rows[e.RowIndex].DataBoundItem;
 
             // Mise à jour de l'objet Produit quand on change la ComboBox
             if (e.ColumnIndex == dgvLignes.Columns["Produit"].Index)
@@ -306,7 +306,7 @@ namespace Declic_Info
             var lignesRegroupees = devis.Lignes
                 .Where(l => l.CodeProduit > 0)  // ignorer les lignes vides
                 .GroupBy(l => l.CodeProduit)
-                .Select(g => new ContenirBO
+                .Select(g => new ContenirCalculs
                 {
                     CodeProduit = g.Key,
                     Produit = g.First().Produit,

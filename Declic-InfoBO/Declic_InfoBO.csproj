@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContenirCalculs.cs" />
     <Compile Include="ContenirBO.cs" />
     <Compile Include="DevisBO.cs" />
     <Compile Include="ClientBO.cs" />

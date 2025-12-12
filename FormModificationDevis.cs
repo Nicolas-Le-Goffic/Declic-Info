@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,6 +36,7 @@ namespace Declic_Info
             // Brancher les événements
             comboDevis.SelectedIndexChanged += comboDevis_SelectedIndexChanged;
             btnModif.Click += btnModif_Click;
+            dgvProduit.CellClick += dataGridView1_CellClick;
         }
 
         private void LoadDevis()
@@ -77,10 +79,13 @@ namespace Declic_Info
             comboBoxClient.SelectedValue = devis.DevisClient.CodeClient;
             comboboxStatut.SelectedValue = devis.DevisStatut.IdStatut;
             produitsDevis = GestionContenir.SelectDevisContenir(devis);
+            AjouterColonneSuppression();
             dgvProduit.DataSource = produitsDevis;
             produitsHorsDevis = GestionContenir.SelectProduitsSansDevis(devis);
             dgvProduitsHorsDevis.DataSource = produitsHorsDevis;
-            AjouterColonneSuppression();
+            dgvProduitsHorsDevis.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProduitsHorsDevis.MultiSelect = false;
+            dgvProduitsHorsDevis.ReadOnly = true;
             btnModif.Enabled = true;
             btnModifier.Enabled = false;
             SetTextBoxesEnabled(false);
@@ -99,6 +104,13 @@ namespace Declic_Info
                 btn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
                 dgvProduit.Columns.Add(btn);
+            }
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvProduit.Columns["btnSupprimer"].Index)
+            {
+                SupprimerLigne(e.RowIndex);
             }
         }
         private void SupprimerLigne(int rowIndex)
@@ -198,5 +210,58 @@ namespace Declic_Info
             comboBoxClient.Enabled = enabled;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvProduitsHorsDevis.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Veuillez sélectionner un produit dans la liste.");
+                }
+
+                // Vérifier quantité
+                if (string.IsNullOrWhiteSpace(txtQuantite.Text))
+                {
+                    MessageBox.Show("Veuillez entrer une quantité.");
+                }
+
+                if (!int.TryParse(txtQuantite.Text, out int quantite) || quantite <= 0)
+                {
+                    MessageBox.Show("La quantité doit être un nombre entier positif.");
+                }
+
+                // Vérifier remise
+                if (string.IsNullOrWhiteSpace(txtRemise.Text))
+                {
+                    MessageBox.Show("Veuillez entrer un pourcentage de remise.");
+                }
+
+                if (!decimal.TryParse(txtRemise.Text, out decimal remise) || remise < 0 || remise > 100)
+                {
+                    MessageBox.Show("La remise doit être un nombre entre 0 et 100.");
+                }
+
+                DevisBO devis = (DevisBO)comboDevis.SelectedItem;
+                int idDevis = devis.IdDevis;
+                ProduitBO produit = (ProduitBO)dgvProduitsHorsDevis.SelectedRows[0].DataBoundItem;
+                quantite = int.Parse(txtQuantite.Text);
+                remise = decimal.Parse(txtRemise.Text);
+                ContenirBO contenir = new ContenirBO(devis, produit, quantite, remise);
+
+                // Ajout en base + retour de l'objet BO
+                GestionContenir.AjoutContenir(contenir);
+
+                // Ajout dans le DataGridView du devis
+                dgvProduit.DataSource = null;
+                dgvProduit.DataSource = produitsDevis;
+
+                MessageBox.Show("Produit ajouté au devis !");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur : " + ex.Message);
+            }
+
+        }
     }
 }
