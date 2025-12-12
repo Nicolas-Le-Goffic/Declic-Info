@@ -52,5 +52,9 @@ namespace Declic_InfoBLL
         {
             return ContenirDAO.SelectProduitsSansDevis(devis);
         }
+        public static void InsererLigne(ContenirBO ligne, int idDevis)
+        {
+            ContenirDAO.InsererLigne(ligne,idDevis);
+        }
     }
 }

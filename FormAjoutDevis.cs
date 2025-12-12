@@ -295,8 +295,32 @@ namespace Declic_Info
             var devis = new DevisBO(dateDevis, (float)tva, (float)remiseGlobale, client, statut);
             foreach (var l in lignes)
                 devis.Lignes.Add(l);
+            
+            // 1. Créer le devis ET récupérer son ID
+            int idDevis = GestionDevis.CreerDevis(devis);
 
-            GestionDevis.CreerDevis(devis);
+            // 2. SUPPRIMER d'abord toutes les lignes existantes pour ce devis (sécurité)
+            GestionDevis.SupprimerLignesDevis(idDevis);
+
+            // 3. Regrouper les lignes par CodeProduit pour éviter les doublons
+            var lignesRegroupees = devis.Lignes
+                .Where(l => l.CodeProduit > 0)  // ignorer les lignes vides
+                .GroupBy(l => l.CodeProduit)
+                .Select(g => new ContenirBO
+                {
+                    CodeProduit = g.Key,
+                    Produit = g.First().Produit,
+                    Quantite = g.Sum(l => l.Quantite),
+                    Pourcentage_remise_ligne = g.First().Pourcentage_remise_ligne
+                }).ToList();
+
+
+
+            // 4. Insérer chaque ligne unique
+            foreach (var ligne in lignesRegroupees)
+            {
+                GestionContenir.InsererLigne(ligne, idDevis);
+            }
             MessageBox.Show("Devis enregistré !");
             ResetFormulaire();
         }

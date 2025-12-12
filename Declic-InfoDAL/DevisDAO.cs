@@ -69,6 +69,7 @@ namespace Declic_InfoDAL
             cmd.CommandText = @"
                 SELECT d.id_devis, d.date_devis, d.taux_TVA_devis, d.taux_remise_glo_devis, d.montant_HT_hors_remis_devise, c.* , s.*
                 FROM Devis d, client c, statut s
+            
                 WHERE d.code_client = c.code_client
                 AND d.id_statut = s.id_statut ";
             
@@ -243,6 +244,19 @@ namespace Declic_InfoDAL
             nbEnr = cmd.ExecuteNonQuery();
             maConnexion.Close();
             return nbEnr;
+        }
+        public static void SupprimerLignesDevis(int idDevis)
+        {
+            using (var cnx = ConnexionBD.GetSqlConnexion())
+            {
+                cnx.Open();
+                using (var cmd = new SqlCommand("DELETE FROM Contenir WHERE id_devis = @idDevis", cnx))
+                {
+                    cmd.Parameters.AddWithValue("@idDevis", idDevis);
+                    cmd.ExecuteNonQuery();
+                    cnx.Close();
+                }
+            }
         }
     }
 }

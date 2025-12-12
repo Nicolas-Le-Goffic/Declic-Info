@@ -29,7 +29,7 @@ namespace Declic_InfoDAL
             DevisBO devis = unContenir.Devis;
             ProduitBO produit = unContenir.Produit;
             int quantite = unContenir.Quantite;
-            int pourcentage_remise_ligne = unContenir.Pourcentage_remise_ligne;
+            decimal pourcentage_remise_ligne = unContenir.Pourcentage_remise_ligne;
 
             // Connexion
             SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
@@ -67,7 +67,7 @@ namespace Declic_InfoDAL
             DevisBO devis = unContenir.Devis;
             ProduitBO produit = unContenir.Produit;
             int quantite = unContenir.Quantite;
-            int pourcentage_remise_ligne = unContenir.Pourcentage_remise_ligne;
+            decimal pourcentage_remise_ligne = unContenir.Pourcentage_remise_ligne;
 
             // Connexion
             SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
@@ -198,19 +198,22 @@ namespace Declic_InfoDAL
         public static void InsererLigne(ContenirBO ligne, int idDevis)
         {
             using (var cnx = ConnexionBD.GetSqlConnexion())
-            using (var cmd = new SqlCommand())
             {
-                cmd.Connection = cnx;
-                cmd.CommandText = @"
-            INSERT INTO Contenir (id_devis, code_produit, quantite, pourcentage_remise_ligne)
-            VALUES (@idDevis, @codeProduit, @qte, @remise);";
+                cnx.Open();
+                using (var cmd = new SqlCommand())
+                {
+                    cmd.Connection = cnx;
+                    cmd.CommandText = @"
+                        INSERT INTO Contenir (id_devis, code_produit, quantite, pourcentage_remise_ligne)
+                        VALUES (@idDevis, @codeProduit, @qte, @remise);";
+                    cmd.Parameters.AddWithValue("@idDevis", idDevis);
+                    cmd.Parameters.AddWithValue("@codeProduit", ligne.Produit.CodeProduit);
+                    cmd.Parameters.AddWithValue("@qte", ligne.Quantite);
+                    cmd.Parameters.AddWithValue("@remise", ligne.Pourcentage_remise_ligne);
 
-                cmd.Parameters.AddWithValue("@idDevis", idDevis);
-                cmd.Parameters.AddWithValue("@codeProduit", ligne.Produit.CodeProduit);  
-                cmd.Parameters.AddWithValue("@qte", ligne.Quantite);
-                cmd.Parameters.AddWithValue("@remise", ligne.Pourcentage_remise_ligne);
-
-                cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
+                    cnx.Close();
+                }
             }
         }
 
