@@ -46,8 +46,8 @@ namespace Declic_InfoDAL
             ";
 
             // Paramètres
-            cmd.Parameters.AddWithValue("@id_devis", devis);
-            cmd.Parameters.AddWithValue("@code_produit", produit);
+            cmd.Parameters.AddWithValue("@id_devis", devis.IdDevis);
+            cmd.Parameters.AddWithValue("@code_produit", produit.CodeProduit);
             cmd.Parameters.AddWithValue("@quantite", quantite);
             cmd.Parameters.AddWithValue("@pourcentage_remise_ligne", pourcentage_remise_ligne);
 
