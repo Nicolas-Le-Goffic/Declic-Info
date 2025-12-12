@@ -65,6 +65,5 @@ namespace Declic_Info
                 MessageBox.Show("Erreur : " + ex.Message);
             }
         }
-
     }
 }

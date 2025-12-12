@@ -198,22 +198,5 @@ namespace Declic_Info
             comboBoxClient.Enabled = enabled;
         }
 
-        private void dgvProduit_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex == dgvProduit.Columns["btnSupprimer"].Index)
-            {
-                SupprimerLigne(e.RowIndex);
-            }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

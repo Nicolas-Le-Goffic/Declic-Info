@@ -46,6 +46,7 @@
     <Compile Include="StatutDAO.cs" />
     <Compile Include="ClientDAO.cs" />
     <Compile Include="DevisDAO.cs" />
+    <Compile Include="SyntheseDAO.cs" />
     <Compile Include="UtilisateurDAO.cs" />
     <Compile Include="CategorieDAO.cs" />
     <Compile Include="ConnexionBD.cs" />

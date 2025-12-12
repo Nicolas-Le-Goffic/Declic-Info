@@ -70,6 +70,7 @@
             this.comboDevis.Name = "comboDevis";
             this.comboDevis.Size = new System.Drawing.Size(517, 24);
             this.comboDevis.TabIndex = 77;
+            this.comboDevis.Click += new System.EventHandler(this.comboDevis_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -175,6 +176,7 @@
             this.btnModif.TabIndex = 49;
             this.btnModif.Text = "Modifier";
             this.btnModif.UseVisualStyleBackColor = true;
+            this.btnModif.Click += new System.EventHandler(this.btnModif_Click);
             // 
             // labelModModif
             // 
@@ -236,7 +238,6 @@
             this.dgvProduit.RowTemplate.Height = 24;
             this.dgvProduit.Size = new System.Drawing.Size(812, 138);
             this.dgvProduit.TabIndex = 83;
-            this.dgvProduit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduit_CellContentClick);
             // 
             // gESTIONCOMMERCIALEDataSetBindingSource
             // 
@@ -268,7 +269,6 @@
             this.dgvProduitsHorsDevis.RowHeadersWidth = 51;
             this.dgvProduitsHorsDevis.Size = new System.Drawing.Size(554, 188);
             this.dgvProduitsHorsDevis.TabIndex = 85;
-            this.dgvProduitsHorsDevis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label5
             // 
@@ -328,7 +328,6 @@
             this.button1.TabIndex = 91;
             this.button1.Text = "Ajouter un produit dans le devis";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormModificationDevis
             // 
