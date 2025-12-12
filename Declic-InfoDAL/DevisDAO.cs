@@ -22,7 +22,18 @@ namespace Declic_InfoDAL
 
         public static int AjoutDevis(DevisBO unDevis)
         {
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            int nbEnr;
+
+            // Récupération des champs du BO
+            DateTime dateDevis = unDevis.DateDevis;
+            float tauxTVA = unDevis.TauxTVADevis;
+            float tauxRemise = unDevis.TauxRemiseGloDevis;
+            int codeClient = unDevis.DevisClient.CodeClient;
+            int idStatut = unDevis.DevisStatut.IdStatut;
+
+            // Connexion BD
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
 
@@ -51,18 +62,17 @@ namespace Declic_InfoDAL
         {
             List<DevisBO> lesDevis = new List<DevisBO>();
 
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
             cmd.CommandText = @"
-                SELECT d.id_devis, d.date_devis, d.taux_TVA_devis, d.taux_remise_glo_devis,
-                       d.montant_HT_hors_remis_devise,
-                       c.*, s.*
-                FROM Devis d
-                JOIN client c ON d.code_client = c.code_client
-                JOIN statut s ON d.id_statut = s.id_statut;
-            ";
-
+                SELECT d.id_devis, d.date_devis, d.taux_TVA_devis, d.taux_remise_glo_devis, d.montant_HT_hors_remis_devise, c.* , s.*
+                FROM Devis d, client c, statut s
+            
+                WHERE d.code_client = c.code_client
+                AND d.id_statut = s.id_statut ";
+            
             SqlDataReader monReader = cmd.ExecuteReader();
 
             while (monReader.Read())
@@ -114,7 +124,8 @@ namespace Declic_InfoDAL
         {
             DevisBO unDevis = null;
 
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
             cmd.CommandText = @"
@@ -175,7 +186,9 @@ namespace Declic_InfoDAL
 
         public static bool SupprimerDevis(int id)
         {
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            // Connexion à la BD
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
 
             try
             {
@@ -202,7 +215,10 @@ namespace Declic_InfoDAL
         {
             int nbEnr;
 
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            // Connexion à la BD
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
+
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
 
@@ -228,6 +244,19 @@ namespace Declic_InfoDAL
             nbEnr = cmd.ExecuteNonQuery();
             maConnexion.Close();
             return nbEnr;
+        }
+        public static void SupprimerLignesDevis(int idDevis)
+        {
+            using (var cnx = ConnexionBD.GetSqlConnexion())
+            {
+                cnx.Open();
+                using (var cmd = new SqlCommand("DELETE FROM Contenir WHERE id_devis = @idDevis", cnx))
+                {
+                    cmd.Parameters.AddWithValue("@idDevis", idDevis);
+                    cmd.ExecuteNonQuery();
+                    cnx.Close();
+                }
+            }
         }
     }
 }

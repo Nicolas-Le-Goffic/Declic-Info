@@ -27,7 +27,8 @@ namespace Declic_InfoDAL
             string nomStatut;
             StatutBO unStatut;
 
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
             List<StatutBO> lesStatuts = new List<StatutBO>();
 
 
@@ -64,8 +65,8 @@ namespace Declic_InfoDAL
             string nomStatut;
             StatutBO unStatut = null;
 
-            SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion();
-
+            SqlConnection maConnexion = ConnexionBD.GetSqlConnexion();
+            maConnexion.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = maConnexion;
             cmd.CommandText = "SELECT * FROM Statut WHERE id_statut = @idStatut";

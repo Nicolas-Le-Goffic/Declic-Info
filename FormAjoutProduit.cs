@@ -18,8 +18,6 @@ namespace Declic_Info
         public ajoutProduitbdd()
         {
             InitializeComponent();
-            // Récupération de chaîne de connexion à la BD à l'ouverture du formulaire
-            GestionCategories.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"]);
 
 
             List<CategorieBO> listeCategories = GestionCategories.GetCategories();

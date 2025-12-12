@@ -16,7 +16,7 @@ namespace Declic_InfoDAL
             var syntheses = new List<SyntheseClientBO>();
 
             
-            using (SqlConnection cnx = ConnexionBD.GetConnexionBD().GetSqlConnexion())
+            using (SqlConnection cnx = ConnexionBD.GetSqlConnexion())
             using (SqlCommand cmd = cnx.CreateCommand())
             {
                

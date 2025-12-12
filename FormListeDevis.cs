@@ -19,9 +19,6 @@ namespace Declic_Info
         {
             InitializeComponent();
             this.Load += FormListeDevis_Load;
-
-            GestionUtilisateurs.SetchaineConnexion(
-                ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"].ConnectionString);
         }
 
         private void FormListeDevis_Load(object sender, EventArgs e)

@@ -26,8 +26,7 @@ namespace Declic_InfoBO
         }
 
         // Constructeur sans ID
-        public DevisBO(DateTime dateDevis, float tauxTVA,
-                       float tauxRemiseGlobale, ClientBO client, StatutBO statut)
+        public DevisBO(DateTime dateDevis, float tauxTVA, float tauxRemiseGlobale, ClientBO client, StatutBO statut)
         {
             this.dateDevis = dateDevis;
             this.tauxTVA = tauxTVA;
@@ -35,12 +34,11 @@ namespace Declic_InfoBO
             this.client = client;
             this.statut = statut;
         }
-
         public DevisBO()
         {
         }
 
-        public List<ContenirBO> Lignes { get; set; } = new List<ContenirBO>();
+        public List<ContenirCalculs> Lignes { get; set; } = new List<ContenirCalculs>();
 
         public decimal TotalHTHorsRemise => Lignes.Sum(l => l.SousTotalHT);
         public decimal TotalRemiseLignes => Lignes.Sum(l => l.MontantRemiseHT);
@@ -99,6 +97,11 @@ namespace Declic_InfoBO
         {
             get => statut;
             set => statut = value;
+        }
+
+        public override string ToString()
+        {
+            return $"{idDevis}";
         }
     }
 }

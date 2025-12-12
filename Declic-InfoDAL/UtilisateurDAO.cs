@@ -21,23 +21,23 @@ namespace Declic_InfoDAL
         // Cette méthode vérifie si un utilisateur existe
         public static bool VerifUtilisateur(Utilisateur unUtilisateur)
         {
-            bool existe = false;
+            string requete = @"SELECT COUNT(*) FROM Utilisateur
+                       WHERE nom_utilisateur = @login
+                       AND mot_de_passe_utilisateur = @mdp";
 
-            // La connexion est automatiquement fermée grâce au using
-            using (SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion())
-            using (SqlCommand cmd = new SqlCommand(@"SELECT COUNT(*) FROM Utilisateur 
-                                                      WHERE nom_utilisateur = @login 
-                                                      AND mot_de_passe_utilisateur = @mdp", maConnexion))
+            using (SqlConnection maConnexion = ConnexionBD.GetSqlConnexion())
             {
-                // Ajout des paramètres sécurisés
-                cmd.Parameters.AddWithValue("@login", unUtilisateur.Login);
-                cmd.Parameters.AddWithValue("@mdp", unUtilisateur.Mdp);
+                maConnexion.Open();
 
-                int nbUtilisateur = (int)cmd.ExecuteScalar();
-                existe = (nbUtilisateur == 1);
+                using (SqlCommand cmd = new SqlCommand(requete, maConnexion))
+                {
+                    cmd.Parameters.AddWithValue("@login", unUtilisateur.Login);
+                    cmd.Parameters.AddWithValue("@mdp", unUtilisateur.Mdp);
+
+                    int nb = (int)cmd.ExecuteScalar();
+                    return nb > 0;
+                }
             }
-            
-            return existe;
         }
     }
 }

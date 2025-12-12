@@ -18,9 +18,6 @@ namespace Declic_Info
         public FormModificationProduit()
         {
             InitializeComponent();
-            // Connexion BD
-            GestionProduits.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"]);
-            GestionCategories.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"]);
 
             // Charger les produits et catégories
             LoadProduits();

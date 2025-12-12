@@ -18,8 +18,6 @@ namespace Declic_Info
         public FormSuppressionDevis()
         {
             InitializeComponent();
-            // Récupération de chaîne de connexion à la BD à l'ouverture du formulaire
-            GestionCategories.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"]);
 
             List<DevisBO> listeDevis = GestionDevis.GetDevis();
             foreach (DevisBO devis in listeDevis)
@@ -45,8 +43,20 @@ namespace Declic_Info
                 {
                     int.TryParse(devisCombobox.SelectedItem.ToString(), out int id);
                     bool verifSupClient = GestionDevis.SupprimerDevis(id);
-                    MessageBox.Show("Le Devis a été supprimé !");
-                    this.Close();
+                    if (verifSupClient == false)
+                    {
+                        MessageBox.Show(
+                            "Impossible de supprimer ce devis car il a contient un ou plusieurs produits.",
+                            "Suppression impossible",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning
+                        );
+                    }
+                    else
+                    {
+                        MessageBox.Show("Le Devis a été supprimé !");
+                        this.Close();
+                    }
                 }
             }
             catch (Exception ex)

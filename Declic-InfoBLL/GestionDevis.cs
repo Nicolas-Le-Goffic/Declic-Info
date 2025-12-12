@@ -29,44 +29,13 @@ namespace Declic_InfoBLL
 
         public static int CreerDevis(DevisBO unDevis)
         {
-            // 1. Créer le devis ET récupérer son ID
-            int idDevis = DevisDAO.AjoutDevis(unDevis);
-
-            // 2. SUPPRIMER d'abord toutes les lignes existantes pour ce devis (sécurité)
-            SupprimerLignesDevis(idDevis);
-
-            // 3. Regrouper les lignes par CodeProduit pour éviter les doublons
-            var lignesRegroupees = unDevis.Lignes
-                .Where(l => l.CodeProduit > 0)  // ignorer les lignes vides
-                .GroupBy(l => l.CodeProduit)
-                .Select(g => new ContenirBO
-                {
-                    CodeProduit = g.Key,
-                    Produit = g.First().Produit,
-                    Quantite = g.Sum(l => l.Quantite),
-                    Pourcentage_remise_ligne = g.First().Pourcentage_remise_ligne
-                }).ToList();
-
-
-
-            // 4. Insérer chaque ligne unique
-            foreach (var ligne in lignesRegroupees)
-            {
-                ContenirDAO.InsererLigne(ligne, idDevis);
-            }
-
-            return idDevis;
+            return DevisDAO.AjoutDevis(unDevis);
         }
 
         // Méthode utilitaire pour supprimer les lignes d'un devis
-        private static void SupprimerLignesDevis(int idDevis)
+        public static void SupprimerLignesDevis(int idDevis)
         {
-            using (var cnx = ConnexionBD.GetConnexionBD().GetSqlConnexion())
-            using (var cmd = new SqlCommand("DELETE FROM Contenir WHERE id_devis = @idDevis", cnx))
-            {
-                cmd.Parameters.AddWithValue("@idDevis", idDevis);
-                cmd.ExecuteNonQuery();
-            }
+            DevisDAO.SupprimerLignesDevis(idDevis);
         }
 
 

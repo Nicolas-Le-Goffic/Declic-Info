@@ -35,21 +35,22 @@
             // dgvDevis
             // 
             this.dgvDevis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDevis.Location = new System.Drawing.Point(-181, 48);
-            this.dgvDevis.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvDevis.Location = new System.Drawing.Point(26, 60);
+            this.dgvDevis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDevis.Name = "dgvDevis";
             this.dgvDevis.RowHeadersWidth = 51;
             this.dgvDevis.RowTemplate.Height = 24;
-            this.dgvDevis.Size = new System.Drawing.Size(982, 355);
+            this.dgvDevis.Size = new System.Drawing.Size(1309, 437);
             this.dgvDevis.TabIndex = 1;
             this.dgvDevis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDevis_CellContentClick);
             // 
             // FormListeDevis
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.dgvDevis);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormListeDevis";
             this.Text = "FormListeDevis";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevis)).EndInit();

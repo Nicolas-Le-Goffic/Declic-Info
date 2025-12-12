@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,13 +17,12 @@ namespace Declic_Info
 {
     public partial class FormModificationDevis : Form
     {
+        List<ContenirBO> produitsDevis;
+        List<ProduitBO> produitsHorsDevis;
+        List<ContenirBO> suppressionsEnAttente = new List<ContenirBO>();
         public FormModificationDevis()
         {
             InitializeComponent();
-
-            // Connexion BD
-            GestionUtilisateurs.SetchaineConnexion(
-                ConfigurationManager.ConnectionStrings["GESTION_COMMERCIALE"].ConnectionString);
 
             // Charger les clients dans la ComboBox
             LoadDevis();
@@ -35,7 +36,9 @@ namespace Declic_Info
             // Brancher les événements
             comboDevis.SelectedIndexChanged += comboDevis_SelectedIndexChanged;
             btnModif.Click += btnModif_Click;
+            dgvProduit.CellClick += dataGridView1_CellClick;
         }
+
         private void LoadDevis()
         {
             List<DevisBO> devis = GestionDevis.GetDevis();
@@ -73,13 +76,71 @@ namespace Declic_Info
             dateDevisPicker.Value = devis.DateDevis;
             txtTauxTVADevis.Text = devis.TauxTVADevis.ToString();
             txtTauxRemiseGloDevis.Text = devis.TauxRemiseGloDevis.ToString();
-            txtMontantHTHorsRemiseDevis.Text = devis.MontantHtHorsRemise.ToString();
             comboBoxClient.SelectedValue = devis.DevisClient.CodeClient;
             comboboxStatut.SelectedValue = devis.DevisStatut.IdStatut;
-
+            produitsDevis = GestionContenir.SelectDevisContenir(devis);
+            AjouterColonneSuppression();
+            dgvProduit.DataSource = produitsDevis;
+            produitsHorsDevis = GestionContenir.SelectProduitsSansDevis(devis);
+            dgvProduitsHorsDevis.DataSource = produitsHorsDevis;
+            dgvProduitsHorsDevis.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProduitsHorsDevis.MultiSelect = false;
+            dgvProduitsHorsDevis.ReadOnly = true;
             btnModif.Enabled = true;
             btnModifier.Enabled = false;
             SetTextBoxesEnabled(false);
+            
+        }
+
+        private void AjouterColonneSuppression()
+        {
+            if (!dgvProduit.Columns.Contains("btnSupprimer"))
+            {
+                DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+                btn.Name = "btnSupprimer";
+                btn.HeaderText = "Supprimer";
+                btn.Text = "Supprimer Produit";
+                btn.UseColumnTextForButtonValue = true;
+                btn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+                dgvProduit.Columns.Add(btn);
+            }
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == dgvProduit.Columns["btnSupprimer"].Index)
+            {
+                SupprimerLigne(e.RowIndex);
+            }
+        }
+        private void SupprimerLigne(int rowIndex)
+        {
+            DevisBO devis = (DevisBO)dgvProduit.Rows[rowIndex].Cells["Devis"].Value;
+            int idDevis = devis.IdDevis;
+            ProduitBO produit = (ProduitBO)dgvProduit.Rows[rowIndex].Cells["Produit"].Value;
+            int codeProduit = produit.CodeProduit;
+
+            int quantite = Convert.ToInt32(dgvProduit.Rows[rowIndex].Cells["Quantite"].Value);
+            int remise = Convert.ToInt32(dgvProduit.Rows[rowIndex].Cells["pourcentage_remise_ligne"].Value);
+
+            DialogResult result = MessageBox.Show(
+                "Supprimer ce produit du devis ?",
+                "Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (result != DialogResult.Yes)
+                return;
+            ContenirBO contenir = new ContenirBO(devis, produit, quantite, remise);
+            suppressionsEnAttente.Add(contenir);
+            // Retirer la ligne du DGV
+            produitsDevis.RemoveAt(rowIndex);
+            dgvProduit.DataSource = null;
+            dgvProduit.DataSource = produitsDevis;
+
+
+            MessageBox.Show("Produit supprimé du devis !");
         }
 
         private void btnModif_Click(object sender, EventArgs e)
@@ -93,16 +154,38 @@ namespace Declic_Info
         private void btnModifier_Click(object sender, EventArgs e)
         {
             // Validation des champs numériques
-            if (!int.TryParse(txtId.Text, out int idDevis) ||
-                !float.TryParse(txtTauxTVADevis.Text, out float TauxTVADevis) ||
-                !float.TryParse(txtTauxRemiseGloDevis.Text, out float TauxRemiseGloDevis) ||
-                !float.TryParse(txtMontantHTHorsRemiseDevis.Text,out float MontantHtHorsRemise))
-
-            {
-                MessageBox.Show("Veuillez saisir des valeurs numériques valides !", "Erreur");
+            if (!int.TryParse(txtId.Text, out int idDevis)){
+                MessageBox.Show("Veuillez saisir un devis à modifier", "Erreur");
                 return;
             }
-            DevisBO devis = new DevisBO(idDevis,dateDevisPicker.Value,TauxTVADevis,TauxRemiseGloDevis, (ClientBO)comboBoxClient.SelectedItem,(StatutBO)comboboxStatut.SelectedItem);
+             if(!float.TryParse(txtTauxTVADevis.Text, out float TauxTVADevis)) {
+                MessageBox.Show("Veuillez saisir un Taux de TVA valide à modifier", "Erreur");
+                return;
+            }
+            if (!float.TryParse(txtTauxRemiseGloDevis.Text, out float TauxRemiseGloDevis)) {
+                MessageBox.Show("Veuillez saisir un Taux de Remise Global valide à modifier", "Erreur");
+                return;
+            }
+            if (!DateTime.TryParse(dateDevisPicker.Value.ToString(), out DateTime DateDevis))
+            {
+                MessageBox.Show("Veuillez saisir une Date valide à modifier", "Erreur");
+                return;
+            }
+            if (comboBoxClient.SelectedItem == null)
+            {
+                MessageBox.Show("Veuillez saisir un Client à modifier", "Erreur");
+                return;
+            }
+            if (comboboxStatut.SelectedItem == null)
+            {
+                MessageBox.Show("Veuillez saisir un Statut à modifier", "Erreur");
+                return;
+            }
+            foreach (ContenirBO liaison in suppressionsEnAttente)
+            {
+                GestionContenir.SupContenir(liaison.Devis.IdDevis, liaison.Produit.CodeProduit);
+            }
+            DevisBO devis = new DevisBO(idDevis, DateDevis, TauxTVADevis,TauxRemiseGloDevis, (ClientBO)comboBoxClient.SelectedItem,(StatutBO)comboboxStatut.SelectedItem);
 
             // Appliquer la modification
             GestionDevis.ModificationDevis(devis);
@@ -123,10 +206,62 @@ namespace Declic_Info
             dateDevisPicker.Enabled = enabled;
             txtTauxTVADevis.Enabled = enabled;
             txtTauxRemiseGloDevis.Enabled = enabled;
-            txtMontantHTHorsRemiseDevis.Enabled = enabled;
             comboboxStatut.Enabled = enabled;
             comboBoxClient.Enabled = enabled;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvProduitsHorsDevis.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Veuillez sélectionner un produit dans la liste.");
+                }
+
+                // Vérifier quantité
+                if (string.IsNullOrWhiteSpace(txtQuantite.Text))
+                {
+                    MessageBox.Show("Veuillez entrer une quantité.");
+                }
+
+                if (!int.TryParse(txtQuantite.Text, out int quantite) || quantite <= 0)
+                {
+                    MessageBox.Show("La quantité doit être un nombre entier positif.");
+                }
+
+                // Vérifier remise
+                if (string.IsNullOrWhiteSpace(txtRemise.Text))
+                {
+                    MessageBox.Show("Veuillez entrer un pourcentage de remise.");
+                }
+
+                if (!decimal.TryParse(txtRemise.Text, out decimal remise) || remise < 0 || remise > 100)
+                {
+                    MessageBox.Show("La remise doit être un nombre entre 0 et 100.");
+                }
+
+                DevisBO devis = (DevisBO)comboDevis.SelectedItem;
+                int idDevis = devis.IdDevis;
+                ProduitBO produit = (ProduitBO)dgvProduitsHorsDevis.SelectedRows[0].DataBoundItem;
+                quantite = int.Parse(txtQuantite.Text);
+                remise = decimal.Parse(txtRemise.Text);
+                ContenirBO contenir = new ContenirBO(devis, produit, quantite, remise);
+
+                // Ajout en base + retour de l'objet BO
+                GestionContenir.AjoutContenir(contenir);
+
+                // Ajout dans le DataGridView du devis
+                dgvProduit.DataSource = null;
+                dgvProduit.DataSource = produitsDevis;
+
+                MessageBox.Show("Produit ajouté au devis !");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur : " + ex.Message);
+            }
+
+        }
     }
 }
