@@ -31,8 +31,8 @@ CREATE TABLE Client
 ( 
  code_client int IDENTITY(1,1) PRIMARY KEY, 
  nom_client nvarchar(255) NOT NULL,
- num_tel_client int NOT NULL,
- num_fax_client int NOT NULL,
+ num_tel_client nvarchar(10) NOT NULL,
+ num_fax_client nvarchar(10) NOT NULL,
  email_client nvarchar(255) NOT NULL,
  num_adr_fact_client int NOT NULL,
  rue_adr_fact_client nvarchar (255) NOT NULL,
@@ -56,8 +56,8 @@ CREATE TABLE Devis
 (
     id_devis int IDENTITY(1,1) PRIMARY KEY,
     date_devis date NOT NULL,
-    taux_TVA_devis int NOT NULL,
-    taux_remise_glo_devis int NOT NULL,
+    taux_TVA_devis float NOT NULL,
+    taux_remise_glo_devis float NOT NULL,
     montant_HT_hors_remis_devise float NOT NULL,
     code_client int NOT NULL,
     id_statut int NOT NULL,
@@ -151,3 +151,17 @@ VALUES
 ('Imprimante Canon PIXMA G3420', 229.99,1),
 ('Tablette Apple iPad Air', 679.00,7),
 ('Montre connectée Garmin Forerunner 255', 349.95,2);
+
+CREATE TABLE Utilisateur
+(
+    code_utilisateur  int IDENTITY(1,1) PRIMARY KEY,
+    nom_utilisateur  nvarchar(255) NOT NULL,
+    mot_de_passe_utilisateur nvarchar(255) NOT NULL
+
+); 
+
+INSERT INTO Utilisateur (nom_utilisateur, mot_de_passe_utilisateur)
+VALUES
+('Julie', 'Julie1234'),
+('Kecy', 'Kecy5678'),
+('Nicolas', 'Nicolas9123')
